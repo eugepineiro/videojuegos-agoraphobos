@@ -17,6 +17,6 @@ public class Bench : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(_interact)) transform.localPosition += new Vector3(0,0,5);
+        if (Input.GetKey(_interact)) transform.localPosition += new Vector3(0,0,-0.55F);
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class SecretDoor : MonoBehaviour
 {
     private PuzzleController _puzzleController; 
-    [SerializeField] private KeyCode _interact = KeyCode.B;
+    [SerializeField] private KeyCode _interact = KeyCode.O;
 
     void Start()
     {
@@ -19,7 +19,7 @@ public class SecretDoor : MonoBehaviour
     {
         if (Input.GetKey(_interact)) { 
             transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, transform.rotation.z+90); 
-            transform.localPosition += new Vector3(0,transform.localScale.y/2,0);
+            transform.localPosition += new Vector3(transform.localPosition.x-0.5F,transform.localPosition.y+0.5F,0);
         }
     }
 }
