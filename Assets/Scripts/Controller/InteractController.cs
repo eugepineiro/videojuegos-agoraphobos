@@ -44,7 +44,7 @@ public class InteractController : MonoBehaviour, ICaster
         }
         else
         {
-            Debug.DrawRay(origin, direction * 1, Color.red);
+            Debug.DrawRay(origin, direction * 20, Color.red);
             Debug.Log("Did not Hit");
         }
     }
