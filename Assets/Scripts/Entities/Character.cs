@@ -13,6 +13,7 @@ public class Character : MonoBehaviour
     [SerializeField] private KeyCode _moveLeft = KeyCode.A;
     [SerializeField] private KeyCode _moveRight = KeyCode.D;
     [SerializeField] private KeyCode _interact = KeyCode.E;
+    [SerializeField] private GameObject _camera;
 
     // Commands
     private CmdMovement _cmdMoveForward;
@@ -38,12 +39,12 @@ public class Character : MonoBehaviour
 
         if (Input.GetKey(_moveForward))
         {
-            Vector3 horizontalForward = transform.InverseTransformDirection(new Vector3(transform.forward.x, 0, transform.forward.z));
+            Vector3 horizontalForward = transform.InverseTransformDirection(new Vector3(_camera.transform.forward.x, 0, _camera.transform.forward.z));
             EventQueueManager.instance.AddCommand(new CmdMovement(_movementController, horizontalForward));
         }
         if (Input.GetKey(_moveBack))
         {
-            Vector3 horizontalForward = transform.InverseTransformDirection(new Vector3(transform.forward.x, 0, transform.forward.z));
+            Vector3 horizontalForward = transform.InverseTransformDirection(new Vector3(_camera.transform.forward.x, 0, _camera.transform.forward.z));
             EventQueueManager.instance.AddCommand(new CmdMovement(_movementController, -horizontalForward));
         }
         if (Input.GetKey(_moveRight))   EventQueueManager.instance.AddCommand(_cmdRotateRight);
