@@ -5,12 +5,11 @@ using UnityEngine;
 public class CmdInteract : ICommand
 {
     // Propiedades del comando 
-    private ICaster _player; 
-    private Vector3 _direction; 
+    private ICaster _interactor;
 
-    public CmdInteract(ICaster player) { 
-        _player = player;
+    public CmdInteract(ICaster interactor) { 
+        _interactor = interactor;
     }
 
-    public void Execute() => _player.Cast();
+    public void Execute() => _interactor.Interact();
 }

@@ -1494,6 +1494,7 @@ GameObject:
   - component: {fileID: 1066199831}
   - component: {fileID: 1066199836}
   - component: {fileID: 1066199835}
+  - component: {fileID: 1066199837}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -1617,6 +1618,7 @@ MonoBehaviour:
   _moveBack: 115
   _moveLeft: 97
   _moveRight: 100
+  _interact: 101
 --- !u!114 &1066199836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1631,6 +1633,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 5
   _rotationSpeed: 20
+--- !u!114 &1066199837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066199830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db34d3f04558f7f4c92c7124ead5bae1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDistance: 2
+  layerMask: 0
+  queryTriggerInteraction: 0
 --- !u!1001 &1161308631
 PrefabInstance:
   m_ObjectHideFlags: 0

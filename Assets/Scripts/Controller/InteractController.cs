@@ -14,15 +14,16 @@ public class InteractController : MonoBehaviour, ICaster
     [SerializeField] private int layerMask;
 
     //The direction of the ray.
-    [SerializeField] private Vector3 direction;
+    private Vector3 direction;
 
     // 	Specifying queryTriggerInteraction allows you to control whether or not Trigger colliders generate a hit, or whether to use the global Physics.queriesHitTriggers setting..
     [SerializeField] private QueryTriggerInteraction queryTriggerInteraction;
 
    
 
-    public void Cast()
+    public void Interact()
     {
+        // TODO set layer
         // Bit shift the index of the layer (8) to get a bit mask
         int layerMask = 1 << 8;
 
@@ -37,12 +38,13 @@ public class InteractController : MonoBehaviour, ICaster
         // Does the ray intersect any objects excluding the player layer
         if (Physics.Raycast(origin, direction, out hit, maxDistance, layerMask))
         {
-            Debug.DrawRay(origin, direction * hit.distance, Color.yellow);
+            Debug.DrawRay(origin, direction * hit.distance, Color.green);
             Debug.Log("Did Hit");
+            // to get GameObject hit -> hit.transform.gameObject;
         }
         else
         {
-            Debug.DrawRay(origin, direction * 1000, Color.white);
+            Debug.DrawRay(origin, direction * 1, Color.red);
             Debug.Log("Did not Hit");
         }
     }
