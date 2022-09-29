@@ -7,9 +7,12 @@ public class CmdInteract : ICommand
     // Propiedades del comando 
     private ICaster _interactor;
 
-    public CmdInteract(ICaster interactor) { 
+    private Vector3 _direction;
+
+    public CmdInteract(ICaster interactor, Vector3 direction) { 
         _interactor = interactor;
+        _direction = direction;
     }
 
-    public void Execute() => _interactor.Interact();
+    public void Execute() => _interactor.Interact(_direction);
 }

@@ -6,5 +6,5 @@ public interface ICaster
 {
     //float Speed { get; } TODO FLYWEIGHT 
 
-    void Interact();
+    void Interact(Vector3 direction);
 }
