@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
     
 
-public class ChessPuzzleController : MonoBehaviour, IPuzzle
+public class ChessPuzzleController : PuzzleController
 {
-    public bool IsSolved => _isSolved;
-    [SerializeField] private bool _isSolved = false;
-    public GameObject PuzzleObject => this.gameObject;
+    //public bool IsSolved => _isSolved;
+    //[SerializeField] private bool _isSolved = false;
+    //public GameObject PuzzleObject => this.gameObject;
 
     private void Awake()
     {
@@ -16,5 +16,5 @@ public class ChessPuzzleController : MonoBehaviour, IPuzzle
     
     public bool CheckSolved() => GetComponent<Chess>().ChessTableOnInitialDisposition();
     
-    public void Solve() => _isSolved = CheckSolved();
+    //public void Solve() => _isSolved = CheckSolved();
 }
