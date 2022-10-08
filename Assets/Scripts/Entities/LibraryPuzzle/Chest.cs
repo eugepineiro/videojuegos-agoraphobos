@@ -2,25 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Chest : MonoBehaviour
+public class Chest : MonoBehaviour, IInteractable
 {
-    private PuzzleController _puzzleController; 
-    [SerializeField] private KeyCode _interact = KeyCode.I;
+    
+    private bool _interacting = false;
+    public bool interacting => _interacting;
 
     void Start()
     {
-        _puzzleController = GetComponent<PuzzleController>();
-        
-
-
-
     }
 
     // Update is called once per frame
-    void Update()
+    public void Interact()
     {
-        if (Input.GetKey(_interact)) { 
-            transform.rotation = Quaternion.Euler(transform.rotation.x-45, transform.rotation.y, transform.rotation.z);  
-        } 
+        
+        transform.rotation = Quaternion.Euler(transform.rotation.x-45, transform.rotation.y, transform.rotation.z);  
+         
     }
 }

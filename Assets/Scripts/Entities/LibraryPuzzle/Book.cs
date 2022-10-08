@@ -2,21 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Book : MonoBehaviour
+public class Book : GrabbableObject
 {
-    private PuzzleController _puzzleController; 
-    [SerializeField] private KeyCode _interact = KeyCode.I;
+    private LibraryPuzzleController _libraryPuzzleController; 
+ 
+    [SerializeField] private GameObject _shelf;
+
 
     void Start()
     {
-        _puzzleController = GetComponent<PuzzleController>();
-
-
+        _libraryPuzzleController = GameObject.Find("LibraryPuzzles").GetComponent<LibraryPuzzleController>();
     }
 
-    // Update is called once per frame
-    void Update()
+    /* public override void LetGo() { 
+        base.LetGo();
+        if(CorrectPosition()){
+            _libraryPuzzleController.Solve();
+        }
+    }
+    
+    private bool CorrectPosition(){
+        if(transform.position.x > 0 && transform.position.x > 0 && transform.position.y > 0)
+        return true;
+    } */ 
+    private void OnTriggerEnter(Collider other)
     {
-        if (Input.GetKey(_interact)) transform.localPosition += new Vector3(0,2,0);
+        print(other.gameObject.name);
+        if(other.gameObject == _shelf ){
+
+            _libraryPuzzleController.Solve();
+        }
     }
+
+  
 }

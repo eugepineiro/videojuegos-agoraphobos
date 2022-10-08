@@ -2,24 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SecretDoor : MonoBehaviour
+public class SecretDoor : MonoBehaviour,IInteractable
 {
-    private PuzzleController _puzzleController; 
-    [SerializeField] private KeyCode _interact = KeyCode.O;
+    private bool _interacting = false;
+    public bool interacting => _interacting;
 
     void Start()
     {
-        _puzzleController = GetComponent<PuzzleController>();
 
 
     }
 
     // Update is called once per frame
-    void Update()
+    public void Interact()
     {
-        if (Input.GetKey(_interact)) { 
-            transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, transform.rotation.z+90); 
-            transform.localPosition += new Vector3(transform.localPosition.x-0.5F,transform.localPosition.y+0.5F,0);
-        }
+          
+        transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, transform.rotation.z+90); 
+        transform.localPosition += new Vector3(transform.localPosition.x-0.5F,transform.localPosition.y+0.5F,0);
+    
     }
 }

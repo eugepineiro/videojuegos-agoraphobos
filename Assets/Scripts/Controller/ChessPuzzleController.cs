@@ -8,6 +8,7 @@ public class ChessPuzzleController : PuzzleController
     //public bool IsSolved => _isSolved;
     //[SerializeField] private bool _isSolved = false;
     //public GameObject PuzzleObject => this.gameObject;
+     
 
     private void Awake()
     {
@@ -16,5 +17,11 @@ public class ChessPuzzleController : PuzzleController
     
     public bool CheckSolved() => GetComponent<Chess>().ChessTableOnInitialDisposition();
     
+    // chess picec le avisa al controller su posicion nueva
+    public void DispositionChanged(){
+        if(CheckSolved())
+            Solve();
+    }
+
     //public void Solve() => _isSolved = CheckSolved();
 }
