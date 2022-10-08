@@ -16,12 +16,15 @@ public class Valve : MonoBehaviour
     public AudioSource AudioSource => _audioSource;
     private AudioSource _audioSource;
 
+    public GameObject AssociatedPipe => _associatedPipe;
+    [SerializeField] private GameObject _associatedPipe;
+
 
     Vector3 GetRotationVectorByValue(int value) {
         return new Vector3(value * 90f, 0, 0);
     }
 
-    IEnumerator Rotate(Vector3 rotationVector) {
+    IEnumerator Rotate(Transform transform, Vector3 rotationVector) {
         Quaternion fromAngle = transform.rotation;
         Quaternion toAngle = Quaternion.Euler(rotationVector);
 
@@ -45,8 +48,9 @@ public class Valve : MonoBehaviour
     { 
         if (Input.GetKeyDown(_interact) && !_rotating) {
             _rotating = true;
-            _value = (_value + 1) % 4; 
-            StartCoroutine(Rotate(GetRotationVectorByValue(_value)));
+            _value = (_value + 1) % 4;
+            StartCoroutine(Rotate(transform, new Vector3(_value * 90f, 0, 0)));
+            StartCoroutine(Rotate(_associatedPipe.transform, new Vector3(0, _value * 90f, 0)));
             AudioSource.PlayOneShot(AudioClip);
         };
     }
