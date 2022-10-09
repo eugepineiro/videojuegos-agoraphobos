@@ -8,7 +8,7 @@ public class GrabbableObject : MonoBehaviour, IGrabbable
     public bool interacting => _interacting;
     public Transform camera;
 
-    public void Grab(){
+    public virtual void Grab(){
         //todo
         _interacting = true;
         

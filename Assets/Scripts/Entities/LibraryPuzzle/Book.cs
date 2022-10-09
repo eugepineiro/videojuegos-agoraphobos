@@ -14,25 +14,43 @@ public class Book : GrabbableObject
         _libraryPuzzleController = GameObject.Find("LibraryPuzzles").GetComponent<LibraryPuzzleController>();
     }
 
-    /* public override void LetGo() { 
+    public override void LetGo() { 
         base.LetGo();
-        if(CorrectPosition()){
-            _libraryPuzzleController.Solve();
+       
+        var didHit = Physics.Raycast(this.transform.position, -this.transform.up, out var hit, 0.5F);
+        Debug.Log(didHit);
+        if(didHit && hit.transform.gameObject == _shelf ){
+            /* Book hits shelf */ 
+            _libraryPuzzleController.SetBook(this.name, _shelf.name);
         }
     }
+
+    public override void Grab() { 
+        base.Grab();
+        _libraryPuzzleController.RemoveBook(this.name);
+    }
     
-    private bool CorrectPosition(){
+    /*private bool CorrectPosition(){
         if(transform.position.x > 0 && transform.position.x > 0 && transform.position.y > 0)
         return true;
-    } */ 
+    }  
     private void OnTriggerEnter(Collider other)
     {
         print(other.gameObject.name);
         if(other.gameObject == _shelf ){
 
-            _libraryPuzzleController.Solve();
+            _libraryPuzzleController.SetBook(this.name, _shelf.name);
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        print(other.gameObject.name);
+        if(other.gameObject == _shelf ){
+
+            _libraryPuzzleController.RemoveBook(this.name, _shelf.name);
+        }
+    } */ 
 
   
 }
