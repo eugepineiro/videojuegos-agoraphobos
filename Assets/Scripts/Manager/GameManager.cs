@@ -51,12 +51,13 @@ public class GameManager : MonoBehaviour
             _isVictory = true;
             EventsManager.instance.EventGameOver(_isVictory);
         // TODO: cambio de escena etc
-        
+        } else { 
+            GameObject.Find("LibraryDoor").SetActive(false); // TODO libraryDOOR ES PARAM
+            //GameObject.Find("BedroomDoor").SetActive(true);
         }
         
     }
 
     private void LoadEndgameScene() => SceneManager.LoadScene("EndgameScene");
     
-
 }

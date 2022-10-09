@@ -20,11 +20,12 @@ public class Book : GrabbableObject
 
     public override void LetGo() { 
         base.LetGo();
-       
+        
         var didHit = Physics.Raycast(this.transform.position, -this.transform.up, out var hit, 0.5F);
         Debug.Log(didHit);
         if(didHit && hit.transform.gameObject.name == ShelfName ){
             /* Book hits shelf */ 
+            
             _libraryPuzzleController.SetBook(this.name, ShelfName);
         }
     }

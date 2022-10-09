@@ -14,6 +14,7 @@ public class SoundEffectController : MonoBehaviour, IListenable
     [SerializeField] private AudioClip _audioClip;
     [SerializeField] private AudioClip _victoryClip;
     [SerializeField] private AudioClip _defeatClip;
+    [SerializeField] private AudioClip _puzzleSolvedClip;
 
     public AudioSource AudioSource => _audioSource;
     private AudioSource _audioSource;
@@ -62,10 +63,10 @@ public class SoundEffectController : MonoBehaviour, IListenable
         if (isVictory)  PlayOnShot(_victoryClip);
         else            PlayOnShot(_defeatClip);
     }
+
     private void OnPuzzleSolved() 
     {
-        // TODO add puzzle solved clip
-        PlayOnShot(_victoryClip);
+        PlayOnShot(_puzzleSolvedClip);
     }
     #endregion
 }
