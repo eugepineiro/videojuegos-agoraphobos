@@ -11,9 +11,9 @@ public class LibraryPuzzleController : PuzzleController
     void Start()
     {
         books = new Dictionary<string, string>() { 
-            {"BlueBook", "TopShelf"},
-            {"RedBook", "MiddleShelf"},
-            {"GreenBook", "BottomShelf"}
+            {"BlueBook", "ShelfTop"},
+            {"RedBook", "ShelfMiddle"},
+            {"GreenBook", "ShelfBottom"}
         };
 
         correct_books = new List<string>();
