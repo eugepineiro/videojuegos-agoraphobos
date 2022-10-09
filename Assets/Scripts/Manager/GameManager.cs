@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class GameManager : MonoBehaviour
     private int _maxTime = 30*60; // TODO chequear cuantos mins queremos
     private int puzzlesSolved = 0;
     private int totalPuzzles = 3;
+    
     
     void Start()
     {
@@ -33,9 +35,12 @@ public class GameManager : MonoBehaviour
     {
         _isGameOver = true; 
         _isVictory = isVictory; 
+        GlobalData.instance.SetVictoryField(_isVictory);
 
         _gameoverMessage.text = isVictory ? "WIN" : "LOSE"; 
         _gameoverMessage.color = isVictory ? Color.cyan : Color.red; 
+
+        Invoke("LoadEndgameScene",3);
         
     }
 
@@ -46,9 +51,12 @@ public class GameManager : MonoBehaviour
             _isVictory = true;
             EventsManager.instance.EventGameOver(_isVictory);
         // TODO: cambio de escena etc
+        
         }
         
     }
+
+    private void LoadEndgameScene() => SceneManager.LoadScene("EndgameScene");
     
 
 }
