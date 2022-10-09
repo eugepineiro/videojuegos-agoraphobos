@@ -7,13 +7,13 @@ public class BookProperties : ScriptableObject
 {
     [SerializeField] private BookValues _bookValues;
 
-    public GameObject Shelf => _bookValues.Shelf; 
-    public Texture Texture => _bookValues.Texture;
+    public string ShelfName => _bookValues.ShelfName; 
+    public Material Material => _bookValues.Material;
 }
 
 [System.Serializable]
 public struct BookValues
 {
-    public GameObject Shelf; 
-    public Texture Texture;
+    public string ShelfName; 
+    public Material Material;
 }

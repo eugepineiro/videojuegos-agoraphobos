@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: GreenBook
   m_EditorClassIdentifier: 
   _bookValues:
-    Shelf: {fileID: 0}
+    ShelfName: ShelfBottom
     Texture: {fileID: 0}

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: RedBook
   m_EditorClassIdentifier: 
   _bookValues:
-    Shelf: {fileID: 0}
+    ShelfName: ShelfMiddle
     Texture: {fileID: 0}

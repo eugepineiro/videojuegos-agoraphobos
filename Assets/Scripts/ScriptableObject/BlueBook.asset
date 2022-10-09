@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: BlueBook
   m_EditorClassIdentifier: 
   _bookValues:
-    Shelf: {fileID: 0}
+    ShelfName: ShelfTop
     Texture: {fileID: 0}

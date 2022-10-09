@@ -5,6 +5,7 @@ using UnityEngine;
 public class MovementController : MonoBehaviour, IMoveable
 {
     [SerializeField] private ActorStats _actorStats;
+    
     public float Speed =>_actorStats.MovementSpeed; 
     //[SerializeField] private float _speed = 5;
 
