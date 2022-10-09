@@ -18,7 +18,7 @@ public class Book : GrabbableObject
         base.LetGo();
        
         var didHit = Physics.Raycast(this.transform.position, -this.transform.up, out var hit, 0.5F);
-        Debug.Log(didHit);
+        // Debug.Log(didHit);
         if(didHit && hit.transform.gameObject == _shelf ){
             /* Book hits shelf */ 
             _libraryPuzzleController.SetBook(this.name, _shelf.name);

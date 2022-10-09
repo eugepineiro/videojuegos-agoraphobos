@@ -286,6 +286,11 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.020578252, y: 0.043951992, z: 0.0205783}
   m_Center: {x: 0.0000000018626454, y: -0.00037569925, z: 0.00000023888424}
+--- !u!1 &14096432 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1067853811198812, guid: f5a1bb1bf8641274c88db4c73f943ae4, type: 3}
+  m_PrefabInstance: {fileID: 1946480135}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &25674528
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2116,7 +2121,7 @@ GameObject:
   - component: {fileID: 375916553}
   - component: {fileID: 375916557}
   - component: {fileID: 375916558}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Paper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2131,8 +2136,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 375916551}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 57.01, y: -28.279, z: -115.91}
-  m_LocalScale: {x: 0.44938236, y: 0.014979413, z: 0.2396706}
+  m_LocalPosition: {x: 57.01, y: -28.284, z: -115.91}
+  m_LocalScale: {x: 0.9935395, y: 0.033117983, z: 0.52988774}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 663139353}
@@ -11635,6 +11640,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 658436337}
     m_Modifications:
+    - target: {fileID: 1067853811198812, guid: f5a1bb1bf8641274c88db4c73f943ae4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4290439104894856, guid: f5a1bb1bf8641274c88db4c73f943ae4, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -11674,6 +11683,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4290439104894856, guid: f5a1bb1bf8641274c88db4c73f943ae4, type: 3}
   m_PrefabInstance: {fileID: 1946480135}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1946480140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14096432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ccea45cb162c81289033cf870bb77cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 963194228}
+  _shelf: {fileID: 653171288}
+--- !u!54 &1946480141
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14096432}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1947680036
 GameObject:
   m_ObjectHideFlags: 0
@@ -12275,6 +12314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db34d3f04558f7f4c92c7124ead5bae1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  forwardBuffer: 0
   pointer: {fileID: 1635233238}
   camara: {fileID: 963194228}
   maxDistance: Infinity

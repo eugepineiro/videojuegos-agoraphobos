@@ -8,11 +8,15 @@ public class GrabbableObject : MonoBehaviour, IGrabbable
     public bool interacting => _interacting;
     public Transform camera;
 
+    private Vector3 _positionBuffer = new Vector3(0, 0.1f, 0);
+    public Vector3 positionBuffer => _positionBuffer;
+
     public virtual void Grab(){
         //todo
         _interacting = true;
         
     }
+    
     public virtual void LetGo(){
         // todo
         _interacting = false;
@@ -23,20 +27,15 @@ public class GrabbableObject : MonoBehaviour, IGrabbable
         if (interacting)
         {
             
-            Debug.Log("i let go the object");
+            // Debug.Log("i let go the object");
             LetGo();
         }
         else
         {
-            Debug.Log("i grabbed the object");
+            // Debug.Log("i grabbed the object");
             Grab();
         }
         
-    }
-
-    void Update() { 
-        if(interacting)
-            transform.position = camera.position + camera.forward * 1;
     }
     
 }
