@@ -18,7 +18,7 @@ public class Chandelier : MonoBehaviour, IInteractable
     // Update is called once per frame
     public void Interact()
     {
-        chandelier.transform.localPosition += new Vector3(transform.localPosition.x,0,transform.localPosition.z);
+        chandelier.transform.localPosition += new Vector3(transform.localPosition.x,transform.localPosition.y-5,transform.localPosition.z);
     
     }
 }

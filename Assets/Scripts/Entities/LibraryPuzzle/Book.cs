@@ -15,7 +15,7 @@ public class Book : GrabbableObject
     void Start()
     {
         _libraryPuzzleController = GameObject.Find("LibraryPuzzles").GetComponent<LibraryPuzzleController>();
-        this.GetComponent<MeshRenderer>().material = BookMaterial;
+        //this.GetComponent<MeshRenderer>().material = BookMaterial;
     }
 
     public override void LetGo() { 

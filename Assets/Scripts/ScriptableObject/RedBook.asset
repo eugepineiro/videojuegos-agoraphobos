@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bookValues:
     ShelfName: ShelfMiddle
-    Texture: {fileID: 0}
+    Material: {fileID: 2100000, guid: 19b610a59115b3544a25976b65817e4e, type: 2}
