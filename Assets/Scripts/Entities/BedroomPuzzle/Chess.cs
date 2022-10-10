@@ -41,7 +41,6 @@ public class Chess : MonoBehaviour
     
     private void MoveChessPiece(int piece, int x, int z)
     {
-        print("moved to x:"+x+", z: "+z);
         _pieces[piece].go.transform.localPosition = new Vector3(_spotSize * x, 0.5f, _spotSize * z);
         _pieces[piece].ChessPosition[0] = x;
         _pieces[piece].ChessPosition[1] = z;
@@ -184,8 +183,8 @@ public class Chess : MonoBehaviour
         {
             do
             {
-                x = Random.Range(0, 8);
-                z = Random.Range(0, 8);
+                x = Random.Range(2, 6);
+                z = Random.Range(2, 6);
             } while (!PositionFree(x, z));
             MoveChessPiece(piece, x, z);
         }
