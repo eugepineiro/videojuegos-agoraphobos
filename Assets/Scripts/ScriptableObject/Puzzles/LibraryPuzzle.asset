@@ -16,4 +16,6 @@ MonoBehaviour:
     Id: LIBRARY_PUZZLE
     Level: 1
     TotalSteps: 3
-    DoorName: LibraryDoor
+    DoorsToOpen:
+    - LibraryDoor
+    - BedroomDoor

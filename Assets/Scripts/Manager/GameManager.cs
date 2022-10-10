@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Text _gameoverMessage;
     private int _maxTime = 30*60; // TODO chequear cuantos mins queremos
     private int puzzlesSolved = 0;
-    private int totalPuzzles = 3;
+    private int totalPuzzles = 1;
     
     
     void Start()
@@ -47,6 +47,9 @@ public class GameManager : MonoBehaviour
     private void OnPuzzleSolved(PuzzleProperties puzzleProperties) 
     {
         puzzlesSolved+=1;
+        Debug.Log("SOLVED");
+        Debug.Log("PUZZLES SOLVED");
+        Debug.Log(puzzlesSolved);
         if(puzzlesSolved == totalPuzzles){
             _isVictory = true;
             EventsManager.instance.EventGameOver(_isVictory);

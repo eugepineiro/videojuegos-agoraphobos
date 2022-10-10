@@ -21,11 +21,15 @@ public class Book : GrabbableObject
     public override void LetGo() { 
         base.LetGo();
         
-        var didHit = Physics.Raycast(this.transform.position, -this.transform.up, out var hit, 0.5F);
-        Debug.Log("let go");
+        var didHit = Physics.Raycast(this.transform.position, -this.transform.up, out var hit, 5F);
+        Debug.Log("shelf naaaaaaaaaame");
+        Debug.Log(ShelfName);
+        Debug.Log("LE PEGO A ESTE");
+        Debug.DrawRay(this.transform.position, -this.transform.up * 5F, Color.green,3);
+        if(didHit) Debug.Log(hit.transform.gameObject.name);
         if(didHit && hit.transform.gameObject.name == ShelfName ){
             /* Book hits shelf */ 
-            
+            Debug.Log("Book hits shelf ");
             _libraryPuzzleController.SetBook(this.name, ShelfName);
         }
     }
