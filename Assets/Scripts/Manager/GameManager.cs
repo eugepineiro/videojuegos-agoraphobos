@@ -75,4 +75,9 @@ public class GameManager : MonoBehaviour
     {
         foreach (var door in doorNames) GameObject.Find(door).GetComponent<BoxCollider>().isTrigger = true;
     }
+
+    public int GetMaxTime()
+    {
+        return _maxTime;
+    }
 }

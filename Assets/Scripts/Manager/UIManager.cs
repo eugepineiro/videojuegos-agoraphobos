@@ -11,8 +11,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _level;
     
     [SerializeField] private TextMeshProUGUI _time;
-    
-    [SerializeField] private float timeRemaining = 120;
+
+    private float timeRemaining = 30 * 60; // TODO GameManager.GetMaxTime();
 
     private void Start()
     {
