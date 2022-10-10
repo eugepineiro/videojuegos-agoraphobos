@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3801,7 +3801,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 600802844}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bdffb218e8a38c671afab1ca2e24edd2, type: 3}
   m_Name: 
@@ -9890,7 +9890,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1578297374
 Transform:
   m_ObjectHideFlags: 0
@@ -13097,7 +13097,6 @@ MonoBehaviour:
   pointer: {fileID: 1635233238}
   camara: {fileID: 963194228}
   maxDistance: Infinity
-  queryTriggerInteraction: 0
 --- !u!114 &1988210342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15489,6 +15488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 963194228}
+  name: 
 --- !u!33 &2878878430261241303
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -15606,6 +15606,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 963194228}
+  name: 
 --- !u!23 &3249948772315184621
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15844,6 +15845,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 963194228}
+  name: 
 --- !u!4 &3624871574036183869
 Transform:
   m_ObjectHideFlags: 0
@@ -15872,6 +15874,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 963194228}
+  name: 
 --- !u!4 &3640768549997147636
 Transform:
   m_ObjectHideFlags: 0
@@ -15900,6 +15903,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 963194228}
+  name: 
 --- !u!23 &3655124284603043281
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15997,6 +16001,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 963194228}
+  name: 
 --- !u!33 &3715079259968251032
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -16039,6 +16044,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 963194228}
+  name: 
 --- !u!4 &3889826663413966832
 Transform:
   m_ObjectHideFlags: 0
@@ -16460,6 +16466,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 963194228}
+  name: 
 --- !u!33 &5248629337889717510
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -16481,6 +16488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 963194228}
+  name: 
 --- !u!23 &5271549647503621289
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16593,6 +16601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 963194228}
+  name: 
 --- !u!1 &5586608291522951273
 GameObject:
   m_ObjectHideFlags: 0
@@ -16627,6 +16636,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 963194228}
+  name: 
 --- !u!23 &5665411534619407958
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16682,6 +16692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 963194228}
+  name: 
 --- !u!4 &5704569158353812512
 Transform:
   m_ObjectHideFlags: 0
@@ -16803,6 +16814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 963194228}
+  name: 
 --- !u!4 &6126682143840474684
 Transform:
   m_ObjectHideFlags: 0
@@ -16931,6 +16943,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 963194228}
+  name: 
 --- !u!4 &6469845724709489579
 Transform:
   m_ObjectHideFlags: 0
@@ -17066,6 +17079,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 963194228}
+  name: 
 --- !u!1 &6911662644488020297
 GameObject:
   m_ObjectHideFlags: 0
@@ -17100,6 +17114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 963194228}
+  name: 
 --- !u!23 &7016078706119105734
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17155,6 +17170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 963194228}
+  name: 
 --- !u!23 &7329645312850660160
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17225,6 +17241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 963194228}
+  name: 
 --- !u!33 &7579877036130669944
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -17246,6 +17263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 963194228}
+  name: 
 --- !u!23 &7752829978265338919
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17316,6 +17334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 963194228}
+  name: 
 --- !u!4 &7949356149653222639
 Transform:
   m_ObjectHideFlags: 0
@@ -17344,6 +17363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 963194228}
+  name: 
 --- !u!1 &7960191146746451765
 GameObject:
   m_ObjectHideFlags: 0
@@ -17378,6 +17398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 963194228}
+  name: 
 --- !u!4 &8020500495450753596
 Transform:
   m_ObjectHideFlags: 0
@@ -17427,6 +17448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 963194228}
+  name: 
 --- !u!4 &8222182315526064088
 Transform:
   m_ObjectHideFlags: 0
@@ -17455,6 +17477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 963194228}
+  name: 
 --- !u!1 &8254287149488266805
 GameObject:
   m_ObjectHideFlags: 0
@@ -17489,6 +17512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 963194228}
+  name: 
 --- !u!4 &8261115758058832573
 Transform:
   m_ObjectHideFlags: 0
@@ -17538,6 +17562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 963194228}
+  name: 
 --- !u!33 &8330839514413032413
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -17567,6 +17592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 963194228}
+  name: 
 --- !u!4 &8416845981587075928
 Transform:
   m_ObjectHideFlags: 0
@@ -17595,6 +17621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 963194228}
+  name: 
 --- !u!33 &8859090293258537779
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -17616,6 +17643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 963194228}
+  name: 
 --- !u!4 &8891792826728022575
 Transform:
   m_ObjectHideFlags: 0
@@ -17652,6 +17680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 963194228}
+  name: 
 --- !u!1 &9152363911649796937
 GameObject:
   m_ObjectHideFlags: 0
@@ -17706,6 +17735,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 963194228}
+  name: 
 --- !u!1 &9214029699836133624
 GameObject:
   m_ObjectHideFlags: 0
@@ -17740,3 +17770,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 963194228}
+  name: 
