@@ -141,13 +141,11 @@ public class InteractController : MonoBehaviour, ICaster
         if (Physics.Raycast(camara.transform.position, camara.forward, out var hit, maxDistance))
         {
             Debug.DrawRay(camara.transform.position, camara.forward * maxDistance, Color.green);
-            return hit.point;
             var r = hit.transform.rotation;
-            var vector = Quaternion.AngleAxis(r.y, Vector3.up) * Quaternion.AngleAxis(r.z, Vector3.forward) * Quaternion.AngleAxis(r.x, Vector3.right)* hit.normal ;
-            print(vector);
-            if (vector.y.Equals(1f))
+            var vector = Quaternion.AngleAxis(-r.y, Vector3.up) * Quaternion.AngleAxis(-r.z, Vector3.forward) * Quaternion.AngleAxis(-r.x, Vector3.right)* hit.normal ;
+            if (Math.Abs(vector.y - 1) < 0.1f)
             {
-                print("mira para arriba");
+                return hit.point;
                 
             }
                 
