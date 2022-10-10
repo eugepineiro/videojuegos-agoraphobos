@@ -36,7 +36,7 @@ public class Chess : MonoBehaviour
 // TODO: instance
     private int GetPieceIndexByName(string pieceName)
     {
-        return _pieces.FindIndex(piece=> piece.Name.Contains(pieceName));
+        return _pieces.FindIndex(piece=> piece.Name.Equals(pieceName));
     }
     
     private void MoveChessPiece(int piece, int x, int z)
@@ -53,7 +53,7 @@ public class Chess : MonoBehaviour
             return;
         
         var pos = GetPosition(piece);
-        
+        print("pos: "+ pos[0] + ","+pos[1]);
         if (pos[0] < 8 && pos[1] < 8)
             SetPieceInTablePosition(piece,  pos[0],  pos[1]);
         else
@@ -107,11 +107,11 @@ public class Chess : MonoBehaviour
     {
         foreach (var piece in _chessPieces)
         {
-            var o = Instantiate(piece, transform);
+            // var o = Instantiate(piece, transform);
             var p = new Piece()
             {
-                ChessPosition = GetPosition(o.transform),
-                go = o,
+                ChessPosition = GetPosition(piece.transform),
+                go = piece,
                 Name = piece.name,
                 Type = GetTypeByName(piece.name)
 

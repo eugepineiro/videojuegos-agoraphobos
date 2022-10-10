@@ -20,6 +20,7 @@ public class ChessPuzzleController : PuzzleController
     {
         _chess.OnPieceMoved(pieceName);
         var steps = _chess.ChessTableOnInitialDisposition();
+
         SolveStep(steps);
         if(steps == TotalSteps)
             Solve();

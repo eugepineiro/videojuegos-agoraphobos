@@ -11,6 +11,7 @@ public class ChessPiece : GrabbableObject
 
     public override void LetGo() { 
         base.LetGo();
+        print("let go");
         _chessPuzzleController.ChessPieceMoved(name);
     }
     
