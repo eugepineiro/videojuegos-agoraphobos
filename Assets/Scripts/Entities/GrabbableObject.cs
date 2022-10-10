@@ -6,9 +6,8 @@ public class GrabbableObject : MonoBehaviour, IGrabbable
 {
     private bool _interacting = false;
     public bool interacting => _interacting;
-    public Transform camera;
 
-    private Vector3 _positionBuffer = new Vector3(0, 0.1f, 0);
+    [SerializeField]private Vector3 _positionBuffer = new Vector3(0, 0.1f, 0);
     public Vector3 positionBuffer => _positionBuffer;
 
     
