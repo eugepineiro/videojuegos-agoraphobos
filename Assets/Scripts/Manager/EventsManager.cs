@@ -13,7 +13,8 @@ public class EventsManager : MonoBehaviour
         if(instance != null) Destroy(this);
         instance = this; 
     }
-
+    
+    #region GAME_EVENTS
     public event Action<bool> OnGameOver; 
     public event Action<PuzzleProperties> OnPuzzleSolved; 
 
@@ -26,7 +27,17 @@ public class EventsManager : MonoBehaviour
 
         if (OnPuzzleSolved != null) OnPuzzleSolved(puzzleProperties);
     }
+    #endregion
     
+    #region UI_EVENTS
 
-    
+    public event Action<int, int> OnStepSolved;
+
+    public void EventStepSolved(int stepsSolved, int totalSteps)
+    {
+        if (OnStepSolved != null) OnStepSolved(stepsSolved, totalSteps);
+    }
+    #endregion
+
+
 }
