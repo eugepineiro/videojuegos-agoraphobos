@@ -20,9 +20,9 @@ public class ChessPuzzleController : PuzzleController
     {
         _chess.OnPieceMoved(pieceName);
         if (_chess.CheckIfInRightPlace(pieceName))
-            SolveStep();
+            SolveStep(true);
         else
-            SolveStep();
+            SolveStep(false);
         if (StepsSolved == TotalSteps)
             Solve();
     }
