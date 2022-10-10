@@ -24,7 +24,7 @@ public class LibraryPuzzleController : PuzzleController
         if (books[bookName] == shelfName)
         {
             correct_books.Add(bookName);
-            base.SolveStep();
+            base.SolveStep(true);
         } 
         // print("Set book");
         print(correct_books.Count);
@@ -34,8 +34,12 @@ public class LibraryPuzzleController : PuzzleController
     }
 
     public void RemoveBook(string bookName) 
-    {   
-        if (correct_books.Contains(bookName)) correct_books.Remove(bookName);
+    {
+        if (correct_books.Contains(bookName))
+        {
+            correct_books.Remove(bookName);
+            base.SolveStep(false);
+        }
     }
  
 }
