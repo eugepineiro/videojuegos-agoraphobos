@@ -15,6 +15,6 @@ MonoBehaviour:
   _puzzleValues:
     Id: BEDROOM_PUZZLE
     Level: 2
-    TotalSteps: 32
+    TotalSteps: 4
     DoorsToOpen:
     - KitchenDoor
