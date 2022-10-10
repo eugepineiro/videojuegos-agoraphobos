@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public enum PieceType
@@ -29,7 +30,8 @@ public struct Piece
 
 public class Chess : MonoBehaviour
 {
-    [SerializeField] List<GameObject> _chessPieces;
+    [SerializeField] List<GameObject> _towerPieces;
+    [SerializeField] GameObject _chessTable;
     [SerializeField] float _spotSize = 1;
 
     private List<Piece> _pieces;
@@ -105,7 +107,8 @@ public class Chess : MonoBehaviour
 
     private void InitializePieces()
     {
-        foreach (var piece in _chessPieces)
+        var table = Instantiate(_chessTable, this.transform);
+        foreach (var piece in _towerPieces)
         {
             // var o = Instantiate(piece, transform);
             var p = new Piece()
