@@ -19,9 +19,14 @@ public class ChessPuzzleController : PuzzleController
     public void ChessPieceMoved(string pieceName)
     {
         _chess.OnPieceMoved(pieceName);
-        if (CheckSolved())
-            base.Solve();
+        if (_chess.CheckIfInRightPlace(pieceName))
+            SolveStep();
+        else
+            SolveStep();
+        if (StepsSolved == TotalSteps)
+            Solve();
     }
+    
     
     public bool CheckSolved() => _chess.ChessTableOnInitialDisposition();
 }

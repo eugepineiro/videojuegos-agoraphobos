@@ -59,6 +59,28 @@ public class Chess : MonoBehaviour
         else
             RemovePieceFromTable(piece);
     }
+
+    public bool CheckIfInRightPlace(string pieceName)
+    {
+        var piecei = GetPieceIndexByName(pieceName);
+        var piece = _pieces[piecei];
+        if (piece.Name.Contains("Bishop"))
+            return ((piece.ChessPosition[0] == 2 || piece.ChessPosition[0] == 5) &&
+                    (piece.ChessPosition[1] == 0 || piece.ChessPosition[1] == 7));
+        if (piece.Name.Contains("Castle"))
+            return ((piece.ChessPosition[0] == 0 || piece.ChessPosition[0] == 7) &&
+                    (piece.ChessPosition[1] == 0 || piece.ChessPosition[1] == 7));
+        if (piece.Name.Contains("Horse"))
+            return (piece.ChessPosition[0] == 2 || piece.ChessPosition[0] == 6) &&
+                   (piece.ChessPosition[1] == 0 || piece.ChessPosition[1] == 7);
+        if (piece.Name.Contains("King") || name.Contains("Queen"))
+            return ((piece.ChessPosition[0] == 3 || piece.ChessPosition[0] == 4) &&
+                    (piece.ChessPosition[1] == 0 || piece.ChessPosition[1] == 7));
+        if (piece.Name.Contains("Pawn"))
+            return ((piece.ChessPosition[0] != -1) &&
+                    (piece.ChessPosition[1] == 1 || piece.ChessPosition[1] == 6));
+        return false;
+    }
     
 
     private void SetPieceInTablePosition(int pieceIndex, int x, int z)
