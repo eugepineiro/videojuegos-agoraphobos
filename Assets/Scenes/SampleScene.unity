@@ -3801,7 +3801,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 600802844}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bdffb218e8a38c671afab1ca2e24edd2, type: 3}
   m_Name: 
@@ -3959,7 +3959,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 619826651}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.01, z: 0}
+  m_LocalPosition: {x: 0, y: 0.72, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6334,7 +6334,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 944750636}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -37.203, y: 4.14, z: 29.7}
+  m_LocalPosition: {x: -8.3, y: 1.85, z: 7.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6578,7 +6578,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -37.203, y: 4.14, z: 29.7}
+  m_LocalPosition: {x: -8.3, y: 1.85, z: 7.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11961,7 +11961,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7768996297429425542, guid: 7c023886f77e9e445a6eb09f9180394a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c023886f77e9e445a6eb09f9180394a, type: 3}
@@ -13044,7 +13044,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1988210333}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -37.203, y: 1.13, z: 29.7}
+  m_LocalPosition: {x: -8.3, y: 1.13, z: 7.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14520,7 +14520,7 @@ GameObject:
   - component: {fileID: 1855868417}
   - component: {fileID: 5572858276327511853}
   m_Layer: 6
-  m_Name: Pawn.005
+  m_Name: WPawn.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14591,7 +14591,7 @@ GameObject:
   - component: {fileID: 1973417659}
   - component: {fileID: 8859090293258537780}
   m_Layer: 6
-  m_Name: Castle.001
+  m_Name: WCastle.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14612,7 +14612,7 @@ GameObject:
   - component: {fileID: 11195789}
   - component: {fileID: 6368462864277860336}
   m_Layer: 6
-  m_Name: Pawn.003
+  m_Name: WPawn.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14727,7 +14727,7 @@ GameObject:
   - component: {fileID: 2045391103}
   - component: {fileID: 2831035997484838489}
   m_Layer: 6
-  m_Name: King
+  m_Name: WKing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15089,7 +15089,7 @@ GameObject:
   - component: {fileID: 601790165}
   - component: {fileID: 3176837072309753764}
   m_Layer: 6
-  m_Name: Horse.001
+  m_Name: WHorse.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15664,7 +15664,7 @@ GameObject:
   - component: {fileID: 800763420}
   - component: {fileID: 8222182315526064089}
   m_Layer: 6
-  m_Name: Pawn
+  m_Name: WPawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15790,7 +15790,7 @@ GameObject:
   - component: {fileID: 2094319444}
   - component: {fileID: 3624871574036183870}
   m_Layer: 6
-  m_Name: Pawn.002
+  m_Name: WPawn.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16180,7 +16180,7 @@ GameObject:
   - component: {fileID: 1535439072}
   - component: {fileID: 7949356149653222640}
   m_Layer: 6
-  m_Name: Pawn.006
+  m_Name: WPawn.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16222,7 +16222,7 @@ GameObject:
   - component: {fileID: 1614388374}
   - component: {fileID: 5665411534619407959}
   m_Layer: 6
-  m_Name: Pawn.001
+  m_Name: WPawn.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16617,7 +16617,7 @@ GameObject:
   - component: {fileID: 1574595867}
   - component: {fileID: 5586608291522951274}
   m_Layer: 6
-  m_Name: Castle
+  m_Name: WCastle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17037,7 +17037,7 @@ GameObject:
   - component: {fileID: 933169795}
   - component: {fileID: 7776190365984402612}
   m_Layer: 6
-  m_Name: Pawn.004
+  m_Name: WPawn.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17095,7 +17095,7 @@ GameObject:
   - component: {fileID: 227187287}
   - component: {fileID: 6911662644488020298}
   m_Layer: 6
-  m_Name: Queen
+  m_Name: WQueen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17379,7 +17379,7 @@ GameObject:
   - component: {fileID: 263148344}
   - component: {fileID: 7960191146746451766}
   m_Layer: 6
-  m_Name: Horse
+  m_Name: WHorse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17543,7 +17543,7 @@ GameObject:
   - component: {fileID: 1985493842}
   - component: {fileID: 8261403522254568164}
   m_Layer: 6
-  m_Name: Pawn.007
+  m_Name: WPawn.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

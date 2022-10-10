@@ -1,134 +1,209 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using JetBrains.Annotations;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
+public enum PieceType
+{
+    Empty,
+    WPawn,
+    WCastle,
+    WHorse,
+    WBishop,
+    WKing,
+    WQueen,
+    BPawn,
+    BCastle,
+    BHorse,
+    BBishop,
+    BKing,
+    BQueen
+}
+
+public struct Piece
+{
+    public PieceType Type;
+    public string Name;
+    public Transform transform;
+    public int[] ChessPosition;
+}
 
 public class Chess : MonoBehaviour
 {
-    enum Pieces
-    {
-        Empty,
-        WPawn,
-        WCastle,
-        WHorse,
-        WBishop,
-        WKing,
-        WQueen,
-        BPawn,
-        BCastle,
-        BHorse,
-        BBishop,
-        BKing,
-        BQueen
-
-
-    }
-
-    private Pieces[,] _chessTable = new Pieces[8, 8];
     [SerializeField] List<GameObject> _chessPieces;
     [SerializeField] float _spotSize = 1;
-    public void MoveChessPiece(int piece, int x, int z)
+
+    private List<Piece> _pieces;
+
+    private int GetPieceIndexByName(string pieceName)
     {
-        _chessPieces[piece].transform.localPosition = new Vector3(_spotSize * x, 1, _spotSize * z);
-        _chessTable[x, z] = GetPieceValue(piece);
+        return _pieces.FindIndex(piece=> piece.Name == pieceName);
+    }
+    
+    private void MoveChessPiece(int piece, int x, int z)
+    {
+        _pieces[piece].transform.localPosition = new Vector3(_spotSize * x, 0.5f, _spotSize * z);
+        _pieces[piece].ChessPosition[0] = x;
+        _pieces[piece].ChessPosition[1] = z;
     }
 
-    private Pieces GetPieceValue(int piece)
+    public void OnPieceMoved(string pieceName)
     {
-        switch (piece)
+        var piece = GetPieceIndexByName(pieceName);
+        var pos = GetPosition(_pieces[piece].transform);
+        
+        if (pos[0] < 8 && pos[1] < 8)
+            SetPieceInTablePosition(piece,  pos[0],  pos[1]);
+        else
+            RemovePieceFromTable(piece);
+    }
+    
+
+    private void SetPieceInTablePosition(int pieceIndex, int x, int z)
+    {
+        var piece = _pieces[pieceIndex];
+        piece.ChessPosition[0] = x;
+        piece.ChessPosition[1] = z;
+    }
+    private void RemovePieceFromTable(int pieceIndex)
+    {
+        var piece = _pieces[pieceIndex];
+        piece.ChessPosition[0] =-1;
+        piece.ChessPosition[1] =-1;
+    }
+    
+
+    private void Awake()
+    {
+        _pieces = new List<Piece>();
+        InitializePieces();
+    }
+
+    private void InitializePieces()
+    {
+        
+        foreach (var piece in _chessPieces)
         {
-            case 0:
-            case 1:
-            case 2:
-            case 3:
-            case 4:
-            case 5:
-            case 6:
-            case 7:
-                return Pieces.WPawn;
-            case 8:
-            case 9:
-                return Pieces.WCastle;
-            case 10:
-            case 11:
-                return Pieces.WHorse;
-            case 12:
-            case 13:
-                return Pieces.WBishop;
-            case 14:
-                return Pieces.WKing;
-            case 15:
-                return Pieces.WQueen;
-            case 16:
-            case 17:
-            case 18:
-            case 19:
-            case 20:
-            case 21:
-            case 22:
-            case 23:
-                return Pieces.BPawn;
-            case 24:
-            case 25:
-                return Pieces.BCastle;
-            case 26:
-            case 27:
-                return Pieces.BHorse;
-            case 28:
-            case 29:
-                return Pieces.BBishop;
-            case 30:
-                return Pieces.BKing;
-            case 31:
-                return Pieces.BQueen;
+            var p = new Piece()
+            {
+                ChessPosition = GetPosition(piece.transform),
+                transform = piece.transform,
+                Name = piece.name,
+                Type = GetTypeByName(piece.name)
 
+            };
+            _pieces.Add(p);
         }
-        return 0;
     }
 
+    private void ClearPositions()
+    {
+        foreach (var piece in _pieces)
+        {
+            piece.ChessPosition[0] = -1;
+            piece.ChessPosition[1] = -1;
+        }
+    }
+    private int[] GetPosition(Transform t)
+    {
+        var position = new int[]{-1,-1};
+        if (t.localPosition.y < 0.5f && t.localPosition.y > 0.4f)
+        {
+            var localPosition = t.localPosition;
+            var x =(int) (localPosition.x / _spotSize);
+            var z = (int) (localPosition.z / _spotSize);
+            position[0] = x;
+            position[1] = z;
+            localPosition = new Vector3(x, localPosition.y, z);
+            t.localPosition = localPosition;
+        }
+        print("new position is: "+ position);
+        return position;
+
+
+    }
+    
+
+    private PieceType GetTypeByName(string name)
+    {
+        if (name.Contains("BBishop"))
+            return PieceType.BBishop;
+        if (name.Contains("BCastle"))
+            return PieceType.BCastle;
+        if (name.Contains("BHorse"))
+            return PieceType.BHorse;
+        if (name.Contains("BKing"))
+            return PieceType.BKing;
+        if (name.Contains("BPawn"))
+            return PieceType.BPawn;
+        if (name.Contains("BQueen"))
+            return PieceType.BQueen;
+        if (name.Contains("WBishop"))
+            return PieceType.WBishop;
+        if (name.Contains("WCastle"))
+            return PieceType.WCastle;
+        if (name.Contains("WHorse"))
+            return PieceType.WHorse;
+        if (name.Contains("WKing"))
+            return PieceType.WKing;
+        if (name.Contains("WPawn"))
+            return PieceType.WPawn;
+        if (name.Contains("WQueen"))
+            return PieceType.WQueen;
+        return PieceType.Empty;
+    }
     public void RandomizePositions()
     {
-        CleanChessTable();
+        ClearPositions();
         int x;
         int z;
-        for (int piece = 1; piece < 32; piece++)
+        for (int piece = 0; piece < _pieces.Count; piece++)
         {
             do
             {
                 x = Random.Range(0, 8);
                 z = Random.Range(0, 8);
             } while (!PositionFree(x, z));
-
             MoveChessPiece(piece, x, z);
         }
 
     }
     
-    private bool PositionFree(int x, int z) => _chessTable[x, z] == 0;
-
-    private void CleanChessTable()
+    private bool PositionFree(int x, int z)
     {
-        for (int i = 0; i < 8; i++)
-        {
-            for (int j = 0; j < 8; j++)
-            {
-                _chessTable[i, j] = Pieces.Empty;
-            }
-        }
+        var i = _pieces.FindIndex(p => p.ChessPosition[0] == x && p.ChessPosition[1] == z);
+        return i == -1;
     }
 
-    //public Vector3 GetPiecePosition(int piece)
-    //{
-    //    if(_chessPieces[piece].transform.localPosition.x <= 7 && _chessPieces[piece].transform.localPosition.z <= 7 && _chessPieces[piece].transform.localPosition.z == 0)
-    //    {
-    //        return _chessPieces[piece].transform.localPosition;
-    //    }
-    //    return new Vector3(-1, -1, -1);
-    //}
 
     public bool ChessTableOnInitialDisposition()
     {
-
+        foreach (var piece in _pieces)
+        {
+            if (name.Contains("Bishop"))
+                if(!((piece.ChessPosition[0] == 2 || piece.ChessPosition[0] == 5) &&
+                   (piece.ChessPosition[1] == 0 || piece.ChessPosition[1] == 7)))
+                    return false;
+            if (name.Contains("Castle"))
+                if(!((piece.ChessPosition[0] == 0 || piece.ChessPosition[0] == 7) &&
+                     (piece.ChessPosition[1] == 0 || piece.ChessPosition[1] == 7)))
+                    return false;
+            if (name.Contains("Horse"))
+                if(!((piece.ChessPosition[0] == 2 || piece.ChessPosition[0] == 6) &&
+                     (piece.ChessPosition[1] == 0 || piece.ChessPosition[1] == 7)))
+                    return false;
+            if (name.Contains("King") || name.Contains("Queen"))
+                if(!((piece.ChessPosition[0] == 3 || piece.ChessPosition[0] == 4) &&
+                     (piece.ChessPosition[1] == 0 || piece.ChessPosition[1] == 7)))
+                    return false;
+            if (name.Contains("Pawn"))
+                if (!((piece.ChessPosition[0] != -1) &&
+                      (piece.ChessPosition[1] == 1 || piece.ChessPosition[1] == 6)))
+                    return false;
+        }
         return true;
     }
 
