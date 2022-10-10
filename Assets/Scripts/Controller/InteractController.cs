@@ -132,7 +132,8 @@ public class InteractController : MonoBehaviour, ICaster
     private void SetInteractingObjectNearMe()
     {
         pointer.SetActive(true);
-        _gameObjectInteracting.transform.position = transform.forward + gameObject.transform.forward * forwardBuffer;
+        var ctransform = camara.transform;
+        _gameObjectInteracting.transform.position = ctransform.position + ctransform.forward * forwardBuffer;
     }
     
     private Vector3? GetRaycastCollision()
