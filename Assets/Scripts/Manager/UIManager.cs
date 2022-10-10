@@ -12,12 +12,12 @@ public class UIManager : MonoBehaviour
     
     [SerializeField] private TextMeshProUGUI _time;
     
-    [SerializeField] pivate float timeRemaining = 10;
+    [SerializeField] private float timeRemaining = 120;
 
     private void Start()
     {
         EventsManager.instance.OnPuzzleSolved += OnPuzzleSolved; //subscribe to event
-        EventsManager.instance.OnStepSolved += OnStepSolved; 
+        EventsManager.instance.OnStepSolved += OnStepSolved;
     }
 
     private void OnStepSolved(int stepsSolved, int totalSteps)
@@ -32,8 +32,14 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        if (timeRemaining > 0) timeRemaining -= Time.deltaTime;
-        _time.text = $"Time Left {timeRemaining}";
+        if (timeRemaining > 0)
+        {
+            float minutes = Mathf.Floor(timeRemaining / 60);
+            float seconds = timeRemaining%60;
+            _time.text = $"Time Left {minutes}:{Mathf.RoundToInt(seconds)}";
+            timeRemaining -= Time.deltaTime;
+        }
+        
     }
 
 }
