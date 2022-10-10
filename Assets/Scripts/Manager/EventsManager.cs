@@ -38,6 +38,15 @@ public class EventsManager : MonoBehaviour
         if (OnStepSolved != null) OnStepSolved(stepsSolved, totalSteps);
     }
     #endregion
+    
+    #region SOUND_EVENTS 
+    public event Action OnDoorOpened;
+
+    public void EventDoorOpened()
+    {
+        if (OnDoorOpened != null) OnDoorOpened();
+    }
+    #endregion
 
 
 }
