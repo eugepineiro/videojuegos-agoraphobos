@@ -1,8 +1,4 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using JetBrains.Annotations;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -27,7 +23,7 @@ public struct Piece
 {
     public PieceType Type;
     public string Name;
-    public Transform transform;
+    public GameObject go;
     public int[] ChessPosition;
 }
 
@@ -40,12 +36,13 @@ public class Chess : MonoBehaviour
 
     private int GetPieceIndexByName(string pieceName)
     {
-        return _pieces.FindIndex(piece=> piece.Name == pieceName);
+        return _pieces.FindIndex(piece=> piece.Name.Contains(pieceName));
     }
     
     private void MoveChessPiece(int piece, int x, int z)
     {
-        _pieces[piece].transform.localPosition = new Vector3(_spotSize * x, 0.5f, _spotSize * z);
+        print("moved to x:"+x+", z: "+z);
+        _pieces[piece].go.transform.localPosition = new Vector3(_spotSize * x, 0.5f, _spotSize * z);
         _pieces[piece].ChessPosition[0] = x;
         _pieces[piece].ChessPosition[1] = z;
     }
@@ -53,7 +50,10 @@ public class Chess : MonoBehaviour
     public void OnPieceMoved(string pieceName)
     {
         var piece = GetPieceIndexByName(pieceName);
-        var pos = GetPosition(_pieces[piece].transform);
+        if(piece == -1)
+            return;
+        
+        var pos = GetPosition(piece);
         
         if (pos[0] < 8 && pos[1] < 8)
             SetPieceInTablePosition(piece,  pos[0],  pos[1]);
@@ -84,13 +84,12 @@ public class Chess : MonoBehaviour
 
     private void InitializePieces()
     {
-        
         foreach (var piece in _chessPieces)
         {
             var p = new Piece()
             {
                 ChessPosition = GetPosition(piece.transform),
-                transform = piece.transform,
+                go = piece,
                 Name = piece.name,
                 Type = GetTypeByName(piece.name)
 
@@ -107,20 +106,41 @@ public class Chess : MonoBehaviour
             piece.ChessPosition[1] = -1;
         }
     }
+    private int[] GetPosition(int pieceIndex)
+    {
+        var position = new int[]{-1,-1};
+        if (_pieces[pieceIndex].go.transform.localPosition.y is < 0.6f and > 0.4f)
+        {
+            var localPosition = _pieces[pieceIndex].go.transform.localPosition;
+            var x =(int) (localPosition.x/_spotSize );
+            var z = (int) (localPosition.z/_spotSize );
+            if (x is < 0 or > 7 && (z is < 0 or > 7))
+                return position;
+            position[0] = x;
+            position[1] = z;
+            localPosition = new Vector3(x * _spotSize, localPosition.y, z* _spotSize);
+            _pieces[pieceIndex].go.transform.localPosition = localPosition;
+        }
+        print("new position is: "+ position[0]+", "+position[1]);
+        return position;
+
+
+    }
     private int[] GetPosition(Transform t)
     {
         var position = new int[]{-1,-1};
-        if (t.localPosition.y < 0.5f && t.localPosition.y > 0.4f)
+        if (t.localPosition.y is < 0.6f and > 0.4f)
         {
             var localPosition = t.localPosition;
-            var x =(int) (localPosition.x / _spotSize);
-            var z = (int) (localPosition.z / _spotSize);
+            var x =(int) (localPosition.x/_spotSize );
+            var z = (int) (localPosition.z/_spotSize );
+            if (x is < 0 or > 7 && (z is < 0 or > 7))
+                return position;
             position[0] = x;
             position[1] = z;
             localPosition = new Vector3(x, localPosition.y, z);
             t.localPosition = localPosition;
         }
-        print("new position is: "+ position);
         return position;
 
 
@@ -183,23 +203,23 @@ public class Chess : MonoBehaviour
     {
         foreach (var piece in _pieces)
         {
-            if (name.Contains("Bishop"))
+            if (piece.Name.Contains("Bishop"))
                 if(!((piece.ChessPosition[0] == 2 || piece.ChessPosition[0] == 5) &&
                    (piece.ChessPosition[1] == 0 || piece.ChessPosition[1] == 7)))
                     return false;
-            if (name.Contains("Castle"))
+            if (piece.Name.Contains("Castle"))
                 if(!((piece.ChessPosition[0] == 0 || piece.ChessPosition[0] == 7) &&
                      (piece.ChessPosition[1] == 0 || piece.ChessPosition[1] == 7)))
                     return false;
-            if (name.Contains("Horse"))
+            if (piece.Name.Contains("Horse"))
                 if(!((piece.ChessPosition[0] == 2 || piece.ChessPosition[0] == 6) &&
                      (piece.ChessPosition[1] == 0 || piece.ChessPosition[1] == 7)))
                     return false;
-            if (name.Contains("King") || name.Contains("Queen"))
+            if (piece.Name.Contains("King") || name.Contains("Queen"))
                 if(!((piece.ChessPosition[0] == 3 || piece.ChessPosition[0] == 4) &&
                      (piece.ChessPosition[1] == 0 || piece.ChessPosition[1] == 7)))
                     return false;
-            if (name.Contains("Pawn"))
+            if (piece.Name.Contains("Pawn"))
                 if (!((piece.ChessPosition[0] != -1) &&
                       (piece.ChessPosition[1] == 1 || piece.ChessPosition[1] == 6)))
                     return false;
