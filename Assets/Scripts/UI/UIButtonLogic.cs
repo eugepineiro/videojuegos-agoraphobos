@@ -10,7 +10,7 @@ public class UIButtonLogic : MonoBehaviour
 
     public void LoadLevelScene() => SceneManager.LoadScene("SampleScene");
 
-    public void LoadInfoScene() => Debug.Log("Infor screen"); //SceneManger.LoadScene("InformationScene"); TODO 
+    public void LoadInfoScene() => SceneManager.LoadScene("InformationScene"); 
 
     public void CloseGame() => Application.Quit();
     
