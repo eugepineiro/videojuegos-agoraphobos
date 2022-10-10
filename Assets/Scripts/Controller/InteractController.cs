@@ -18,8 +18,6 @@ public class InteractController : MonoBehaviour, ICaster
     // The max distance the ray should check for collisions.
     [SerializeField] private float maxDistance = Mathf.Infinity;
 
-    // 	Specifying queryTriggerInteraction allows you to control whether or not Trigger colliders generate a hit, or whether to use the global Physics.queriesHitTriggers setting..
-    [SerializeField] private QueryTriggerInteraction queryTriggerInteraction;
 
     private void Start()
     {
@@ -30,10 +28,9 @@ public class InteractController : MonoBehaviour, ICaster
 
     public void Interact(Vector3 direction)
     {
-        // print("interact is called");
         if (IsInteracting())
         {
-            StopInteracting();
+            LetGo();
             return;
         }
             
@@ -41,7 +38,11 @@ public class InteractController : MonoBehaviour, ICaster
         if (objectToInteract != null)
         {
             if (IsGrabbable(objectToInteract))
+            {
                 Grab(objectToInteract);
+                return; 
+            }
+                
             InteractWithObject(objectToInteract);
         }
     }
@@ -49,11 +50,12 @@ public class InteractController : MonoBehaviour, ICaster
     private void Grab(GameObject o)
     {
         _gameObjectInteracting = o;
-        _gameObjectInteracting.GetComponent<Rigidbody>().detectCollisions = false;
-        _gameObjectInteracting.GetComponent<Rigidbody>().useGravity = false;
+        Rigidbody rb = _gameObjectInteracting.GetComponent<Rigidbody>();
+        rb.detectCollisions = false;
+        rb.useGravity = false;
         pointer.SetActive(false);
         _interacting = true;
-        print("start interacting");
+        _gameObjectInteracting.GetComponent<IGrabbable>().Grab();
     }
 
     private void InteractWithObject(GameObject o)
@@ -70,9 +72,9 @@ public class InteractController : MonoBehaviour, ICaster
         return _interacting;
     }
 
-    private void StopInteracting()
+    private void LetGo()
     {
-        print("stop interacting");
+        _gameObjectInteracting.GetComponent<IGrabbable>().LetGo();
         _gameObjectInteracting.GetComponent<Rigidbody>().detectCollisions = true;
         _gameObjectInteracting.GetComponent<Rigidbody>().useGravity = true;
         _gameObjectInteracting = null;
@@ -88,25 +90,20 @@ public class InteractController : MonoBehaviour, ICaster
         {
             
             GameObject objectHit = hit.transform.gameObject;
-            // print(objectHit.name);
             Debug.DrawRay(_origin, direction * maxDistance, Color.green);
             
             if (IsInteractable(objectHit))
             {
-                // print("hit interactable");
                 return objectHit;
             }
-            // print("hit non interactable");
         }
         Debug.DrawRay(_origin, direction * maxDistance, Color.red);
-        // Debug.Log("Did not Hit");
         return null;
 
     }
 
     private bool IsInteractable(GameObject objectHit)
     {
-        // print(objectHit.name);
         return objectHit.GetComponent<IInteractable>() != null;
     }
 

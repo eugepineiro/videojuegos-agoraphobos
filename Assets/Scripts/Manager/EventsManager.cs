@@ -26,6 +26,7 @@ public class EventsManager : MonoBehaviour
 
         if (OnPuzzleSolved != null) OnPuzzleSolved();
     }
+    
 
     
 }

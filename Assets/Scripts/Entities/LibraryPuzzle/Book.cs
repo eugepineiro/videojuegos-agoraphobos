@@ -22,7 +22,7 @@ public class Book : GrabbableObject
         base.LetGo();
         
         var didHit = Physics.Raycast(this.transform.position, -this.transform.up, out var hit, 0.5F);
-        Debug.Log(didHit);
+        Debug.Log("let go");
         if(didHit && hit.transform.gameObject.name == ShelfName ){
             /* Book hits shelf */ 
             

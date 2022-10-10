@@ -8,11 +8,18 @@ public class ChessPuzzleController : PuzzleController
     //public bool IsSolved => _isSolved;
     //[SerializeField] private bool _isSolved = false;
     //public GameObject PuzzleObject => this.gameObject;
-     
+    private Chess _chess;
 
     private void Awake()
     {
-        GetComponent<Chess>().RandomizePositions();
+        _chess = GetComponent<Chess>();
+        _chess.RandomizePositions();
+    }
+    
+
+    public void ChessPieceMoved(Vector3 localPosition, string piece)
+    {
+        
     }
     
     public bool CheckSolved() => GetComponent<Chess>().ChessTableOnInitialDisposition();

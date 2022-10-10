@@ -11,6 +11,7 @@ public class GrabbableObject : MonoBehaviour, IGrabbable
     private Vector3 _positionBuffer = new Vector3(0, 0.1f, 0);
     public Vector3 positionBuffer => _positionBuffer;
 
+    
     public virtual void Grab(){
         //todo
         _interacting = true;
@@ -25,14 +26,13 @@ public class GrabbableObject : MonoBehaviour, IGrabbable
     public void Interact()
     {
         if (interacting)
-        {
-            
-            // Debug.Log("i let go the object");
+        {   
+            Debug.Log("i let go the object");
             LetGo();
         }
         else
         {
-            // Debug.Log("i grabbed the object");
+            Debug.Log("i grabbed the object");
             Grab();
         }
         
