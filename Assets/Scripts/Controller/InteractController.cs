@@ -139,7 +139,7 @@ public class InteractController : MonoBehaviour, ICaster
     {
         if (Physics.Raycast(_origin, camara.forward, out var hit, maxDistance))
         {
-            if (hit.normal == new Vector3(0, 1, 0)) ;
+            if (hit.normal == new Vector3(0, 1, 0))
                 return hit.point;
         }
         return null;

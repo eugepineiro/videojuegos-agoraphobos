@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PuzzleController : MonoBehaviour, IPuzzle
 {
+    [SerializeField] private PuzzleProperties _puzzleProperties;
     public string puzzleId => _puzzleId;
     [SerializeField] private string _puzzleId = "FIRST";
 
