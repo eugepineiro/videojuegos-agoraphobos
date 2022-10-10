@@ -9,13 +9,18 @@ public class GameManager : MonoBehaviour
     [SerializeField] private bool _isGameOver = false; // triggers game over logic 
     [SerializeField] private bool _isVictory = false;  // win or lose 
     [SerializeField] private Text _gameoverMessage;
+
+    //[SerializeField] private Queue<PuzzleProperties> puzzles;
     private int _maxTime = 30*60; // TODO chequear cuantos mins queremos
     private int puzzlesSolved = 0;
-    private int totalPuzzles = 1;
+    private int totalPuzzles = 2;
+    //private PuzzleProperties currentPuzzle;
+    
     
     
     void Start()
     {
+        //currentPuzzle = puzzles.Dequeue();
         EventsManager.instance.OnGameOver += OnGameOver; // suscripcion a nuestro evento
         EventsManager.instance.OnPuzzleSolved += OnPuzzleSolved;
         _gameoverMessage.text = string.Empty;
@@ -47,9 +52,11 @@ public class GameManager : MonoBehaviour
     private void OnPuzzleSolved(PuzzleProperties puzzleProperties) 
     {
         puzzlesSolved+=1;
+        //currentPuzzle = puzzles.Dequeue();
         Debug.Log("SOLVED");
         Debug.Log("PUZZLES SOLVED");
         Debug.Log(puzzlesSolved);
+        
         if(puzzlesSolved == totalPuzzles){
             _isVictory = true;
             EventsManager.instance.EventGameOver(_isVictory);

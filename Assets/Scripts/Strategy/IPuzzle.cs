@@ -7,5 +7,5 @@ public interface IPuzzle
    bool IsSolved { get; }
    int StepsSolved { get; }
    void Solve();
-   void SolveStep();
+   void SolveStep(bool isCorrect);
 }
