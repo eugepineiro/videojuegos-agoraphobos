@@ -20,7 +20,7 @@ public class ChessPuzzleController : PuzzleController
     {
         _chess.OnPieceMoved(pieceName);
         if (CheckSolved())
-            EventsManager.instance.EventPuzzleSolved();
+            base.Solve();
     }
     
     public bool CheckSolved() => _chess.ChessTableOnInitialDisposition();

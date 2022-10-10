@@ -64,7 +64,7 @@ public class SoundEffectController : MonoBehaviour, IListenable
         else            PlayOnShot(_defeatClip);
     }
 
-    private void OnPuzzleSolved() 
+    private void OnPuzzleSolved(PuzzleProperties puzzleProperties) 
     {
         PlayOnShot(_puzzleSolvedClip);
     }

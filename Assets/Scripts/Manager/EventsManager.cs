@@ -15,16 +15,16 @@ public class EventsManager : MonoBehaviour
     }
 
     public event Action<bool> OnGameOver; 
-    public event Action OnPuzzleSolved; 
+    public event Action<PuzzleProperties> OnPuzzleSolved; 
 
     public void EventGameOver(bool isVictory) 
     { 
         if (OnGameOver != null) OnGameOver(isVictory);
     }
 
-    public void EventPuzzleSolved(){
+    public void EventPuzzleSolved(PuzzleProperties puzzleProperties){
 
-        if (OnPuzzleSolved != null) OnPuzzleSolved();
+        if (OnPuzzleSolved != null) OnPuzzleSolved(puzzleProperties);
     }
     
 

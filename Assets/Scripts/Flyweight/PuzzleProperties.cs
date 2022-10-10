@@ -10,7 +10,7 @@ public class PuzzleProperties : ScriptableObject
     public string Id =>_puzzleValues.Id; 
     public int Level => _puzzleValues.Level;
     public int TotalSteps => _puzzleValues.TotalSteps;
-    public string DoorName => _puzzleValues.DoorName;
+    public List<string> DoorsToOpen => _puzzleValues.DoorsToOpen;
     
 }
 
@@ -20,6 +20,6 @@ public struct PuzzleValues
     public string Id;
     public int Level;
     public int TotalSteps;
-    public string DoorName;
+    public List<string> DoorsToOpen;
 
 }

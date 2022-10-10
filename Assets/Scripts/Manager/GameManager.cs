@@ -44,20 +44,25 @@ public class GameManager : MonoBehaviour
         
     }
 
-    private void OnPuzzleSolved() 
+    private void OnPuzzleSolved(PuzzleProperties puzzleProperties) 
     {
         puzzlesSolved+=1;
         if(puzzlesSolved == totalPuzzles){
             _isVictory = true;
             EventsManager.instance.EventGameOver(_isVictory);
         // TODO: cambio de escena etc
-        } else { 
-            GameObject.Find("LibraryDoor").SetActive(false); // TODO libraryDOOR ES PARAM
+        } else
+        {
+            OpenDoors(puzzleProperties.DoorsToOpen); // TODO libraryDOOR ES PARAM
             //GameObject.Find("BedroomDoor").SetActive(true);
         }
         
     }
 
     private void LoadEndgameScene() => SceneManager.LoadScene("EndgameScene");
-    
+
+    private void OpenDoors(List<string> doorNames)
+    {
+        foreach (var door in doorNames) GameObject.Find(door).SetActive(false);
+    }
 }

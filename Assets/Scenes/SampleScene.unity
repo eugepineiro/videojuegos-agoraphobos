@@ -5120,10 +5120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c76550386522e34488ec72db4cb3184b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _puzzleProperties: {fileID: 0}
-  _puzzleId: FIRST
+  _puzzleProperties: {fileID: 11400000, guid: b82f6a816fd6dbf42b2a835259dbfea1, type: 2}
   _isSolved: 0
-  _puzzleObject: {fileID: 0}
 --- !u!54 &800763420
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11895,10 +11893,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2de6cab40eb421da28faca679878b336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _puzzleProperties: {fileID: 0}
-  _puzzleId: LIBRARY
+  _puzzleProperties: {fileID: 11400000, guid: 4429298ac92b59339ba86ed9b1c5dadf, type: 2}
   _isSolved: 0
-  _puzzleObject: {fileID: 0}
 --- !u!1001 &1843600962
 PrefabInstance:
   m_ObjectHideFlags: 0
