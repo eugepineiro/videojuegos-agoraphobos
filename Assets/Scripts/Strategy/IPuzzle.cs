@@ -5,5 +5,7 @@ using UnityEngine;
 public interface IPuzzle 
 {
    bool IsSolved { get; }
-   void Solve(); 
+   int StepsSolved { get; }
+   void Solve();
+   void SolveStep();
 }

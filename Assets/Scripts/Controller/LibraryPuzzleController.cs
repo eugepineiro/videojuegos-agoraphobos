@@ -20,8 +20,12 @@ public class LibraryPuzzleController : PuzzleController
     }
 
     public void SetBook(string bookName, string shelfName) 
-    {   
-        if (books[bookName] == shelfName) correct_books.Add(bookName); 
+    {
+        if (books[bookName] == shelfName)
+        {
+            correct_books.Add(bookName);
+            base.SolveStep();
+        } 
         // print("Set book");
         print(correct_books.Count);
         if (correct_books.Count == total_books) {

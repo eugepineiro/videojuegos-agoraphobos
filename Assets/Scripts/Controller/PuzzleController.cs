@@ -9,10 +9,23 @@ public class PuzzleController : MonoBehaviour, IPuzzle
     public int Level => _puzzleProperties.Level;
     public int TotalSteps => _puzzleProperties.TotalSteps;
     public List<string> DoorsToOpen => _puzzleProperties.DoorsToOpen;
-   
-
+    
+    public int StepsSolved => _stepsSolved;
+    [SerializeField] private int _stepsSolved = -1;
+    
     public bool IsSolved => _isSolved;
     [SerializeField] private bool _isSolved = false;
 
     public void Solve() => EventsManager.instance.EventPuzzleSolved(_puzzleProperties);
+
+    public void SolveStep()
+    {
+        _stepsSolved++;
+        EventsManager.instance.EventStepSolved(StepsSolved,TotalSteps); // Update UI 
+    }
+
+    void Start()
+    {
+        SolveStep(); // Set 0 of total_steps in UI
+    }
 }
