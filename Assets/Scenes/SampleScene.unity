@@ -1767,6 +1767,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4534449285516404, guid: 0941535f5a7c0d846a45a6370dc4036b, type: 3}
   m_PrefabInstance: {fileID: 251922393}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &278519250 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8292310058708298303, guid: db9a95e4a6a2df14b935d1bfbdd7ea76, type: 3}
+  m_PrefabInstance: {fileID: 83113240}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &282605242
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2882,6 +2887,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 421088056}
   m_CullTransparentMesh: 1
+--- !u!1 &435288160 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7645629148860416395, guid: dd0e52fdddfb0254da73a03786a2d0cc, type: 3}
+  m_PrefabInstance: {fileID: 1575628968}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &441895455
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5566,7 +5576,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3054a3ebffa3384aaf3fa6e0c167ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _towerPieces: []
+  _towerPieces:
+  - {fileID: 1579468087}
+  - {fileID: 893089395}
+  - {fileID: 278519250}
+  - {fileID: 435288160}
   _chessTable: {fileID: 8394553545091985350, guid: 3c0ac8eee3a301843b737051e4b9e6b4, type: 3}
   _spotSize: 0.054
 --- !u!1 &802581303
@@ -6442,6 +6456,11 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_ApplyBeforeBody: 0
+--- !u!1 &893089395 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8292310058708298303, guid: db9a95e4a6a2df14b935d1bfbdd7ea76, type: 3}
+  m_PrefabInstance: {fileID: 804484057}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &902627419
 GameObject:
   m_ObjectHideFlags: 0
@@ -10828,6 +10847,11 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+--- !u!1 &1579468087 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7645629148860416395, guid: dd0e52fdddfb0254da73a03786a2d0cc, type: 3}
+  m_PrefabInstance: {fileID: 1698661720}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1588041572
 PrefabInstance:
   m_ObjectHideFlags: 0
