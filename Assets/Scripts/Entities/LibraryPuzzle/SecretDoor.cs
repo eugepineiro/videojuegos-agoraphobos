@@ -16,9 +16,10 @@ public class SecretDoor : MonoBehaviour,IInteractable
     // Update is called once per frame
     public void Interact()
     {
-          
+        //Destroy(this);
+         
         transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, transform.rotation.z+90); 
-        transform.localPosition += new Vector3(transform.localPosition.x-0.5F,transform.localPosition.y+0.5F,0);
+        transform.localPosition += new Vector3(transform.localPosition.x-0.5F,transform.localPosition.y+0.5F,0); 
     
     }
 }
