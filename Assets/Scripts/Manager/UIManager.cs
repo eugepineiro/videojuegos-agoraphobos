@@ -9,6 +9,10 @@ public class UIManager : MonoBehaviour
     /* Text Reference */
     [SerializeField] private TextMeshProUGUI _steps;
     [SerializeField] private TextMeshProUGUI _level;
+    
+    [SerializeField] private TextMeshProUGUI _time;
+    
+    [SerializeField] pivate float timeRemaining = 10;
 
     private void Start()
     {
@@ -24,6 +28,12 @@ public class UIManager : MonoBehaviour
     private void OnPuzzleSolved(PuzzleProperties puzzleProperties)
     {
         _level.text = $"Level {puzzleProperties.Level+1} of 3";
-    } 
+    }
+
+    private void Update()
+    {
+        if (timeRemaining > 0) timeRemaining -= Time.deltaTime;
+        _time.text = $"Time Left {timeRemaining}";
+    }
 
 }
