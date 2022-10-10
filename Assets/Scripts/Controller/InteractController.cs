@@ -138,8 +138,9 @@ public class InteractController : MonoBehaviour, ICaster
     
     private Vector3? GetRaycastCollision()
     {
-        if (Physics.Raycast(_origin, camara.forward, out var hit, maxDistance))
+        if (Physics.Raycast(camara.transform.position, camara.forward, out var hit, maxDistance))
         {
+            Debug.DrawRay(camara.transform.position, camara.forward * maxDistance, Color.green);
             return hit.point;
             var r = hit.transform.rotation;
             var vector = Quaternion.AngleAxis(r.y, Vector3.up) * Quaternion.AngleAxis(r.z, Vector3.forward) * Quaternion.AngleAxis(r.x, Vector3.right)* hit.normal ;
@@ -151,6 +152,7 @@ public class InteractController : MonoBehaviour, ICaster
             }
                 
         }
+        Debug.DrawRay(camara.transform.position, camara.forward * maxDistance, Color.red);
         return null;
     }
 }
