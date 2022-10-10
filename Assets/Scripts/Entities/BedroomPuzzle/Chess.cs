@@ -33,7 +33,7 @@ public class Chess : MonoBehaviour
     [SerializeField] float _spotSize = 1;
 
     private List<Piece> _pieces;
-
+// TODO: instance
     private int GetPieceIndexByName(string pieceName)
     {
         return _pieces.FindIndex(piece=> piece.Name.Contains(pieceName));
