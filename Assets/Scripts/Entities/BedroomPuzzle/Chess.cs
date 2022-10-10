@@ -183,8 +183,8 @@ public class Chess : MonoBehaviour
         {
             do
             {
-                x = Random.Range(0, 8);
-                z = Random.Range(0, 8);
+                x = Random.Range(2, 6);
+                z = Random.Range(2, 6);
             } while (!PositionFree(x, z));
             MoveChessPiece(piece, x, z);
         }

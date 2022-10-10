@@ -5157,7 +5157,7 @@ GameObject:
   m_Component:
   - component: {fileID: 797581788}
   - component: {fileID: 797581790}
-  - component: {fileID: 797581789}
+  - component: {fileID: 797581791}
   m_Layer: 0
   m_Name: Chess
   m_TagString: Untagged
@@ -5213,52 +5213,6 @@ Transform:
   m_Father: {fileID: 63122261}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &797581789
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 797581787}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3054a3ebffa3384aaf3fa6e0c167ad7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _chessPieces:
-  - {fileID: 3301902385647343631}
-  - {fileID: 4510868034293178219}
-  - {fileID: 3393726721584592207}
-  - {fileID: 666498714675212553}
-  - {fileID: 6874003133605239171}
-  - {fileID: 484645534940434984}
-  - {fileID: 4251391203736290131}
-  - {fileID: 8261403522254568163}
-  - {fileID: 5586608291522951273}
-  - {fileID: 659210776232107972}
-  - {fileID: 7960191146746451765}
-  - {fileID: 1492799654071221831}
-  - {fileID: 8254287149488266805}
-  - {fileID: 3591463208896648898}
-  - {fileID: 995936347850448644}
-  - {fileID: 6911662644488020297}
-  - {fileID: 6570100350323081760}
-  - {fileID: 8199343030027598791}
-  - {fileID: 4998224777620970203}
-  - {fileID: 4157387782979169770}
-  - {fileID: 6039882275053380587}
-  - {fileID: 958519887173007625}
-  - {fileID: 1307057312449156330}
-  - {fileID: 1167398171253011854}
-  - {fileID: 4270169913305317746}
-  - {fileID: 1017555773534738639}
-  - {fileID: 2715115167561695487}
-  - {fileID: 2169825437128292807}
-  - {fileID: 9214029699836133624}
-  - {fileID: 3766906889485985927}
-  - {fileID: 3302916865385359570}
-  - {fileID: 9210262293963755320}
-  _spotSize: 0.054
 --- !u!114 &797581790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5274,6 +5228,24 @@ MonoBehaviour:
   _puzzleProperties: {fileID: 11400000, guid: b82f6a816fd6dbf42b2a835259dbfea1, type: 2}
   _stepsSolved: 0
   _isSolved: 0
+--- !u!114 &797581791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797581787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3054a3ebffa3384aaf3fa6e0c167ad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _chessPieces:
+  - {fileID: 4270169913305317746}
+  - {fileID: 1017555773534738639}
+  - {fileID: 5586608291522951273}
+  - {fileID: 659210776232107972}
+  _spotSize: 0.054
 --- !u!54 &800763420
 Rigidbody:
   m_ObjectHideFlags: 0
