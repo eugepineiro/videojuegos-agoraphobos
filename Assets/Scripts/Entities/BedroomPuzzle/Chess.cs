@@ -107,10 +107,11 @@ public class Chess : MonoBehaviour
     {
         foreach (var piece in _chessPieces)
         {
+            var o = Instantiate(piece, transform);
             var p = new Piece()
             {
-                ChessPosition = GetPosition(piece.transform),
-                go = piece,
+                ChessPosition = GetPosition(o.transform),
+                go = o,
                 Name = piece.name,
                 Type = GetTypeByName(piece.name)
 
