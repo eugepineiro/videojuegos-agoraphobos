@@ -5,13 +5,19 @@ using UnityEngine.UI;
 
 public class EndgameManager : MonoBehaviour
 {
-    /*[SerializeField] private Image _background;
+    [SerializeField] private Image _faceImage; 
     [SerializeField] private Sprite _victorySprite;
-    [SerializeField] private Sprite _defeatSprite; */ 
+    [SerializeField] private Sprite _defeatSprite;   
+    [SerializeField] private Text _gameoverText;   
 
     void Start()
     { 
-        Text title = GameObject.Find("TitleText").GetComponent<Text>();
-        title.text = GlobalData.instance.IsVictory ? "YOU'VE ESCAPED!!" : "LOST";
-    }
+       
+        bool victory = GlobalData.instance.IsVictory;
+        //bool victory = true;
+        _gameoverText.text = victory ? "WIN!!" : "LOST";
+
+        _faceImage.sprite = victory ? _victorySprite : _defeatSprite;
+         
+    }   
 }
