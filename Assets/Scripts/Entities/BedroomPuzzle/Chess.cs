@@ -220,32 +220,33 @@ public class Chess : MonoBehaviour
     }
 
 
-    public bool ChessTableOnInitialDisposition()
+    public int ChessTableOnInitialDisposition()
     {
+        var steps = 0;
         foreach (var piece in _pieces)
         {
             if (piece.Name.Contains("Bishop"))
-                if(!((piece.ChessPosition[0] == 2 || piece.ChessPosition[0] == 5) &&
+                if(((piece.ChessPosition[0] == 2 || piece.ChessPosition[0] == 5) &&
                    (piece.ChessPosition[1] == 0 || piece.ChessPosition[1] == 7)))
-                    return false;
+                    steps++;
             if (piece.Name.Contains("Castle"))
-                if(!((piece.ChessPosition[0] == 0 || piece.ChessPosition[0] == 7) &&
+                if(((piece.ChessPosition[0] == 0 || piece.ChessPosition[0] == 7) &&
                      (piece.ChessPosition[1] == 0 || piece.ChessPosition[1] == 7)))
-                    return false;
+                    steps++;
             if (piece.Name.Contains("Horse"))
-                if(!((piece.ChessPosition[0] == 2 || piece.ChessPosition[0] == 6) &&
+                if(((piece.ChessPosition[0] == 2 || piece.ChessPosition[0] == 6) &&
                      (piece.ChessPosition[1] == 0 || piece.ChessPosition[1] == 7)))
-                    return false;
+                    steps++;
             if (piece.Name.Contains("King") || name.Contains("Queen"))
-                if(!((piece.ChessPosition[0] == 3 || piece.ChessPosition[0] == 4) &&
+                if(((piece.ChessPosition[0] == 3 || piece.ChessPosition[0] == 4) &&
                      (piece.ChessPosition[1] == 0 || piece.ChessPosition[1] == 7)))
-                    return false;
+                    steps++;
             if (piece.Name.Contains("Pawn"))
-                if (!((piece.ChessPosition[0] != -1) &&
+                if (((piece.ChessPosition[0] != -1) &&
                       (piece.ChessPosition[1] == 1 || piece.ChessPosition[1] == 6)))
-                    return false;
+                    steps++;
         }
-        return true;
+        return steps;
     }
 
 }
