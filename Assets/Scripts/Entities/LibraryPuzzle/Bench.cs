@@ -2,21 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bench : MonoBehaviour
+public class Bench : MonoBehaviour, IInteractable
 {
-    private PuzzleController _puzzleController; 
-    [SerializeField] private KeyCode _interact = KeyCode.B;
+    private bool _interacting = false;
+    public bool interacting => _interacting;
 
     void Start()
     {
-        _puzzleController = GetComponent<PuzzleController>();
-
 
     }
 
     // Update is called once per frame
-    void Update()
+    public void Interact()
     {
-        if (Input.GetKey(_interact)) transform.localPosition += new Vector3(0,0,-0.55F);
+        transform.localPosition += new Vector3(0,0,-0.55F);
     }
 }

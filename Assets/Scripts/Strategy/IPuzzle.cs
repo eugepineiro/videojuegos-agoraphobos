@@ -5,8 +5,7 @@ using UnityEngine;
 public interface IPuzzle 
 {
    bool IsSolved { get; }
-
-   GameObject PuzzleObject { get; }
-
-   void Solve(); 
+   int StepsSolved { get; }
+   void Solve();
+   void SolveStep(bool isCorrect);
 }

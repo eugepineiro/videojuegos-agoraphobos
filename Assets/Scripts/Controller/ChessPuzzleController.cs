@@ -1,20 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-    
 
-public class ChessPuzzleController : MonoBehaviour, IPuzzle
+using System;
+
+public class ChessPuzzleController : PuzzleController
 {
-    public bool IsSolved => _isSolved;
-    [SerializeField] private bool _isSolved = false;
-    public GameObject PuzzleObject => this.gameObject;
+    private Chess _chess;
 
     private void Awake()
     {
-        GetComponent<Chess>().RandomizePositions();
+        _chess = GetComponent<Chess>();
+    }
+
+    private void Start()
+    {
+        _chess.RandomizePositions();
+    }
+
+
+    public void ChessPieceMoved(string pieceName)
+    {
+        _chess.OnPieceMoved(pieceName);
+        var steps = _chess.ChessTableOnInitialDisposition();
+
+        SolveStep(steps);
+        if(steps == TotalSteps)
+            Solve();
     }
     
-    public bool CheckSolved() => GetComponent<Chess>().ChessTableOnInitialDisposition();
     
-    public void Solve() => _isSolved = CheckSolved();
+    public bool CheckSolved() => _chess.ChessTableOnInitialDisposition() == TotalSteps;
 }
