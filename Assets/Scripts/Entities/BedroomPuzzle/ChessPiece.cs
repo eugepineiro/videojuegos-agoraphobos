@@ -1,6 +1,5 @@
 using UnityEngine;
 
-
 public class ChessPiece : GrabbableObject
 {
     private ChessPuzzleController _chessPuzzleController;
@@ -14,5 +13,4 @@ public class ChessPiece : GrabbableObject
         print("let go");
         _chessPuzzleController.ChessPieceMoved(name);
     }
-    
 }
