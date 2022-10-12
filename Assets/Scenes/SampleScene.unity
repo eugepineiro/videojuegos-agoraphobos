@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3394,7 +3394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isVictory: 0
-  _maxMinutes: 1
+  _maxMinutes: 30
   _totalPuzzles: 2
 --- !u!114 &347821544
 MonoBehaviour:
@@ -5435,7 +5435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6a6897366c8f62f58194b4cc4b9015e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: bb1a8ce9e09278936933b088d41770a0, type: 3}
+  _audioClip: {fileID: 8300000, guid: c8f75b0a064a2dd4a9892f288f845a4e, type: 3}
   _victoryClip: {fileID: 8300000, guid: bc3f556ec41f6b04d98f11939149c0a9, type: 3}
   _defeatClip: {fileID: 8300000, guid: 44282e70e072cc6a5aacae2bd777a4ad, type: 3}
   _puzzleSolvedClip: {fileID: 8300000, guid: 2136e1c1a1392202191e1d4f676882a3, type: 3}
@@ -8037,8 +8037,8 @@ Transform:
   - {fileID: 119628866}
   - {fileID: 689273493}
   - {fileID: 1634381620}
-  - {fileID: 1441679921}
   - {fileID: 647271621}
+  - {fileID: 1441679921}
   - {fileID: 1809429503}
   - {fileID: 733056864}
   - {fileID: 422118458}
@@ -23242,7 +23242,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db34d3f04558f7f4c92c7124ead5bae1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardBuffer: 2
   pointer: {fileID: 1635233238}
   camara: {fileID: 963194228}
   maxDistance: 10
