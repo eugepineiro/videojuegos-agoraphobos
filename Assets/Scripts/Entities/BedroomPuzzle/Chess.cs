@@ -35,7 +35,6 @@ public class Chess : MonoBehaviour
     [SerializeField] float _spotSize = 1;
 
     private List<Piece> _pieces;
-// TODO: instance
     private int GetPieceIndexByName(string pieceName)
     {
         return _pieces.FindIndex(piece=> piece.Name.Equals(pieceName));
@@ -98,7 +97,6 @@ public class Chess : MonoBehaviour
         piece.ChessPosition[1] =-1;
     }
     
-
     private void Awake()
     {
         _pieces = new List<Piece>();
@@ -110,14 +108,12 @@ public class Chess : MonoBehaviour
         var table = Instantiate(_chessTable, this.transform);
         foreach (var piece in _towerPieces)
         {
-            // var o = Instantiate(piece, transform);
             var p = new Piece()
             {
                 ChessPosition = GetPosition(piece.transform),
                 go = piece,
                 Name = piece.name,
                 Type = GetTypeByName(piece.name)
-
             };
             _pieces.Add(p);
         }
@@ -148,9 +144,8 @@ public class Chess : MonoBehaviour
         }
         print("new position is: "+ position[0]+", "+position[1]);
         return position;
-
-
     }
+    
     private int[] GetPosition(Transform t)
     {
         var position = new int[]{-1,-1};
@@ -167,8 +162,6 @@ public class Chess : MonoBehaviour
             t.localPosition = localPosition;
         }
         return position;
-
-
     }
     
 
@@ -200,6 +193,7 @@ public class Chess : MonoBehaviour
             return PieceType.WQueen;
         return PieceType.Empty;
     }
+    
     public void RandomizePositions()
     {
         ClearPositions();
@@ -214,7 +208,6 @@ public class Chess : MonoBehaviour
             } while (!PositionFree(x, z));
             MoveChessPiece(piece, x, z);
         }
-
     }
     
     private bool PositionFree(int x, int z)
@@ -222,8 +215,7 @@ public class Chess : MonoBehaviour
         var i = _pieces.FindIndex(p => p.ChessPosition[0] == x && p.ChessPosition[1] == z);
         return i == -1;
     }
-
-
+    
     public int ChessTableOnInitialDisposition()
     {
         var steps = 0;

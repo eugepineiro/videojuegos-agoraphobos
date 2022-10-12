@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 {
     static public GameManager instance; 
     [SerializeField] private bool _isVictory = false;  // win or lose 
-    [SerializeField] private int _maxMinutes = 1;
+    [SerializeField] private int _maxMinutes = 30;
     private float _maxTime;  // lose if time is over
     private int puzzlesSolved = 0;
     [SerializeField] private int _totalPuzzles = 2;
