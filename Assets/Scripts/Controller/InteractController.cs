@@ -9,81 +9,52 @@ public class InteractController : MonoBehaviour, ICaster
 {
     // The starting point of the ray in world coordinates.
     private Vector3 _origin;
-    [SerializeField] private int forwardBuffer;
-    private GameObject _gameObjectInteracting;
+    
     [SerializeField]private GameObject pointer;
     [SerializeField]private Transform camara;
-    private bool _interacting;
+    
     
     // The max distance the ray should check for collisions.
     [SerializeField] private float maxDistance = Mathf.Infinity;
+    private ObjectInteracting _objectInteracting;
 
 
+    struct ObjectInteracting
+    {
+        public IInteractable script;
+        public GameObject gameObject;
+    }
     private void Start()
     {
-        _gameObjectInteracting = null;
+        _objectInteracting = new ObjectInteracting();
+        _objectInteracting.gameObject = null;
+        _objectInteracting.script = null;
         pointer.SetActive(true);
-        _interacting = false;
+        
     }
 
     public void Interact(Vector3 direction)
     {
         if (IsInteracting())
         {
-            LetGo();
+            pointer.SetActive(true);
+            _objectInteracting.script.Interact();
             return;
         }
             
-        GameObject objectToInteract = GetObjectInFront(direction);
-        if (objectToInteract != null)
+        GetObjectInFront(direction);
+        if (_objectInteracting.gameObject != null)
         {
-            if (IsGrabbable(objectToInteract))
-            {
-                Grab(objectToInteract);
-                return; 
-            }
-                
-            InteractWithObject(objectToInteract);
+            _objectInteracting.script.Interact();
+            if (_objectInteracting.script.interacting)
+                pointer.SetActive(false);
         }
-    }
-
-    private void Grab(GameObject o)
-    {
-        _gameObjectInteracting = o;
-        Rigidbody rb = _gameObjectInteracting.GetComponent<Rigidbody>();
-        rb.detectCollisions = false;
-        rb.useGravity = false;
-        pointer.SetActive(false);
-        _interacting = true;
-        _gameObjectInteracting.GetComponent<IGrabbable>().Grab();
-    }
-
-    private void InteractWithObject(GameObject o)
-    {
-        o.GetComponent<IInteractable>().Interact();
-    }
-
-    private bool IsGrabbable(GameObject o)
-    {
-        return o.GetComponent<IGrabbable>() != null;
     }
     private bool IsInteracting()
     {
-        return _interacting;
+        return _objectInteracting.script is { interacting: true };
     }
-
-    private void LetGo()
-    {
-        _gameObjectInteracting.GetComponent<IGrabbable>().LetGo();
-        _gameObjectInteracting.GetComponent<Rigidbody>().detectCollisions = true;
-        _gameObjectInteracting.GetComponent<Rigidbody>().useGravity = true;
-        _gameObjectInteracting = null;
-        pointer.SetActive(true);
-        _interacting = false;
-    }
-    
-    [CanBeNull]
-    private GameObject  GetObjectInFront(Vector3 direction)
+    private void  GetObjectInFront(Vector3 direction)
     {
         _origin = camara.position;
         if (Physics.Raycast(_origin, direction, out var hit, maxDistance))
@@ -94,63 +65,17 @@ public class InteractController : MonoBehaviour, ICaster
             
             if (IsInteractable(objectHit))
             {
-                return objectHit;
+                _objectInteracting.gameObject = objectHit;
+                _objectInteracting.script = objectHit.GetComponent<IInteractable>();
+                return;
             }
         }
         Debug.DrawRay(_origin, direction * maxDistance, Color.red);
-        return null;
-
+        _objectInteracting.gameObject = null;
     }
 
     private bool IsInteractable(GameObject objectHit)
     {
         return objectHit.GetComponent<IInteractable>() != null;
-    }
-
-    private void Update()
-    {
-        if (IsInteracting())
-        {
-            PlaceCurrentObjectInFront();
-        }
-            
-    }
-
-    private void PlaceCurrentObjectInFront()
-    {
-        var point = GetRaycastCollision();
-        if (point != null)
-        {
-            pointer.SetActive(false);
-            var buffer = _gameObjectInteracting.GetComponent<IGrabbable>().positionBuffer;
-            _gameObjectInteracting.transform.position = (Vector3)point +  buffer;
-            return;
-        }
-        SetInteractingObjectNearMe();
-    }
-
-    private void SetInteractingObjectNearMe()
-    {
-        pointer.SetActive(true);
-        var ctransform = camara.transform;
-        _gameObjectInteracting.transform.position = ctransform.position + ctransform.forward * forwardBuffer;
-    }
-    
-    private Vector3? GetRaycastCollision()
-    {
-        if (Physics.Raycast(camara.transform.position, camara.forward, out var hit, maxDistance))
-        {
-            Debug.DrawRay(camara.transform.position, camara.forward * maxDistance, Color.green);
-            var r = hit.transform.rotation;
-            var vector = Quaternion.AngleAxis(-r.y, Vector3.up) * Quaternion.AngleAxis(-r.z, Vector3.forward) * Quaternion.AngleAxis(-r.x, Vector3.right)* hit.normal ;
-            if (Math.Abs(vector.y - 1) < 0.1f)
-            {
-                return hit.point;
-                
-            }
-                
-        }
-        Debug.DrawRay(camara.transform.position, camara.forward * maxDistance, Color.red);
-        return null;
     }
 }
