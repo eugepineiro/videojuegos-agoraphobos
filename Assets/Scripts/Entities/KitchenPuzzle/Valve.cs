@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
-public class Valve : MonoBehaviour
+public class Valve : MonoBehaviour, IInteractable
 {
     private PuzzleController _puzzleController; 
-    [SerializeField] private KeyCode _interact = KeyCode.V;
-    [SerializeField] private bool _rotating = false;
+
     [SerializeField] private int _value = 0;
 
     public AudioClip AudioClip => _audioClip;
@@ -18,6 +17,9 @@ public class Valve : MonoBehaviour
 
     public GameObject AssociatedPipe => _associatedPipe;
     [SerializeField] private GameObject _associatedPipe;
+
+    private bool _interacting = false;
+    public bool interacting => _interacting;
 
 
     Vector3 GetRotationVectorByValue(int value) {
@@ -33,7 +35,7 @@ public class Valve : MonoBehaviour
             yield return null;
          }
  
-        _rotating = false;
+        _interacting = false;
     }
 
     void Start()
@@ -44,10 +46,11 @@ public class Valve : MonoBehaviour
         _puzzleController = GetComponent<PuzzleController>();
     }
 
-    void Update()
-    { 
-        if (Input.GetKeyDown(_interact) && !_rotating) {
-            _rotating = true;
+
+    public void Interact()
+    {
+        if (!_interacting) {
+            _interacting = false;
             _value = (_value + 1) % 4;
             StartCoroutine(Rotate(transform, new Vector3(_value * 90f, 0, 0)));
             StartCoroutine(Rotate(_associatedPipe.transform, new Vector3(0, _value * 90f, 0)));
