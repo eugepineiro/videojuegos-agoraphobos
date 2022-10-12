@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class Book : GrabbableObject
 {
-    private LibraryPuzzleController _libraryPuzzleController; 
- 
+    private LibraryPuzzleController _libraryPuzzleController;
     [SerializeField] private BookProperties _bookProperties;
-
     public string ShelfName => _bookProperties.ShelfName;
-    public Material BookMaterial => _bookProperties.Material;
-
+    //public Material BookMaterial => _bookProperties.Material;
 
     void Start()
     {
@@ -22,9 +19,7 @@ public class Book : GrabbableObject
         base.LetGo();
         
         var didHit = Physics.Raycast(this.transform.position, -this.transform.up, out var hit, 5F);
-        Debug.Log("shelf naaaaaaaaaame");
-        Debug.Log(ShelfName);
-        Debug.Log("LE PEGO A ESTE");
+      
         Debug.DrawRay(this.transform.position, -this.transform.up * 5F, Color.green,3);
         if(didHit) Debug.Log(hit.transform.gameObject.name);
         if(didHit && hit.transform.gameObject.name == ShelfName ){
@@ -38,28 +33,4 @@ public class Book : GrabbableObject
         base.Grab();
         _libraryPuzzleController.RemoveBook(this.name);
     }
-    
-    /*private bool CorrectPosition(){
-        if(transform.position.x > 0 && transform.position.x > 0 && transform.position.y > 0)
-        return true;
-    }  
-    private void OnTriggerEnter(Collider other)
-    {
-        print(other.gameObject.name);
-        if(other.gameObject == _shelf ){
-
-            _libraryPuzzleController.SetBook(this.name, _shelf.name);
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        print(other.gameObject.name);
-        if(other.gameObject == _shelf ){
-
-            _libraryPuzzleController.RemoveBook(this.name, _shelf.name);
-        }
-    } */ 
-
-  
 }

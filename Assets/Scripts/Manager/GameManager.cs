@@ -6,65 +6,50 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private bool _isGameOver = false; // triggers game over logic 
+    static public GameManager instance; 
     [SerializeField] private bool _isVictory = false;  // win or lose 
-    [SerializeField] private Text _gameoverMessage;
-
-    //[SerializeField] private Queue<PuzzleProperties> puzzles;
-    private int _maxTime = 30*60; // TODO chequear cuantos mins queremos
+    [SerializeField] private int _maxMinutes = 30;
+    private float _maxTime;  // lose if time is over
     private int puzzlesSolved = 0;
-    private int totalPuzzles = 2;
-    //private PuzzleProperties currentPuzzle;
+    [SerializeField] private int _totalPuzzles = 2;
     
-    
-    
+    private void Awake() 
+    {
+        if(instance != null) Destroy(this);
+        instance = this; 
+    }
     void Start()
     {
-        //currentPuzzle = puzzles.Dequeue();
-        EventsManager.instance.OnGameOver += OnGameOver; // suscripcion a nuestro evento
+        _maxTime = _maxMinutes * 60;
+        EventsManager.instance.OnGameOver += OnGameOver; // subscribe to event 
         EventsManager.instance.OnPuzzleSolved += OnPuzzleSolved;
-        _gameoverMessage.text = string.Empty;
         StartCoroutine(TimeFinished(_maxTime));
     }
-    
- 
-    IEnumerator TimeFinished(int time)
+
+    IEnumerator TimeFinished(float time)
     {
         yield return new WaitForSeconds(time);
-        // todo si no se destruye game manager al cambiar de escena entonces 
-        // hay que cambiar esto, se lanzaria dos veces sino
         EventsManager.instance.EventGameOver(_isVictory);
     }
     
     private void OnGameOver(bool isVictory) 
     {
-        _isGameOver = true; 
         _isVictory = isVictory; 
         GlobalData.instance.SetVictoryField(_isVictory);
 
-        _gameoverMessage.text = isVictory ? "WIN" : "LOSE"; 
-        _gameoverMessage.color = isVictory ? Color.cyan : Color.red; 
-
         Invoke("LoadEndgameScene",3);
-        
     }
 
     private void OnPuzzleSolved(PuzzleProperties puzzleProperties) 
     {
         puzzlesSolved+=1;
-        //currentPuzzle = puzzles.Dequeue();
-        Debug.Log("SOLVED");
-        Debug.Log("PUZZLES SOLVED");
-        Debug.Log(puzzlesSolved);
-        
-        if(puzzlesSolved == totalPuzzles){
+   
+        if(puzzlesSolved == _totalPuzzles){
             _isVictory = true;
             EventsManager.instance.EventGameOver(_isVictory);
-        // TODO: cambio de escena etc
         } else
         {
-            OpenDoors(puzzleProperties.DoorsToOpen); // TODO libraryDOOR ES PARAM
-            //GameObject.Find("BedroomDoor").SetActive(true);
+            OpenDoors(puzzleProperties.DoorsToOpen);
         }
         
     }
@@ -76,8 +61,13 @@ public class GameManager : MonoBehaviour
         foreach (var door in doorNames) GameObject.Find(door).GetComponent<BoxCollider>().isTrigger = true;
     }
 
-    public int GetMaxTime()
+    public float GetMaxTime()
     {
         return _maxTime;
+    }
+    
+    public float GetTotalPuzzles()
+    {
+        return _totalPuzzles;
     }
 }
