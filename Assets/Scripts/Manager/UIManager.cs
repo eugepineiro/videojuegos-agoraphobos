@@ -19,6 +19,7 @@ public class UIManager : MonoBehaviour
 		timeRemaining = GameManager.instance.GetMaxTime();
         EventsManager.instance.OnPuzzleSolved += OnPuzzleSolved; //subscribe to event
         EventsManager.instance.OnStepSolved += OnStepSolved;
+		_level.text = $"Level 1 of {GameManager.instance.GetTotalPuzzles()}";
     }
 
     private void OnStepSolved(int stepsSolved, int totalSteps)
@@ -28,7 +29,7 @@ public class UIManager : MonoBehaviour
     
     private void OnPuzzleSolved(PuzzleProperties puzzleProperties)
     {
-        _level.text = $"Level {puzzleProperties.Level+1} of 3";
+        _level.text = $"Level {puzzleProperties.Level+1} of {GameManager.instance.GetTotalPuzzles()}";
     }
 
     private void Update()

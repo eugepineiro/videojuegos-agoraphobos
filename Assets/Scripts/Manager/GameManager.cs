@@ -8,10 +8,10 @@ public class GameManager : MonoBehaviour
 {
     static public GameManager instance; 
     [SerializeField] private bool _isVictory = false;  // win or lose 
-    [SerializeField] private int _maxMinutes = 30;
+    [SerializeField] private int _maxMinutes = 1;
     private float _maxTime;  // lose if time is over
     private int puzzlesSolved = 0;
-    [SerializeField] private int totalPuzzles = 2;
+    [SerializeField] private int _totalPuzzles = 2;
     
     private void Awake() 
     {
@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
     {
         puzzlesSolved+=1;
    
-        if(puzzlesSolved == totalPuzzles){
+        if(puzzlesSolved == _totalPuzzles){
             _isVictory = true;
             EventsManager.instance.EventGameOver(_isVictory);
         } else
@@ -64,5 +64,10 @@ public class GameManager : MonoBehaviour
     public float GetMaxTime()
     {
         return _maxTime;
+    }
+    
+    public float GetTotalPuzzles()
+    {
+        return _totalPuzzles;
     }
 }
