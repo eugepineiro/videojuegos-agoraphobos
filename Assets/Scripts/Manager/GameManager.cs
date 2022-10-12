@@ -6,12 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private bool _isGameOver = false; // triggers game over logic 
     [SerializeField] private bool _isVictory = false;  // win or lose 
-    [SerializeField] private Text _gameoverMessage;
-
-    //[SerializeField] private Queue<PuzzleProperties> puzzles;
-    private int _maxTime = 30*60; // TODO chequear cuantos mins queremos
+    private int _maxTime = 10;//30*60; // TODO chequear cuantos mins queremos
     private int puzzlesSolved = 0;
     private int totalPuzzles = 2;
     //private PuzzleProperties currentPuzzle;
@@ -23,7 +19,6 @@ public class GameManager : MonoBehaviour
         //currentPuzzle = puzzles.Dequeue();
         EventsManager.instance.OnGameOver += OnGameOver; // suscripcion a nuestro evento
         EventsManager.instance.OnPuzzleSolved += OnPuzzleSolved;
-        _gameoverMessage.text = string.Empty;
         StartCoroutine(TimeFinished(_maxTime));
     }
     
@@ -38,12 +33,8 @@ public class GameManager : MonoBehaviour
     
     private void OnGameOver(bool isVictory) 
     {
-        _isGameOver = true; 
         _isVictory = isVictory; 
         GlobalData.instance.SetVictoryField(_isVictory);
-
-        _gameoverMessage.text = isVictory ? "WIN" : "LOSE"; 
-        _gameoverMessage.color = isVictory ? Color.cyan : Color.red; 
 
         Invoke("LoadEndgameScene",3);
         
@@ -52,7 +43,6 @@ public class GameManager : MonoBehaviour
     private void OnPuzzleSolved(PuzzleProperties puzzleProperties) 
     {
         puzzlesSolved+=1;
-        //currentPuzzle = puzzles.Dequeue();
         Debug.Log("SOLVED");
         Debug.Log("PUZZLES SOLVED");
         Debug.Log(puzzlesSolved);
@@ -60,11 +50,10 @@ public class GameManager : MonoBehaviour
         if(puzzlesSolved == totalPuzzles){
             _isVictory = true;
             EventsManager.instance.EventGameOver(_isVictory);
-        // TODO: cambio de escena etc
+        
         } else
         {
-            OpenDoors(puzzleProperties.DoorsToOpen); // TODO libraryDOOR ES PARAM
-            //GameObject.Find("BedroomDoor").SetActive(true);
+            OpenDoors(puzzleProperties.DoorsToOpen);
         }
         
     }
