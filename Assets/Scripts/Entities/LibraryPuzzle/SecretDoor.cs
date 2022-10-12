@@ -17,9 +17,5 @@ public class SecretDoor : MonoBehaviour,IInteractable
     public void Interact()
     {
         Destroy(secretDoor);
-         
-        /*transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, transform.rotation.z+90); 
-        transform.localPosition += new Vector3(transform.localPosition.x-0.5F,transform.localPosition.y+0.5F,0);*/ 
-    
     }
 }

@@ -6,7 +6,6 @@ using UnityEngine;
 public class Ladder : MonoBehaviour, IInteractable
 {
     [SerializeField] private Transform character;
-
     public bool interacting { get; }
     public void Interact()
     {

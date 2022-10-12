@@ -12,12 +12,11 @@ public class Chandelier : MonoBehaviour, IInteractable
     void Start()
     {
         chandelier = GameObject.Find("Chandelier");
-    }
-
-    // Update is called once per frame
+    } 
+    
     public void Interact()
     {
-        //chandelier.transform.localPosition += new Vector3(transform.localPosition.x,transform.localPosition.y-5,transform.localPosition.z);
+        //chandelier.transform.localPosition += new Vector3(transform.localPosition.x,transform.localPosition.y-5,transform.localPosition.z); TODO animation of destoyed chandelier
         Destroy(chandelier);
     }
 }

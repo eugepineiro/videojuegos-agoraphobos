@@ -12,28 +12,17 @@ public class Character : MonoBehaviour
     [SerializeField] private KeyCode _moveBack = KeyCode.S;
     [SerializeField] private KeyCode _moveLeft = KeyCode.A;
     [SerializeField] private KeyCode _moveRight = KeyCode.D;
+    
+    // Interaction with objects
     [SerializeField] private KeyCode _interact = KeyCode.E;
     [SerializeField] private GameObject _camera;
-
-    // Commands
-    //private CmdMovement _cmdMoveForward;
-    //private CmdMovement _cmdMoveBack;
-    //private CmdMovement _cmdMoveLeft;
-    //private CmdMovement _cmdMoveRight;
-    //private CmdInteract _cmdInteract;
     private Vector3 _horizontalForward;
     private Vector3 _forward;
 
     void Start()
     {
         _movementController = GetComponent<MovementController>();
-        _interactionController = GetComponent<InteractController>();
-        //_cmdMoveForward = new CmdMovement(_movementController, _horizontalForward);
-        //_cmdMoveBack = new CmdMovement(_movementController,-_horizontalForward);
-        //_cmdMoveLeft = new CmdMovement(_movementController,Vector3.left);
-        //_cmdMoveRight = new CmdMovement(_movementController,-Vector3.left);
-        //_cmdInteract = new CmdInteract(_interactionController, _forward);
-        
+        _interactionController = GetComponent<InteractController>(); 
     }
 
     void Update()
