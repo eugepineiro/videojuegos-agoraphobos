@@ -11,7 +11,6 @@ public class Chandelier : MonoBehaviour, IInteractable
 
     void Start()
     {
-
         chandelier = GameObject.Find("Chandelier");
     }
 
