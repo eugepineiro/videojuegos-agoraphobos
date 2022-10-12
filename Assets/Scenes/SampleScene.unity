@@ -2382,6 +2382,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 639414184}
     m_Modifications:
+    - target: {fileID: 149690750453889138, guid: 0a94bd08074ccfd4e938cda201930e63, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a45d415cc7dd604499d8ec877c9626d8, type: 2}
     - target: {fileID: 1322055175328285469, guid: 0a94bd08074ccfd4e938cda201930e63, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -8889,6 +8893,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 639414184}
     m_Modifications:
+    - target: {fileID: 7926586013755975558, guid: 80967ac7bb2c8104b8dd5b649046d79b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a45d415cc7dd604499d8ec877c9626d8, type: 2}
     - target: {fileID: 8430773187405317715, guid: 80967ac7bb2c8104b8dd5b649046d79b, type: 3}
       propertyPath: m_Name
       value: Fotel4
@@ -10351,6 +10359,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2365344, guid: 8088cc0ca1f49f645802eeca8f4c1615, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 18a635f73de55b64e8204aaf6d8d55c9, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8088cc0ca1f49f645802eeca8f4c1615, type: 3}
 --- !u!1001 &885884356
@@ -14828,6 +14840,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: fd8712e1a3b95bf408cf1bf15fb9a131, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a45d415cc7dd604499d8ec877c9626d8, type: 2}
     - target: {fileID: 919132149155446097, guid: fd8712e1a3b95bf408cf1bf15fb9a131, type: 3}
       propertyPath: m_Name
       value: 3Seat2
@@ -18612,6 +18628,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 639414184}
     m_Modifications:
+    - target: {fileID: 7926586013755975558, guid: 80967ac7bb2c8104b8dd5b649046d79b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a45d415cc7dd604499d8ec877c9626d8, type: 2}
     - target: {fileID: 8430773187405317715, guid: 80967ac7bb2c8104b8dd5b649046d79b, type: 3}
       propertyPath: m_Name
       value: Fotel4 (1)
