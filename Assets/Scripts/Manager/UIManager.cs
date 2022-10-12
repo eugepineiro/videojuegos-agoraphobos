@@ -12,10 +12,11 @@ public class UIManager : MonoBehaviour
     
     [SerializeField] private TextMeshProUGUI _time;
 
-    private float timeRemaining = 30 * 60; // TODO GameManager.GetMaxTime();
+    private float timeRemaining; 
 
     private void Start()
     {
+		timeRemaining = GameManager.instance.GetMaxTime();
         EventsManager.instance.OnPuzzleSolved += OnPuzzleSolved; //subscribe to event
         EventsManager.instance.OnStepSolved += OnStepSolved;
     }

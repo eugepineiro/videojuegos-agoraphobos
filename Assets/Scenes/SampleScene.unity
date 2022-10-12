@@ -3040,6 +3040,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isVictory: 0
+  _maxMinutes: 1
+  totalPuzzles: 2
 --- !u!114 &347821544
 MonoBehaviour:
   m_ObjectHideFlags: 0
