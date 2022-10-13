@@ -18,9 +18,11 @@ public class Door : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Entered collision");
-        if ( other.CompareTag("Player") ) 
-            StartCoroutine(Rotate(transform, new Vector3(0, 90f, 0)));
+        if ( other.CompareTag("Player") ) {
+            Vector3 localRotation = transform.localEulerAngles;
+            StartCoroutine(Rotate(transform, new Vector3(localRotation.x, localRotation.y + 90f, localRotation.z)));
             GetComponent<Collider>().enabled = false;
+        } 
         EventsManager.instance.EventDoorOpened(); //Opened door sound
     }
 }
