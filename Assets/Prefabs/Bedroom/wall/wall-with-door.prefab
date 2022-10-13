@@ -127,7 +127,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1541815616308420149}
+  - {fileID: 6195115049709571609}
   - {fileID: 7244048999987257472}
   - {fileID: 5736684332564993219}
   m_Father: {fileID: 0}
@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 1541815616308420149}
   - component: {fileID: 8305510578629896151}
   - component: {fileID: 2522115995671110185}
-  - component: {fileID: 2590832322591854850}
+  - component: {fileID: 6161482741953462415}
   m_Layer: 0
   m_Name: door
   m_TagString: Untagged
@@ -270,11 +270,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7768996297429425542}
   m_LocalRotation: {x: -0.0000002613133, y: 0.7071068, z: 0.7071068, w: 0.0000002613133}
-  m_LocalPosition: {x: 0.9952698, y: 0, z: 6.7299995}
+  m_LocalPosition: {x: 0.9952704, y: 0, z: 6.012}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6574805261940178899}
+  m_Father: {fileID: 6195115049709571609}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8305510578629896151
@@ -327,8 +327,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2590832322591854850
-MeshCollider:
+--- !u!65 &6161482741953462415
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -337,7 +337,38 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 5779197439840542771, guid: 6b3ff5f869bac8048ab5b57e5dd9823f, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.17871316, y: 1.4266188, z: 2.9681845}
+  m_Center: {x: 0.0000016614804, y: -0.7000005, z: 1.4840928}
+--- !u!1 &8452854120973572084
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6195115049709571609}
+  m_Layer: 0
+  m_Name: DoorPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6195115049709571609
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8452854120973572084}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.745}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1541815616308420149}
+  m_Father: {fileID: 6574805261940178899}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

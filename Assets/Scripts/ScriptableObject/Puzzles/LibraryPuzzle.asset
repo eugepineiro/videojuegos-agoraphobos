@@ -17,5 +17,5 @@ MonoBehaviour:
     Level: 1
     TotalSteps: 3
     DoorsToOpen:
-    - LibraryDoor
+    - LibraryPivot
     - BedroomDoor
