@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _statValues:
     MaxLife: 0
-    MovementSpeed: 5
+    MovementSpeed: 4
     RotationSpeed: 20

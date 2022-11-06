@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour
 
     private void OpenDoors(List<string> doorNames)
     {
+        Debug.Log(doorNames);
         foreach (var door in doorNames) GameObject.Find(door).GetComponent<BoxCollider>().isTrigger = true;
     }
 
