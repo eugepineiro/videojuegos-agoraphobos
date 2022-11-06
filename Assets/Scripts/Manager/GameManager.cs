@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     private float _maxTime;  // lose if time is over
     private int puzzlesSolved = 0;
     [SerializeField] private int _totalPuzzles = 2;
-    
+
     private void Awake() 
     {
         if(instance != null) Destroy(this);
