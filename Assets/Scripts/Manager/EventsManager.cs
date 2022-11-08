@@ -32,10 +32,16 @@ public class EventsManager : MonoBehaviour
     #region UI_EVENTS
 
     public event Action<int, int> OnStepSolved;
+    public event Action<float, float> OnCharacterLifeChange;
 
     public void EventStepSolved(int stepsSolved, int totalSteps)
     {
         if (OnStepSolved != null) OnStepSolved(stepsSolved, totalSteps);
+    }
+    
+    public void EventCharacterLifeChange(float currentLife, float maxLife)
+    {
+        if (OnCharacterLifeChange != null) OnCharacterLifeChange(currentLife, maxLife);
     }
     #endregion
     

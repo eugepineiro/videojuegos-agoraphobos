@@ -498,6 +498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e946b7dd1e0f49cc9da75517fd7fc875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _lifebar: {fileID: 1208739537}
   _steps: {fileID: 965712686}
   _level: {fileID: 802581305}
   _time: {fileID: 282810798}
@@ -2980,6 +2981,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec17592282eb0ab63be8560ed10c8612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2036149487 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4634978906829813533, guid: 640fae00894905c55adfc5bf01f0047f, type: 3}
+  m_PrefabInstance: {fileID: 4634978907140217216}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2036149488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036149487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ede766cb396c14d41ab488e689656d4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxLife: 100
 --- !u!1 &2045423571
 GameObject:
   m_ObjectHideFlags: 0
@@ -3136,6 +3155,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
+    - target: {fileID: 4634978906829813533, guid: 640fae00894905c55adfc5bf01f0047f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4634978906829813537, guid: 640fae00894905c55adfc5bf01f0047f, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -3192,6 +3215,10 @@ PrefabInstance:
       propertyPath: _camera
       value: 
       objectReference: {fileID: 963194225}
+    - target: {fileID: 4634978907608880219, guid: 640fae00894905c55adfc5bf01f0047f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 640fae00894905c55adfc5bf01f0047f, type: 3}
 --- !u!1001 &6237156236997339602

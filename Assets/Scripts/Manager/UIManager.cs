@@ -6,10 +6,13 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
+    
+    /* Image Referece */
+    [SerializeField] private Image _lifebar;
+    
     /* Text Reference */
     [SerializeField] private TextMeshProUGUI _steps;
     [SerializeField] private TextMeshProUGUI _level;
-    
     [SerializeField] private TextMeshProUGUI _time;
 
     private float timeRemaining; 
@@ -17,9 +20,12 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
 		timeRemaining = GameManager.instance.GetMaxTime();
-        EventsManager.instance.OnPuzzleSolved += OnPuzzleSolved; //subscribe to event
+        _level.text = $"Level 1 of {GameManager.instance.GetTotalPuzzles()}";
+        
+        /* Subscribe to events */ 
+        EventsManager.instance.OnPuzzleSolved += OnPuzzleSolved;
         EventsManager.instance.OnStepSolved += OnStepSolved;
-		_level.text = $"Level 1 of {GameManager.instance.GetTotalPuzzles()}";
+        EventsManager.instance.OnCharacterLifeChange += OnCharacterLifeChange;
     }
 
     private void OnStepSolved(int stepsSolved, int totalSteps)
@@ -31,7 +37,11 @@ public class UIManager : MonoBehaviour
     {
         _level.text = $"Level {puzzleProperties.Level+1} of {GameManager.instance.GetTotalPuzzles()}";
     }
-
+    
+    private void OnCharacterLifeChange(float currentLife, float maxLife)
+    {
+        _lifebar.fillAmount = currentLife / maxLife;
+    }
     private void Update()
     {
         if (timeRemaining > 0)
