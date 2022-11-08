@@ -285,7 +285,7 @@ RectTransform:
   m_GameObject: {fileID: 594689584}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.8043, y: 1.8043, z: 3.7659342}
+  m_LocalScale: {x: 1.4215537, y: 1.4215537, z: 2.9670665}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 756976905}
@@ -293,7 +293,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 40, y: -6}
+  m_AnchoredPosition: {x: -2, y: 1}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &594689586
@@ -350,8 +350,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -441,30 +441,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 983763302}
-  - component: {fileID: 983763301}
+  - component: {fileID: 983763303}
   m_Layer: 0
-  m_Name: EndgameLogic
+  m_Name: LoadbarLogic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &983763301
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 983763300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb9c305bbbdff3c0ba82a717e9108fc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _faceImage: {fileID: 0}
-  _victorySprite: {fileID: 1441229528, guid: dc675ba4f01354edaba2591fc6363842, type: 3}
-  _defeatSprite: {fileID: -1962706524, guid: dc675ba4f01354edaba2591fc6363842, type: 3}
-  _gameoverText: {fileID: 0}
 --- !u!4 &983763302
 Transform:
   m_ObjectHideFlags: 0
@@ -480,6 +464,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &983763303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983763300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04fec908e9b925be1a2de0e7d3b1458f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _progressBar: {fileID: 1457008543}
+  _progressValue: {fileID: 594689586}
+  _targetScene: SampleScene
 --- !u!1 &1092375067
 GameObject:
   m_ObjectHideFlags: 0
