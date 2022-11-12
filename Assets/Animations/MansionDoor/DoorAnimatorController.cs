@@ -17,6 +17,7 @@ public class DoorAnimatorController : MonoBehaviour
         if ( other.CompareTag("Player") )
         {
             SetAnimatorParams(DOOR_PLAY_OPEN_ANIMATION);
+            EventsManager.instance.EventDoorOpened(); //Opened door sound
         }
     }
     
