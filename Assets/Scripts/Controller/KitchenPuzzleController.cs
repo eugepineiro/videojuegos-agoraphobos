@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class KitchenPuzzleController : PuzzleController
 {
+    static public KitchenPuzzleController kitchenInstance;
     [SerializeField] private int _step = 1;  
     private Dictionary<int, Color> _puzzleColorByStep;
 
@@ -30,23 +31,48 @@ public class KitchenPuzzleController : PuzzleController
 
     private Dictionary<int, string[]> _puzzleCombinationsByStep;
 
+    private void Awake() {
+        if(kitchenInstance != null) Destroy(this);
+        kitchenInstance = this; 
+    }
+
+    public void CheckStepSolved() {
+        Valve[] valves = gameObject.GetComponentsInChildren<Valve>();
+        IList<int> values = new List<int>();
+
+        foreach(Valve valve in valves) {
+            values.Add(valve.GetValue());
+        }
+
+        CheckPipes(values);
+    }
+
     void CheckPipes(IList<int> pipeValues) {
         string[] combinations = _puzzleCombinationsByStep[_step];
+        bool currentStepSolved = false;
         foreach(string combination in combinations) {
+            if (currentStepSolved) {
+                break;
+            }
             int numberOfCorrectPipes = 0;
 
             for (int i = 0; i < 5; i++) {
-                if (pipeValues[i].ToString().Equals(combination[i]) || combination[i].Equals("*")) {
+                if (pipeValues[i].ToString().Equals(combination[i].ToString()) || combination[i].Equals('*')) {
                     numberOfCorrectPipes++;
                 }
             }
             
             if (numberOfCorrectPipes == 5) {
                 base.SolveStep(true);
+                currentStepSolved = true;
+                _step++;
                 break;
             }
         }
+    }
 
+    void UpdateCapsuleColor() {
+        gameObject.GetComponentInChildren<Light>().color = GetPuzzleColor();
     }
 
     void Start()
