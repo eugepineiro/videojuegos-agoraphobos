@@ -17,6 +17,7 @@ public class SoundEffectController : MonoBehaviour, IListenable
     [SerializeField] private AudioClip _puzzleSolvedClip;
     
     [SerializeField] private AudioClip _doorOpenedClip;
+    [SerializeField] private AudioClip _valveRotatedClip;
 
     public AudioSource AudioSource => _audioSource;
     private AudioSource _audioSource;
@@ -49,6 +50,7 @@ public class SoundEffectController : MonoBehaviour, IListenable
         EventsManager.instance.OnGameOver += OnGameOver;
         EventsManager.instance.OnPuzzleSolved += OnPuzzleSolved;
         EventsManager.instance.OnDoorOpened += OnDoorOpened;
+        EventsManager.instance.OnValveRotated += OnValveRotated;
     }
 
     // Update is called once per frame
@@ -75,6 +77,10 @@ public class SoundEffectController : MonoBehaviour, IListenable
     private void OnDoorOpened() 
     {
         PlayOnShot(_doorOpenedClip);
+    }
+
+    private void OnValveRotated() {
+        PlayOnShot(_valveRotatedClip);
     }
     #endregion
 }

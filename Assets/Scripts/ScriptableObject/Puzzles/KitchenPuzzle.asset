@@ -15,5 +15,5 @@ MonoBehaviour:
   _puzzleValues:
     Id: KITCHEN_PUZZLE
     Level: 3
-    TotalSteps: 2
+    TotalSteps: 3
     DoorsToOpen: []
