@@ -19,7 +19,7 @@ public class LifeController : MonoBehaviour, IDamageable
         if (_currentLife <= 0) Die(); 
     }
 
-    public void Die() => Destroy(this.gameObject); 
+    public void Die() => EventsManager.instance.EventGameOver(false); 
 
     private void OnDestroy()
     {

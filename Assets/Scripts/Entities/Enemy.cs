@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
 {
 	private NavMeshAgent _navMeshAgent;
 	private bool _chasing;
-	[SerializeField] private Transform target;
+	private Transform _target;
 	[SerializeField] private float chaseDistance;
 	public int Damage => _damage; 
 	[SerializeField] private int _damage = 10;
@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour
 		_collider = GetComponent<Collider>();
 		_animator = GetComponent<Animator>();
 		_navMeshAgent = GetComponent<NavMeshAgent>();
-		target = GameObject.Find("Character").gameObject.transform;
+		_target = GameObject.Find("Character").gameObject.transform;
 		_collider.isTrigger = true; 
 		_rigidBody.useGravity = false;  
 		_rigidBody.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
@@ -63,10 +63,10 @@ public class Enemy : MonoBehaviour
 
 	protected void Update()
 	{
-		if (!_chasing && Vector3.Distance(target.position, transform.position) < chaseDistance) 
+		if (!_chasing && Vector3.Distance(_target.position, transform.position) < chaseDistance) 
 			Chase();
-		if (Vector3.Distance(target.position, transform.position) > chaseDistance)
+		if (Vector3.Distance(_target.position, transform.position) > chaseDistance)
 			StopChasing();
-		_navMeshAgent.SetDestination(target.position);
+		_navMeshAgent.SetDestination(_target.position);
 	}
 }
