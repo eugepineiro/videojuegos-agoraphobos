@@ -1,18 +1,23 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-	
+	private NavMeshAgent _navMeshAgent;
+	private bool _chasing;
+	[SerializeField] private Transform target;
+	[SerializeField] private float chaseDistance;
 	public int Damage => _damage; 
 	[SerializeField] private int _damage = 10;
 
 	public Collider collider => _collider; 
-	[SerializeField] private Collider _collider;
+	private Collider _collider;
 
 	public Rigidbody rigidBody => _rigidBody; 
-	[SerializeField] private Rigidbody _rigidBody;
+	private Rigidbody _rigidBody;
 
 	[SerializeField] private List<int> _layerTarget;
 	
@@ -24,16 +29,44 @@ public class Enemy : MonoBehaviour
 			IDamageable damageable = collider.GetComponent<IDamageable>();
 			damageable?.TakeDamage(_damage);
 		}
-	}	
+	}
+
+    private Animator _animator;
 	
-	public void Start() 
-	{	 
+	public void Start()
+	{
+		_chasing = false;
 		_rigidBody = GetComponent<Rigidbody>(); 
 		_collider = GetComponent<Collider>();
-
+		_animator = GetComponent<Animator>();
+		_navMeshAgent = GetComponent<NavMeshAgent>();
+		target = GameObject.Find("Character").gameObject.transform;
 		_collider.isTrigger = true; 
 		_rigidBody.useGravity = false;  
 		_rigidBody.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
 		
-	} 
+	}
+	
+
+	protected void Chase()
+	{
+		_chasing = true;
+		_animator.SetBool("IsChasing", _chasing);
+		
+	}
+	protected void StopChasing()
+	{
+		_chasing = false;
+		_animator.SetBool("IsChasing", _chasing);
+		
+	}
+
+	protected void Update()
+	{
+		if (!_chasing && Vector3.Distance(target.position, transform.position) < chaseDistance) 
+			Chase();
+		if (Vector3.Distance(target.position, transform.position) > chaseDistance)
+			StopChasing();
+		_navMeshAgent.SetDestination(target.position);
+	}
 }
