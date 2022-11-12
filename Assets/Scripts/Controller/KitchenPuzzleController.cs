@@ -30,6 +30,16 @@ public class KitchenPuzzleController : PuzzleController
 
     private Dictionary<int, string[]> _puzzleCombinationsByStep;
 
+    void GetValvesValues() {
+        Valve[] valves = gameObject.GetComponentsInChildren<Valve>();
+        IList<int> values = new List<int>();
+        foreach(Valve valve in valves) {
+            values.Add(valve.GetValue());
+        }
+        Debug.Log("values of pipes were" + values.ToString());
+        CheckPipes(values);
+    }
+
     void CheckPipes(IList<int> pipeValues) {
         string[] combinations = _puzzleCombinationsByStep[_step];
         foreach(string combination in combinations) {
@@ -42,9 +52,12 @@ public class KitchenPuzzleController : PuzzleController
             }
             
             if (numberOfCorrectPipes == 5) {
+                Debug.Log("puzzle was solved");
                 base.SolveStep(true);
                 break;
             }
+
+            Debug.Log("puzzle was not solved");
         }
 
     }
