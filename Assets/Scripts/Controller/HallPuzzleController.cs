@@ -14,6 +14,7 @@ public class HallPuzzleController : PuzzleController
 
     public void OpenMansionDoor()
     {
+		
         base.Solve();
     }
 }
