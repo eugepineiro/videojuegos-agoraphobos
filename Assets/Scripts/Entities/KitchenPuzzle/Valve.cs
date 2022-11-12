@@ -2,18 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(AudioSource))]
 public class Valve : MonoBehaviour, IInteractable
 {
-    private PuzzleController _puzzleController; 
+    private KitchenPuzzleController _kitchenPuzzleController;
 
     [SerializeField] private int _value = 0;
-
-    public AudioClip AudioClip => _audioClip;
-    [SerializeField] private AudioClip _audioClip;
-
-    public AudioSource AudioSource => _audioSource;
-    private AudioSource _audioSource;
 
     public GameObject AssociatedPipe => _associatedPipe;
     [SerializeField] private GameObject _associatedPipe;
@@ -40,10 +33,7 @@ public class Valve : MonoBehaviour, IInteractable
 
     void Start()
     {
-        _audioSource = GetComponent<AudioSource>();
-        _audioSource.clip = AudioClip;
-
-        _puzzleController = GetComponent<PuzzleController>();
+        _kitchenPuzzleController = gameObject.transform.parent.parent.GetComponent<KitchenPuzzleController>();
     }
 
 
@@ -54,7 +44,12 @@ public class Valve : MonoBehaviour, IInteractable
             _value = (_value + 1) % 4;
             StartCoroutine(Rotate(transform, new Vector3(_value * 90f, 0, 0)));
             StartCoroutine(Rotate(_associatedPipe.transform, new Vector3(0, _value * 90f, 0)));
-            AudioSource.PlayOneShot(AudioClip);
+            EventsManager.instance.EventValveRotated();
+            _kitchenPuzzleController.CheckStepSolved();
         };
+    }
+
+    public int GetValue() {
+        return _value;
     }
 }

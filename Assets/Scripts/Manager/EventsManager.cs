@@ -52,6 +52,11 @@ public class EventsManager : MonoBehaviour
     {
         if (OnDoorOpened != null) OnDoorOpened();
     }
+
+    public event Action OnValveRotated;
+    public void EventValveRotated() {
+        if (OnValveRotated!= null) OnValveRotated();
+    }
     #endregion
 
 
