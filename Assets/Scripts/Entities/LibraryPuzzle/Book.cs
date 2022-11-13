@@ -6,13 +6,11 @@ public class Book : GrabbableObject
 {
     private LibraryPuzzleController _libraryPuzzleController;
     [SerializeField] private BookProperties _bookProperties;
-    public string ShelfName => _bookProperties.ShelfName;
-    //public Material BookMaterial => _bookProperties.Material;
+    public string ShelfName => _bookProperties.ShelfName; 
 
     void Start()
     {
         _libraryPuzzleController = GameObject.Find("LibraryPuzzles").GetComponent<LibraryPuzzleController>();
-        //this.GetComponent<MeshRenderer>().material = BookMaterial;
     }
 
     public override void LetGo() { 
