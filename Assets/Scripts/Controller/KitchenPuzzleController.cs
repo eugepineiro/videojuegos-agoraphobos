@@ -9,24 +9,24 @@ public class KitchenPuzzleController : PuzzleController
     private Dictionary<int, Color> _puzzleColorByStep;
 
     private string[] RED_COMBINATIONS = new string[] {
-        "1*2*3",
-        "3*2*3",
-        "1**01",
-        "1**21",
-        "3**01",
-        "3**21"
+        "0*2*0",
+        "2*2*0",
+        "0**12",
+        "0**32",
+        "2**12",
+        "2**32"
     };
 
     private string[] BLUE_COMBINATIONS = new string [] {
-        "00***",
-        "20***",
+        "12***",
+        "32***",
     };
 
     private string[] GREEN_COMBINATIONS = new string[] {
-        "1**0*",
-        "3**0*",
-        "1**2*",
-        "3**2*",
+        "0**1*",
+        "2**1*",
+        "0**3*",
+        "2**3*",
     };
 
     private Dictionary<int, string[]> _puzzleCombinationsByStep;
@@ -87,9 +87,9 @@ public class KitchenPuzzleController : PuzzleController
     void Start()
     {  
         _puzzleColorByStep = new Dictionary<int, Color> {
-            {1, Color.red},
-            {2, Color.blue},
-            {3, Color.green},
+            {1, new Color(0.4f, 0.003f, 0.003f)},
+            {2, new Color(0.003f, 0.003f, 0.4f)},
+            {3, new Color(0.003f, 0.4f, 0.003f)},
         };
         _puzzleCombinationsByStep  = new Dictionary<int, string[]> {
             {1, RED_COMBINATIONS },
