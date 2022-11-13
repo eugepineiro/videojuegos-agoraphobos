@@ -47,7 +47,7 @@ public class KitchenPuzzleController : PuzzleController
         CheckPipes(values);
     }
 
-    void CheckPipes(IList<int> pipeValues) {
+    private void CheckPipes(IList<int> pipeValues) {
         string[] combinations = _puzzleCombinationsByStep[_step];
         bool currentStepSolved = false;
         foreach(string combination in combinations) {
@@ -63,21 +63,25 @@ public class KitchenPuzzleController : PuzzleController
             }
             
             if (numberOfCorrectPipes == 5) {
-                base.SolveStep(true);
                 currentStepSolved = true;
                 _step++;
-                UpdateCapsuleColor();
+                base.SolveStep(true);
+
+                UpdateCapsuleColor(_step <= 3 ? GetPuzzleColor() : Color.black);
+                EventsManager.instance.EventCorrectPipeCombination();
+                
+                if (_step <= 3) {
+                    CheckStepSolved();
+                }
                 break;
             }
         }
     }
 
-    void UpdateCapsuleColor() {
+    private void UpdateCapsuleColor(Color emissionColor) {
         GameObject capsule = this.transform.Find("Capsule").gameObject;
         capsule.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
-        capsule.GetComponent<Renderer>().material.SetColor("_EmissionColor", GetPuzzleColor());
-
-        Debug.Log("updated capsule color to " + GetPuzzleColor().ToString());
+        capsule.GetComponent<Renderer>().material.SetColor("_EmissionColor", emissionColor);
     }
 
     void Start()

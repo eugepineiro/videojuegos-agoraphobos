@@ -568,7 +568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isVictory: 0
   _maxMinutes: 30
-  _totalPuzzles: 3
+  _totalPuzzles: 4
 --- !u!114 &347821544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1040,6 +1040,7 @@ MonoBehaviour:
   _puzzleSolvedClip: {fileID: 8300000, guid: 2136e1c1a1392202191e1d4f676882a3, type: 3}
   _doorOpenedClip: {fileID: 8300000, guid: 301c840043efe15c99b9cedce1e3ed78, type: 3}
   _valveRotatedClip: {fileID: 8300000, guid: e797a70adf39944108f26ee4c31a99fe, type: 3}
+  _correctPipeCombinationClip: {fileID: 8300000, guid: 857c9ed61a57345aebebaece71b64b77, type: 3}
 --- !u!82 &496315263
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2277,6 +2278,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 929412623}
   m_CullTransparentMesh: 1
+--- !u!1 &939328968 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4422482560625098355, guid: 0bb2d76ed51b3c54380af79f4220f65f, type: 3}
+  m_PrefabInstance: {fileID: 6237156236997339602}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &939328974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939328968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93e8728947c3b7caabb90df57ee9ae86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &944750636
 GameObject:
   m_ObjectHideFlags: 0
@@ -4648,7 +4666,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2576136523500205057, guid: 0bb2d76ed51b3c54380af79f4220f65f, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2576136523611855751, guid: 0bb2d76ed51b3c54380af79f4220f65f, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5184,7 +5202,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4422482560625098355, guid: 0bb2d76ed51b3c54380af79f4220f65f, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4422482560660263413, guid: 0bb2d76ed51b3c54380af79f4220f65f, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6504,7 +6522,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6236345772942275639, guid: 0bb2d76ed51b3c54380af79f4220f65f, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6236643492098864484, guid: 0bb2d76ed51b3c54380af79f4220f65f, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -8192,7 +8210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6237156238034642616, guid: 0bb2d76ed51b3c54380af79f4220f65f, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6237156238034642623, guid: 0bb2d76ed51b3c54380af79f4220f65f, type: 3}
       propertyPath: m_Size.y
