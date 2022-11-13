@@ -16,5 +16,4 @@ MonoBehaviour:
     Id: 
     Level: 4
     TotalSteps: 1
-    DoorsToOpen:
-    - Animator Door
+    DoorsToOpen: []
