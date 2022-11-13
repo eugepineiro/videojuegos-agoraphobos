@@ -6,17 +6,15 @@ public class Chandelier : MonoBehaviour, IInteractable
 {
     private bool _interacting = false;
     public bool interacting => _interacting;
-
-    GameObject chandelier; 
+    private Animator _animator; 
 
     void Start()
     {
-        chandelier = GameObject.Find("Chandelier");
+        _animator = GameObject.Find("ChandelierAnimator").GetComponent<Animator>();
     } 
     
     public void Interact()
-    {
-        //chandelier.transform.localPosition += new Vector3(transform.localPosition.x,transform.localPosition.y-5,transform.localPosition.z); TODO animation of destoyed chandelier
-        Destroy(chandelier);
+    { 
+        _animator.SetBool("TriggerPullDown", true);
     }
 }

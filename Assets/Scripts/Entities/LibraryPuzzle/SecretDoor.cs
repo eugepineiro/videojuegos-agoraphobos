@@ -23,21 +23,17 @@ public class SecretDoor : MonoBehaviour,IInteractable
         Debug.Log("Interacting with secret door");
         if (secretDoor.transform.rotation.x == 0)
         {
-            SetAnimatorParams(DOOR_PLAY_OPEN_ANIMATION);
-            Debug.Log("Playing open aanim");
+            SetAnimatorParams(DOOR_PLAY_OPEN_ANIMATION); 
         }
         else
         {
-            SetAnimatorParams(DOOR_PLAY_CLOSE_ANIMATION);
-            Debug.Log("Playing close aanim");
+            SetAnimatorParams(DOOR_PLAY_CLOSE_ANIMATION); 
         }
-        
     }
     
     private void SetAnimatorParams(bool performGateOpenAnimation)
     {
         _animator.SetBool("TriggerOpen", performGateOpenAnimation);
         _animator.SetBool("TriggerClose", !performGateOpenAnimation);
-        
     }
 }

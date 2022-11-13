@@ -9,6 +9,6 @@ public class Carpet : MonoBehaviour, IInteractable
  
     public void Interact()
     {
-        transform.localPosition += new Vector3(0,0,0.5F);
+        transform.localPosition += new Vector3(0,0,1F);
     }
 }
