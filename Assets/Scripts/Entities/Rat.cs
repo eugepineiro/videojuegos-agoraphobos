@@ -6,11 +6,7 @@ public class Rat : Enemy
 {
     void Start()
     {
-        
+        base.Start();
     }
     
-    void Update()
-    {
-        
-    }
 }
