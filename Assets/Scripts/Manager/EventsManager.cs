@@ -57,6 +57,11 @@ public class EventsManager : MonoBehaviour
     public void EventValveRotated() {
         if (OnValveRotated!= null) OnValveRotated();
     }
+
+    public event Action OnCorrectPipeCombination;
+    public void EventCorrectPipeCombination() {
+        if (OnCorrectPipeCombination != null) OnCorrectPipeCombination();
+    }
     #endregion
 
 
