@@ -73,8 +73,11 @@ public class KitchenPuzzleController : PuzzleController
     }
 
     void UpdateCapsuleColor() {
-        Material capsuleMaterial = GameObject.Find("Capsule").GetComponent<Material>();
-        capsuleMaterial.SetColor("_EmissionColor", GetPuzzleColor());
+        GameObject capsule = this.transform.Find("Capsule").gameObject;
+        capsule.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+        capsule.GetComponent<Renderer>().material.SetColor("_EmissionColor", GetPuzzleColor());
+
+        Debug.Log("updated capsule color to " + GetPuzzleColor().ToString());
     }
 
     void Start()
