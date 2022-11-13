@@ -66,13 +66,15 @@ public class KitchenPuzzleController : PuzzleController
                 base.SolveStep(true);
                 currentStepSolved = true;
                 _step++;
+                UpdateCapsuleColor();
                 break;
             }
         }
     }
 
     void UpdateCapsuleColor() {
-        gameObject.GetComponentInChildren<Light>().color = GetPuzzleColor();
+        Material capsuleMaterial = GameObject.Find("Capsule").GetComponent<Material>();
+        capsuleMaterial.SetColor("_EmissionColor", GetPuzzleColor());
     }
 
     void Start()
