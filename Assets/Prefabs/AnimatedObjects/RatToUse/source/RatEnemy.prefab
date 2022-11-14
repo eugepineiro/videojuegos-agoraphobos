@@ -141,7 +141,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 802367472142780605}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.1
   m_Speed: 1
@@ -736,6 +736,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7445648964574470188}
   - component: {fileID: 119374435058908802}
+  - component: {fileID: 2175470262965800603}
   m_Layer: 0
   m_Name: Rat
   m_TagString: Untagged
@@ -841,6 +842,19 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.00006315563, y: 0.00042011574, z: -0.00014065974}
     m_Extent: {x: 0.00039269755, y: 0.0013188928, z: 0.00052065094}
   m_DirtyAABB: 0
+--- !u!65 &2175470262965800603
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4606761041162514269}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0007853951, y: 0.0027812999, z: 0.0014954468}
+  m_Center: {x: 0.00006315563, y: 0.00021518537, z: 0.00037101252}
 --- !u!1 &4646640589779643599
 GameObject:
   m_ObjectHideFlags: 0

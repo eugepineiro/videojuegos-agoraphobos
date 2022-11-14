@@ -40,9 +40,9 @@ public class Enemy : MonoBehaviour
 		_collider = GetComponent<Collider>();
 		_animator = GetComponent<Animator>();
 		_navMeshAgent = GetComponent<NavMeshAgent>();
+		_navMeshAgent.enabled = true;
 		_target = GameObject.Find("Character").gameObject.transform;
 		_collider.isTrigger = true; 
-		_rigidBody.useGravity = false;  
 		_rigidBody.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
 		
 	}
@@ -52,6 +52,7 @@ public class Enemy : MonoBehaviour
 	{
 		_chasing = true;
 		_animator.SetBool("IsChasing", _chasing);
+		
 		
 	}
 	protected void StopChasing()
@@ -63,8 +64,14 @@ public class Enemy : MonoBehaviour
 
 	protected void Update()
 	{
-		if (!_chasing && Vector3.Distance(_target.position, transform.position) < chaseDistance) 
-			Chase();
+		var distance = Vector3.Distance(_target.position, transform.position);
+		if (!_chasing)
+		{
+			if (distance < chaseDistance)
+				Chase();
+			return;
+		}
+
 		if (Vector3.Distance(_target.position, transform.position) > chaseDistance)
 			StopChasing();
 		_navMeshAgent.SetDestination(_target.position);

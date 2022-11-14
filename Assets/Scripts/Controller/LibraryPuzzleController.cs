@@ -19,7 +19,7 @@ public class LibraryPuzzleController : PuzzleController
 
     private const int TOTAL_RATS = 5;
 
-    private Vector3 _ratInitialPosition = new Vector3(-18, -3, 15);
+    private Vector3 _ratInitialPosition = new Vector3(-18, -3.4f, 15);
     
     
     private void Awake() 
