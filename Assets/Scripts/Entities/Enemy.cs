@@ -31,16 +31,15 @@ public class Enemy : MonoBehaviour
 		}
 	}
 
-    private Animator _animator;
+    [SerializeField]private Animate animator;
 	
 	public void Start()
 	{
 		_chasing = false;
 		_rigidBody = GetComponent<Rigidbody>(); 
 		_collider = GetComponent<Collider>();
-		_animator = GetComponent<Animator>();
 		_navMeshAgent = GetComponent<NavMeshAgent>();
-		_navMeshAgent.enabled = true;
+		_navMeshAgent.enabled = false;
 		_target = GameObject.Find("Character").gameObject.transform;
 		_collider.isTrigger = true; 
 		_rigidBody.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
@@ -51,15 +50,18 @@ public class Enemy : MonoBehaviour
 	protected void Chase()
 	{
 		_chasing = true;
-		_animator.SetBool("IsChasing", _chasing);
-		
-		
+		animator.Chase();
+		_navMeshAgent.enabled = true;
+		print("start chasing");
+
 	}
 	protected void StopChasing()
 	{
+		print("stop chasing");
 		_chasing = false;
-		_animator.SetBool("IsChasing", _chasing);
-		
+		animator.StopChasing();
+		_navMeshAgent.enabled = false;
+
 	}
 
 	protected void Update()
@@ -73,7 +75,11 @@ public class Enemy : MonoBehaviour
 		}
 
 		if (Vector3.Distance(_target.position, transform.position) > chaseDistance)
+		{
 			StopChasing();
+			return;
+		}
+			
 		_navMeshAgent.SetDestination(_target.position);
 	}
 }
