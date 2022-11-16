@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18279007, g: 0.0531485, b: 0.03235268, a: 1}
+  m_IndirectSpecularColor: {r: 0.17995557, g: 0.052230522, b: 0.031852193, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: cada704c30622a71d9d8a8a8aead1b0f, type: 2}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 6485abf78a24c054494ae2c61b5d4cfc, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -6047,6 +6047,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 14.9
       objectReference: {fileID: 0}
+    - target: {fileID: 3345548654517119706, guid: 0bb2d76ed51b3c54380af79f4220f65f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3376518152682560672, guid: 0bb2d76ed51b3c54380af79f4220f65f, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -9686,6 +9690,10 @@ PrefabInstance:
     - target: {fileID: 6655012450898235649, guid: 0bb2d76ed51b3c54380af79f4220f65f, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6740603109157637900, guid: 0bb2d76ed51b3c54380af79f4220f65f, type: 3}
+      propertyPath: m_RootOrder
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 6878898736941393553, guid: 0bb2d76ed51b3c54380af79f4220f65f, type: 3}
       propertyPath: m_StaticEditorFlags
