@@ -4999,7 +4999,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ede766cb396c14d41ab488e689656d4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxLife: 100
 --- !u!1 &2045423571
 GameObject:
   m_ObjectHideFlags: 0
@@ -5613,6 +5612,10 @@ PrefabInstance:
       propertyPath: _camera
       value: 
       objectReference: {fileID: 963194225}
+    - target: {fileID: 4634978906829813542, guid: 640fae00894905c55adfc5bf01f0047f, type: 3}
+      propertyPath: _actorStats
+      value: 
+      objectReference: {fileID: 11400000, guid: 21fae1d6b4cb6b821a4d185ff30cd006, type: 2}
     - target: {fileID: 4634978907608880219, guid: 640fae00894905c55adfc5bf01f0047f, type: 3}
       propertyPath: m_Layer
       value: 7

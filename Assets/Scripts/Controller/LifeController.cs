@@ -2,20 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Actor))]
 public class LifeController : MonoBehaviour, IDamageable
-{
-    public float MaxLife => _maxLife;
-    [SerializeField] private float _maxLife; 
+{ 
+    public float MaxLife => GetComponent<Actor>().ActorStats.MaxLife;
     private float _currentLife;
 
     private void Start()
     {
-        _currentLife = _maxLife;
+        _currentLife = MaxLife;
     }
     public void TakeDamage(float damage)
     {
         _currentLife -= damage;
-        EventsManager.instance.EventCharacterLifeChange(_currentLife, _maxLife);
+        EventsManager.instance.EventCharacterLifeChange(_currentLife, MaxLife);
         if (_currentLife <= 0) Die(); 
     }
 
