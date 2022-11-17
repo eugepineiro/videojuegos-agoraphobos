@@ -14,16 +14,15 @@ public class LifeController : MonoBehaviour, IDamageable
     }
     public void TakeDamage(float damage)
     {
+		 
         _currentLife -= damage;
         EventsManager.instance.EventCharacterLifeChange(_currentLife, MaxLife);
         if (_currentLife <= 0) Die(); 
     }
 
-    public void Die() => EventsManager.instance.EventGameOver(false); 
+    public void Die() {  
+		EventsManager.instance.EventGameOver(false);
+	} 
 
-    private void OnDestroy()
-    {
-        if (name == "Character") EventsManager.instance.EventGameOver(false);
-    }
-
+   
 }

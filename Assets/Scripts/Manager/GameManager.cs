@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int _maxMinutes = 30;
     private float _maxTime;  // lose if time is over
     private int puzzlesSolved = 0;
-    [SerializeField] private int _totalPuzzles = 2;
+    [SerializeField] private int _totalPuzzles = 4;
 
     private void Awake() 
     {
@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator TimeFinished(float time)
     {
-        yield return new WaitForSeconds(time);
+        yield return new WaitForSeconds(time); 
         EventsManager.instance.EventGameOver(_isVictory);
     }
     
@@ -43,9 +43,10 @@ public class GameManager : MonoBehaviour
     private void OnPuzzleSolved(PuzzleProperties puzzleProperties) 
     {
         puzzlesSolved+=1;
+        Debug.Log($"Solved {puzzlesSolved} puzzles");
 		if (puzzlesSolved == _totalPuzzles-1) GameObject.Find("HallPuzzles").transform.GetChild(0).gameObject.SetActive(true); // final puzzle needs mansion key
         
-		if(puzzlesSolved == _totalPuzzles){
+		if(puzzlesSolved >= _totalPuzzles){
             _isVictory = true;
             EventsManager.instance.EventGameOver(_isVictory);
         } else

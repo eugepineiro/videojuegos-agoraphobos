@@ -2290,19 +2290,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7a6461b30e07d8fa5a6e7438a53a636d, type: 3}
   m_PrefabInstance: {fileID: 755133371}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &755133374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 755133373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a2fd4a40f95daf0ab19bcd747b16c2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _positionBuffer: {x: 0, y: 0.1, z: 0}
 --- !u!54 &755133375
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4313,15 +4300,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 180149b1a35449044a27b451e816d2de, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -37.64824
+      value: -48.94
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 180149b1a35449044a27b451e816d2de, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.002482
+      value: -10.25
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 180149b1a35449044a27b451e816d2de, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.15583651
+      value: 0.23
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 180149b1a35449044a27b451e816d2de, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5889,7 +5876,7 @@ PrefabInstance:
       objectReference: {fileID: 1635233238}
     - target: {fileID: 4634978906829813541, guid: 640fae00894905c55adfc5bf01f0047f, type: 3}
       propertyPath: maxDistance
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4634978906829813542, guid: 640fae00894905c55adfc5bf01f0047f, type: 3}
       propertyPath: _camera

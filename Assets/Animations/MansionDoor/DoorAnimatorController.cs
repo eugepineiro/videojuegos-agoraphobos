@@ -22,7 +22,7 @@ public class DoorAnimatorController : MonoBehaviour
 			Debug.Log("Key hit mansion door");
             SetAnimatorParams(DOOR_PLAY_OPEN_ANIMATION);
             EventsManager.instance.EventDoorOpened(); //Opened door sound
- 			_hallPuzzleController.OpenMansionDoor();
+ 			_hallPuzzleController.OpenMansionDoor(); //Solves puzzle
         }
     }
     
