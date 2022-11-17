@@ -11,10 +11,10 @@ public class LibraryPuzzleController : PuzzleController
     
         
     // factory pattern (enemy:rat)
-    [SerializeField] private Rat ratPrefab;
-    private Spawner<Rat> _ratFactory = new Spawner<Rat>();
-    public List<Rat> RatInstances => _ratInstances;
-    private List<Rat> _ratInstances = new List<Rat>();
+    [SerializeField] private Enemy ratPrefab;
+    private Spawner<Enemy> _ratFactory = new Spawner<Enemy>();
+    public List<Enemy> RatInstances => _ratInstances;
+    private List<Enemy> _ratInstances = new List<Enemy>();
     private Transform _ratParent;
 
     private const int TOTAL_RATS = 5;

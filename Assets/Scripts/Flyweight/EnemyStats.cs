@@ -9,6 +9,7 @@ public class EnemyStats : ScriptableObject
     
     public float ChaseDistance => _enemyValues.ChaseDistance;
     public int Damage => _enemyValues.Damage;
+    public float Speed => _enemyValues.Speed;
 
 }
 
@@ -16,5 +17,6 @@ public class EnemyStats : ScriptableObject
 public struct EnemyValues
 {
     public float ChaseDistance; 
-    public int Damage; 
+    public int Damage;
+    public float Speed;
 }

@@ -41,12 +41,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 29630027617686023}
-  - component: {fileID: 900882963088996712}
   - component: {fileID: 5732857919110673915}
   - component: {fileID: 1603227870850705521}
   - component: {fileID: 8267178130026818183}
   - component: {fileID: 1444071462337810776}
   - component: {fileID: 5452122724116668017}
+  - component: {fileID: -840736372542406046}
   m_Layer: 0
   m_Name: RatEnemy
   m_TagString: Untagged
@@ -71,21 +71,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &900882963088996712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 802367472142780605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38f0a522407912fa2a518f9c9a0cb972, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _stats: {fileID: 11400000, guid: 42e39655212a8e002a31fc41a89bf742, type: 2}
-  _layerTarget: 
-  animator: {fileID: 5452122724116668017}
 --- !u!95 &5732857919110673915
 Animator:
   serializedVersion: 4
@@ -170,6 +155,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 5732857919110673915}
+--- !u!114 &-840736372542406046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802367472142780605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f58b99afb92011102a419bc8318061f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stats: {fileID: 11400000, guid: 42e39655212a8e002a31fc41a89bf742, type: 2}
+  _layerTarget: 
+  animator: {fileID: 5452122724116668017}
 --- !u!1 &893613040208011757
 GameObject:
   m_ObjectHideFlags: 0

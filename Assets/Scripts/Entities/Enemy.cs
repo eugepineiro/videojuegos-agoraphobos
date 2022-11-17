@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
 	private Transform _target;
 	public float chaseDistance => _stats.ChaseDistance;
 	public int Damage => _stats.Damage;
+	public float Speed => _stats.Speed;
 
 	public Collider collider => _collider; 
 	private Collider _collider;
@@ -19,12 +20,11 @@ public class Enemy : MonoBehaviour
 	public Rigidbody rigidBody => _rigidBody; 
 	private Rigidbody _rigidBody;
 
-	[SerializeField] private List<int> _layerTarget;
-	
-    public void OnTriggerEnter(Collider collider) 
+	public void OnTriggerEnter(Collider collider) 
 	{ 
 		Debug.Log("Enemy collided with smth");
 		if(collider.gameObject.name == "Character") { 
+			// take life
 			Debug.Log("Enemy collided with character");
 			IDamageable damageable = collider.GetComponent<IDamageable>();
 			damageable?.TakeDamage(Damage);
@@ -40,6 +40,7 @@ public class Enemy : MonoBehaviour
 		_collider = GetComponent<Collider>();
 		_navMeshAgent = GetComponent<NavMeshAgent>();
 		_navMeshAgent.enabled = false;
+		_navMeshAgent.speed = Speed;
 		_target = GameObject.Find("Character").gameObject.transform;
 		_collider.isTrigger = true; 
 		_rigidBody.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
@@ -55,6 +56,7 @@ public class Enemy : MonoBehaviour
 		print("start chasing");
 
 	}
+	
 	protected void StopChasing()
 	{
 		print("stop chasing");
@@ -79,7 +81,7 @@ public class Enemy : MonoBehaviour
 			StopChasing();
 			return;
 		}
-			
+		
 		_navMeshAgent.SetDestination(_target.position);
 	}
 }

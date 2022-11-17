@@ -5637,6 +5637,10 @@ PrefabInstance:
       propertyPath: pointer
       value: 
       objectReference: {fileID: 1635233238}
+    - target: {fileID: 4634978906829813541, guid: 640fae00894905c55adfc5bf01f0047f, type: 3}
+      propertyPath: maxDistance
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4634978906829813542, guid: 640fae00894905c55adfc5bf01f0047f, type: 3}
       propertyPath: _camera
       value: 
@@ -9425,7 +9429,7 @@ PrefabInstance:
     - target: {fileID: 6237156237478871993, guid: 0bb2d76ed51b3c54380af79f4220f65f, type: 3}
       propertyPath: ratPrefab
       value: 
-      objectReference: {fileID: 900882963088996712, guid: 021a3b3a01e00cb46a534ff98ed473f4, type: 3}
+      objectReference: {fileID: -840736372542406046, guid: 021a3b3a01e00cb46a534ff98ed473f4, type: 3}
     - target: {fileID: 6237156237478871995, guid: 0bb2d76ed51b3c54380af79f4220f65f, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647

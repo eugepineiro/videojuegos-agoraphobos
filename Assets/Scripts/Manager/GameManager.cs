@@ -53,6 +53,7 @@ public class GameManager : MonoBehaviour
             OpenDoors(puzzleProperties.DoorsToOpen);
         }
         
+        
     }
 
     private void LoadEndgameScene() => SceneManager.LoadScene("EndgameScene");
@@ -60,6 +61,11 @@ public class GameManager : MonoBehaviour
     private void OpenDoors(List<string> doorNames)
     {
         Debug.Log(doorNames);
+        foreach (var door in doorNames) GameObject.Find(door).GetComponent<BoxCollider>().isTrigger = true;
+    }
+    private void SpawnEnemies(List<string> doorNames)
+    {
+        
         foreach (var door in doorNames) GameObject.Find(door).GetComponent<BoxCollider>().isTrigger = true;
     }
 
