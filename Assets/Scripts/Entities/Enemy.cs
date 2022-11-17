@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
 	public int Damage => _stats.Damage;
 	public float Speed => _stats.Speed;
 
-	public Collider collider => _collider; 
+	public new Collider collider => _collider; 
 	private Collider _collider;
 
 	public Rigidbody rigidBody => _rigidBody; 
