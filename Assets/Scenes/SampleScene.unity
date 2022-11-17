@@ -1241,7 +1241,7 @@ MonoBehaviour:
   _puzzleSolvedClip: {fileID: 8300000, guid: 2136e1c1a1392202191e1d4f676882a3, type: 3}
   _doorOpenedClip: {fileID: 8300000, guid: 301c840043efe15c99b9cedce1e3ed78, type: 3}
   _valveRotatedClip: {fileID: 8300000, guid: e797a70adf39944108f26ee4c31a99fe, type: 3}
-  _correctPipeCombinationClip: {fileID: 8300000, guid: 857c9ed61a57345aebebaece71b64b77, type: 3}
+  _correctPipeCombinationClip: {fileID: 8300000, guid: 6b9851dfdd53e47b8b16e1be75935bda, type: 3}
 --- !u!82 &496315263
 AudioSource:
   m_ObjectHideFlags: 0

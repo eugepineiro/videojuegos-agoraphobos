@@ -35,6 +35,10 @@ public class PuzzleController : MonoBehaviour, IPuzzle
         _stepsSolved = steps;
         EventsManager.instance.EventStepSolved(StepsSolved,TotalSteps); // Update UI 
     }
+
+    public int GetStepsSolved() {
+        return _stepsSolved;
+    }
     
     void Start()
     {

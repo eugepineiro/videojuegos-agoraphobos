@@ -36,6 +36,7 @@ public class UIManager : MonoBehaviour
     private void OnPuzzleSolved(PuzzleProperties puzzleProperties)
     {
         _level.text = $"Level {puzzleProperties.Level+1} of {GameManager.instance.GetTotalPuzzles()}";
+        _steps.text = "0";
     }
     
     private void OnCharacterLifeChange(float currentLife, float maxLife)

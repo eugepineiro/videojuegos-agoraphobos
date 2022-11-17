@@ -43,8 +43,7 @@ public class GameManager : MonoBehaviour
     private void OnPuzzleSolved(PuzzleProperties puzzleProperties) 
     {
         puzzlesSolved+=1;
-   		
-		if (puzzlesSolved == _totalPuzzles-1) GameObject.Find("MansionKey").SetActive(true); // final puzzle needs mansion key
+		if (puzzlesSolved == _totalPuzzles-1) GameObject.Find("HallPuzzles").transform.GetChild(0).gameObject.SetActive(true); // final puzzle needs mansion key
         
 		if(puzzlesSolved == _totalPuzzles){
             _isVictory = true;
