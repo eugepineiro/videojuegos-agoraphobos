@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: RatStats
   m_EditorClassIdentifier: 
   _enemyValues:
-    ChaseDistance: 10
+    ChaseDistance: 2
     Damage: 10

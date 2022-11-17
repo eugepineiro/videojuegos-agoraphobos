@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SpiderStats
   m_EditorClassIdentifier: 
   _enemyValues:
-    ChaseDistance: 10
+    ChaseDistance: 1
     Damage: 5
