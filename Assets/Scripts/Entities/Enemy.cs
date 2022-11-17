@@ -14,9 +14,6 @@ public class Enemy : MonoBehaviour
 	public int Damage => _stats.Damage;
 	public float Speed => _stats.Speed;
 
-	public new Collider collider => _collider; 
-	private Collider _collider;
-
 	public Rigidbody rigidBody => _rigidBody; 
 	private Rigidbody _rigidBody;
 
@@ -37,12 +34,12 @@ public class Enemy : MonoBehaviour
 	{
 		_chasing = false;
 		_rigidBody = GetComponent<Rigidbody>(); 
-		_collider = GetComponent<Collider>();
+		 
 		_navMeshAgent = GetComponent<NavMeshAgent>();
 		_navMeshAgent.enabled = false;
 		_navMeshAgent.speed = Speed;
 		_target = GameObject.Find("Character").gameObject.transform;
-		_collider.isTrigger = true; 
+	 
 		_rigidBody.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
 		
 	}
