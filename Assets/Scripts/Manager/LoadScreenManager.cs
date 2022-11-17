@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System;
 
 public class LoadScreenManager : MonoBehaviour
 {
@@ -25,7 +26,7 @@ public class LoadScreenManager : MonoBehaviour
         {
             progress = operation.progress;
             _progressBar.fillAmount = progress; // [0;1] 
-            _progressValue.text = $"Loading ... {progress * 100}%";
+            _progressValue.text = $"Loading ... {Math.Truncate(progress * 100)}%";
             
             yield return null;  // se libera frame a frame 
         }
