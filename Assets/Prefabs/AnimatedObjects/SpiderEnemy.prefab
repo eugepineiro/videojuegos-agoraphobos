@@ -1471,8 +1471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f58b99afb92011102a419bc8318061f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chaseDistance: 2
-  _damage: 10
+  _stats: {fileID: 11400000, guid: 54e259dd7ecca76b1b9b9e46c1817b25, type: 2}
   _layerTarget: 
   animator: {fileID: 6541462596014920885}
 --- !u!1 &6984526771468063225

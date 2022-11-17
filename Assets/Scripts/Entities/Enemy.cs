@@ -6,12 +6,12 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
+	[SerializeField] private EnemyStats _stats;
 	private NavMeshAgent _navMeshAgent;
 	private bool _chasing;
 	private Transform _target;
-	[SerializeField] private float chaseDistance;
-	public int Damage => _damage; 
-	[SerializeField] private int _damage = 10;
+	public float chaseDistance => _stats.ChaseDistance;
+	public int Damage => _stats.Damage;
 
 	public Collider collider => _collider; 
 	private Collider _collider;
@@ -27,7 +27,7 @@ public class Enemy : MonoBehaviour
 		if(collider.gameObject.name == "Character") { 
 			Debug.Log("Enemy collided with character");
 			IDamageable damageable = collider.GetComponent<IDamageable>();
-			damageable?.TakeDamage(_damage);
+			damageable?.TakeDamage(Damage);
 		}
 	}
 
