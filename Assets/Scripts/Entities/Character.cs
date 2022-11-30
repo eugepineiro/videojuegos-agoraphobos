@@ -15,6 +15,12 @@ public class Character : Actor
     
     // Interaction with objects
     [SerializeField] private KeyCode _interact = KeyCode.E;
+    [SerializeField] private KeyCode _jump = KeyCode.Space;
+
+    [SerializeField] private const float JUMP_COOLDOWN = 1F;
+
+    private float _jumpTime = JUMP_COOLDOWN;
+
     [SerializeField] private GameObject _camera;
     private Vector3 _horizontalForward;
     private Vector3 _forward;
@@ -47,10 +53,22 @@ public class Character : Actor
             Vector3 _horizontalRight = transform.InverseTransformDirection(new Vector3(_camera.transform.right.x, 0, _camera.transform.right.z));
             EventQueueManager.instance.AddCommand(new CmdMovement(_movementController, -_horizontalRight));
         }
+
+        if (Input.GetKeyDown(_jump))
+        {
+            Debug.Log("Jump");
+            if (_jumpTime - Time.deltaTime < 0) {
+                Debug.Log("jump pressed");
+                _jumpTime = JUMP_COOLDOWN;
+                EventQueueManager.instance.AddCommand(new CmdJump(_movementController));
+            }
+        }
+
         if (Input.GetKeyDown(_interact))
         {
             _forward = transform.InverseTransformDirection(_camera.transform.forward);
             EventQueueManager.instance.AddCommand(new CmdInteract(_interactionController, _forward));
         }
+        _jumpTime -= Time.deltaTime;
     }
 }

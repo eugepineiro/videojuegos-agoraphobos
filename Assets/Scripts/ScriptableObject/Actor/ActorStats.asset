@@ -16,3 +16,4 @@ MonoBehaviour:
     MaxLife: 100
     MovementSpeed: 4
     RotationSpeed: 20
+    JumpForce: 10000
