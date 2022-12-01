@@ -33,6 +33,7 @@ public class EventsManager : MonoBehaviour
 
     public event Action<int, int> OnStepSolved;
     public event Action<float, float> OnCharacterLifeChange;
+    public event Action<string> OnStoryFrameOpened;
 
     public void EventStepSolved(int stepsSolved, int totalSteps)
     {
@@ -42,6 +43,11 @@ public class EventsManager : MonoBehaviour
     public void EventCharacterLifeChange(float currentLife, float maxLife)
     {
         if (OnCharacterLifeChange != null) OnCharacterLifeChange(currentLife, maxLife);
+    }
+    
+    public void EventStoryFrameOpened(string storyFrameName)
+    {
+        if (OnStoryFrameOpened != null) OnStoryFrameOpened(storyFrameName);
     }
     #endregion
     
