@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: KitchenPuzzle
   m_EditorClassIdentifier: 
   _puzzleValues:
-    Id: KITCHEN_PUZZLE
+    Id: THE EXIT
     Level: 3
     TotalSteps: 3
     DoorsToOpen: []

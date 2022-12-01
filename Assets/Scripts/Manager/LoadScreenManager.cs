@@ -10,16 +10,31 @@ public class LoadScreenManager : MonoBehaviour
 {
     [SerializeField] private Image _progressBar; 
     [SerializeField] private TextMeshProUGUI _progressValue;
-    [SerializeField] private string _targetScene = "SampleScene"; 
+    /*public string TargetScene => _targetScene; 
+    [SerializeField] private string _targetScene; */
+    static public LoadScreenManager instance;
     
-    void Start()
+    private void Awake() 
     {
-        StartCoroutine(LoadAsync());
+        if(instance != null) Destroy(this);
+        instance = this; 
     }
 
-    IEnumerator LoadAsync()
+    void Start()
     {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(_targetScene);
+        string targetScene = GlobalData.instance.Chapter;
+        StartCoroutine(LoadAsync(targetScene));
+        
+    }
+    
+   /* public void SetTargetScene(string targetScene)
+    {
+        Debug.Log($"Set targe scene to {targetScene} ");
+        _targetScene = targetScene;
+    } */
+    IEnumerator LoadAsync(string targetScene)
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(targetScene);
         float progress = 0;
         
         while (!operation.isDone)
@@ -31,4 +46,6 @@ public class LoadScreenManager : MonoBehaviour
             yield return null;  // se libera frame a frame 
         }
     }
+
+   
 }
