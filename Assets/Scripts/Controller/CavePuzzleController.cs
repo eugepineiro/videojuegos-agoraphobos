@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HallPuzzleController : PuzzleController
+public class CavePuzzleController : PuzzleController
 {
-    static public HallPuzzleController hallInstance;
+    static public CavePuzzleController caveInstance;
     
     private void Awake() 
     {
-        if( hallInstance != null) Destroy(this);
-        hallInstance = this; 
+        if( caveInstance != null) Destroy(this);
+        caveInstance = this; 
     }
 
-    public void OpenMansionDoor()
+    public void OpenCave()
     {	
         base.Solve();
     }
