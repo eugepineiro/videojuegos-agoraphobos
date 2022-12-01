@@ -18,6 +18,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _steps;
     [SerializeField] private TextMeshProUGUI _level;
     [SerializeField] private TextMeshProUGUI _time;
+    [SerializeField] private TextMeshProUGUI _levelAnimation;
+
+    private Animator _animator;
 
     private float timeRemaining; 
 
@@ -26,7 +29,9 @@ public class UIManager : MonoBehaviour
 		timeRemaining = GameManager.instance.GetMaxTime();
         _level.text = $"Level 1 of {GameManager.instance.GetTotalPuzzles()}";
         _storyFrame.SetActive(false);
-        
+        _animator = _levelAnimation.GetComponent<Animator>();
+        //_animator.SetBool("isNewLevel", true); 
+        _animator.Play("Base Layer.levelTextBegin", 0, 0.25f);
         /* Subscribe to events */ 
         EventsManager.instance.OnPuzzleSolved += OnPuzzleSolved;
         EventsManager.instance.OnStepSolved += OnStepSolved;
@@ -43,6 +48,9 @@ public class UIManager : MonoBehaviour
     {
         _level.text = $"Level {puzzleProperties.Level+1} of {GameManager.instance.GetTotalPuzzles()}";
         _steps.text = "0";
+        _levelAnimation.text = $"LEVEL {puzzleProperties.Level + 1}\n{puzzleProperties.Id}";
+        _animator.SetBool("isNewLevel", true);
+        _animator.Play("Base Layer.levelTextBegin", 0, 0.25f);
     }
     
     private void OnCharacterLifeChange(float currentLife, float maxLife)

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LibraryPuzzle
   m_EditorClassIdentifier: 
   _puzzleValues:
-    Id: LIBRARY_PUZZLE
+    Id: THE CHAMBERS
     Level: 1
     TotalSteps: 3
     DoorsToOpen:
