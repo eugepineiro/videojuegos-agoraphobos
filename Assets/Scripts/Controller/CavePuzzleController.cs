@@ -12,8 +12,9 @@ public class CavePuzzleController : PuzzleController
         caveInstance = this; 
     }
 
-    public void OpenCave()
-    {	
+    public void OpenCaveDoor()
+    {
+        Debug.Log("Solved cave puzzle");
         base.Solve();
     }
 }
