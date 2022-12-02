@@ -15,5 +15,5 @@ public class MovementController : MonoBehaviour, IMoveable
 
     public void Rotate(Vector3 direction) => transform.Rotate(direction * Time.deltaTime * RotationSpeed);
 
-    public void Jump() => transform.GetComponent<Rigidbody>().AddForce(Vector3.up * Time.deltaTime * JumpForce, ForceMode.Impulse);
+    public void Jump() => transform.GetComponent<Rigidbody>().AddForce(Vector3.up * JumpForce);
 }

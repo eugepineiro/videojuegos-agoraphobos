@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: HallPuzzle
   m_EditorClassIdentifier: 
   _puzzleValues:
-    Id: 
+    Id: THE MAZE
     Level: 4
     TotalSteps: 1
     DoorsToOpen: []
