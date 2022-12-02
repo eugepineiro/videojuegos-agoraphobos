@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CavePuzzle
   m_EditorClassIdentifier: 
   _puzzleValues:
-    Id: 
+    Id: THE END
     Level: 5
     TotalSteps: 1
     DoorsToOpen: []

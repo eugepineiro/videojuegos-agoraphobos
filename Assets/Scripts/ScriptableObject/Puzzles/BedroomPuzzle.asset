@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BedroomPuzzle
   m_EditorClassIdentifier: 
   _puzzleValues:
-    Id: THE BOILING WATER
+    Id: THE KITCHEN
     Level: 2
     TotalSteps: 4
     DoorsToOpen:

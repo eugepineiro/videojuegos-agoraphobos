@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a792368e64ecbc22973ee3889c0f6a0, type: 3}
-  m_Name: HallPuzzle
+  m_Name: MazePuzzle
   m_EditorClassIdentifier: 
   _puzzleValues:
-    Id: THE MAZE
-    Level: 4
-    TotalSteps: 1
+    Id: THE CAVE
+    Level: 5
+    TotalSteps: 3
     DoorsToOpen: []

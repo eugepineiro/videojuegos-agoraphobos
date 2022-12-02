@@ -2682,6 +2682,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 873439189}
+  - component: {fileID: 873439190}
   m_Layer: 0
   m_Name: Maze
   m_TagString: Untagged
@@ -2707,6 +2708,21 @@ Transform:
   m_Father: {fileID: 2095906675}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &873439190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873439188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1efb37590db41ed8715954575e10305, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _puzzleProperties: {fileID: 11400000, guid: 0fd97e776ffd7b7aab9cbfecbd651418, type: 2}
+  _stepsSolved: -1
+  _isSolved: 0
 --- !u!1 &878721158 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: bbee89ead95ab49d784ad7cdcb7ff8a6, type: 3}
@@ -4068,9 +4084,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'LEVEL 1
+  m_text: 'LEVEL 5
 
-    THE LIBRARY'
+    THE MAZE'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
