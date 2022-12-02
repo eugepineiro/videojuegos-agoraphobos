@@ -920,10 +920,10 @@ MonoBehaviour:
   _lifebar: {fileID: 773090415}
   _storyFrame: {fileID: 549034657}
   _kitchenStoryFrame: {fileID: 21300000, guid: b8c092437c847aa309fec920caf8fb48, type: 3}
-  _steps: {fileID: 0}
-  _level: {fileID: 0}
-  _time: {fileID: 0}
-  _levelAnimation: {fileID: 0}
+  _steps: {fileID: 1816117446}
+  _level: {fileID: 1652583058}
+  _time: {fileID: 38147572}
+  _levelAnimation: {fileID: 1447963142}
 --- !u!114 &238724531
 MonoBehaviour:
   m_ObjectHideFlags: 0
