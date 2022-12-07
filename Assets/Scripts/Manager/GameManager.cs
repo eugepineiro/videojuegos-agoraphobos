@@ -11,7 +11,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int _maxMinutes = 30;
     private float _maxTime;  // lose if time is over
     private int puzzlesSolved = 0;
-    [SerializeField] private int _totalPuzzles = 4;
+    [SerializeField] private int _totalPuzzles = 6;
+    
+    private const int FIRST_CHAPTER_PUZZLES = 4;
 
     private void Awake() 
     {
@@ -44,20 +46,28 @@ public class GameManager : MonoBehaviour
     {
         puzzlesSolved+=1;
         Debug.Log($"Solved {puzzlesSolved} puzzles");
-		if (puzzlesSolved == _totalPuzzles-1) GameObject.Find("HallPuzzles").transform.GetChild(0).gameObject.SetActive(true); // final puzzle needs mansion key
+        GlobalData.instance.SetPuzzlesSolved(puzzlesSolved);
+		if (GlobalData.instance.PuzzlesSolved == FIRST_CHAPTER_PUZZLES-1) GameObject.Find("HallPuzzles").transform.GetChild(0).gameObject.SetActive(true); // final puzzle needs mansion key
         
-		if(puzzlesSolved >= _totalPuzzles){
+        if(GlobalData.instance.PuzzlesSolved == FIRST_CHAPTER_PUZZLES) StartCoroutine(LoadSecondChapterScene());
+        
+		if(GlobalData.instance.PuzzlesSolved >= _totalPuzzles){
             _isVictory = true;
             EventsManager.instance.EventGameOver(_isVictory);
         } else
         {
             OpenDoors(puzzleProperties.DoorsToOpen);
         }
-        
-        
     }
 
     private void LoadEndgameScene() => SceneManager.LoadScene("EndgameScene");
+
+    private IEnumerator LoadSecondChapterScene()
+    {
+        yield return new WaitForSeconds(4);
+        SceneManager.LoadScene("Laberynth");
+        
+    }
 
     private void OpenDoors(List<string> doorNames)
     {

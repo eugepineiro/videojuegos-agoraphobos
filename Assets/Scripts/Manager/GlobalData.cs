@@ -12,6 +12,9 @@ public class GlobalData : MonoBehaviour
     
     public string Chapter => _chapter;
     [SerializeField] private string _chapter;
+    
+    public int PuzzlesSolved => _puzzlesSolved;
+    [SerializeField] private int _puzzlesSolved;
 
     private void Awake()
     { 
@@ -24,4 +27,6 @@ public class GlobalData : MonoBehaviour
     public void SetVictoryField(bool isVictory) => _isVictory = isVictory;
     
     public void SetChapter(string chapter) => _chapter = chapter;
+    
+    public void SetPuzzlesSolved(int puzzlesSolved) => _puzzlesSolved = puzzlesSolved;
 }
