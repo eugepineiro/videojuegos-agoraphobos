@@ -19,11 +19,21 @@ public class UIButtonLogic : MonoBehaviour
 
     public void LoadLaberynthScene()
     {
-        Debug.Log($"btn labery");
-        GlobalData.instance.SetChapter("Laberynth");
-        SceneManager.LoadScene("LoadbarScene");
+        print("max chapter is: " + GlobalData.instance.MaxChapter );
+        if (GlobalData.instance.MaxChapter == "Laberynth")
+        {
+            print("yey laberynth");
+            GlobalData.instance.SetChapter("Laberynth");
+            SceneManager.LoadScene("Laberynth"); 
+            SceneManager.LoadScene("LoadbarScene");
 
-        //SceneManager.LoadScene("Laberynth"); 
+            
+        }
+        else
+        {
+            print("not done yet");
+        }
+        
     }
 
     public void CloseGame() => Application.Quit();
