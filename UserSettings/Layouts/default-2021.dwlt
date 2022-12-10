@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1848
     height: 991
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Hierarchy
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 68
+  controlID: 102
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 54
+  controlID: 103
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 55
+  controlID: 104
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -389,7 +389,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -415724
+  m_LastSelectedObjectID: -5274
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -523,22 +523,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/Outside/Arbust
+    - Assets/Materials/BasicColors
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs/Outside/Arbust
+  - Assets/Materials/BasicColors
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /home/eugenia/videojuegos/videojuegos-agoraphobos
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 236}
-    m_SelectedIDs: 14c20000
-    m_LastClickedID: 49684
-    m_ExpandedIDs: 00000000d0600000d2600000d4600000d6600000d8600000da600000dc600000de600000e0600000226100002661000014c2000000ca9a3b
+    scrollPos: {x: 0, y: 152}
+    m_SelectedIDs: 5a610000
+    m_LastClickedID: 24922
+    m_ExpandedIDs: 00000000086100000a6100000c6100000e61000010610000126100001461000016610000186100001a6100003261000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -566,7 +566,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000d0600000d2600000d4600000d6600000d8600000da600000dc600000de600000e0600000
+    m_ExpandedIDs: 00000000086100000a6100000c6100000e61000010610000126100001461000016610000186100001a610000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -696,7 +696,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 227affff2ab9ffff1ae3ffff14fbffff985d0000105e00001c5e0000685e0000746700005ebf00006cbf00009ebf0000c4bf0000c8bf0000e4bf0000f0bf00003cc00000
+      m_ExpandedIDs: 14fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -945,9 +945,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 268.98322, y: 445.6608, z: 255.91116}
+    m_Target: {x: -9.189742, y: 2.0451558, z: 28.000767}
     speed: 2
-    m_Value: {x: 268.98322, y: 445.6608, z: 255.91116}
+    m_Value: {x: -9.189742, y: 2.0451558, z: 28.000767}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -994,13 +994,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.15561777, y: -0.029025566, z: 0.004866494, w: 0.9874992}
+    m_Target: {x: 0.5323565, y: 0.0044593695, z: -0.0024314467, w: 0.8466518}
     speed: 2
-    m_Value: {x: 0.15857486, y: -0.026046526, z: 0.004477293, w: 0.98699325}
+    m_Value: {x: -0.5323565, y: -0.00445937, z: 0.0024314467, w: -0.8466518}
   m_Size:
-    m_Target: 250.95035
+    m_Target: 0.4768425
     speed: 2
-    m_Value: 250.95035
+    m_Value: 0.4768425
   m_Ortho:
     m_Target: 0
     speed: 2
