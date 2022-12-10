@@ -13,6 +13,7 @@ public class CaveDoor : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("trigger");
         if ( other.gameObject.name == "Pickaxe" /*other.CompareTag("Player")*/ )
         {
 			Debug.Log("Pickaxe hit cave door");

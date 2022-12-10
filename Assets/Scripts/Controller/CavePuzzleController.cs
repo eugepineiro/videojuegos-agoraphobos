@@ -5,6 +5,7 @@ using UnityEngine;
 public class CavePuzzleController : PuzzleController
 {
     static public CavePuzzleController caveInstance;
+    [SerializeField] private GameObject _caveDoor;
     
     private void Awake() 
     {
@@ -15,6 +16,7 @@ public class CavePuzzleController : PuzzleController
     public void OpenCaveDoor()
     {
         Debug.Log("Solved cave puzzle");
+        _caveDoor.SetActive(false);
         base.Solve();
     }
 }
