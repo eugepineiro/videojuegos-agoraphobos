@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CavePuzzle
   m_EditorClassIdentifier: 
   _puzzleValues:
-    Id: THE AGORAPHOBIA
+    Id: THE END
     Level: 6
     TotalSteps: 1
     DoorsToOpen: []
