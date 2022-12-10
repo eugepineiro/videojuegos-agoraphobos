@@ -65,6 +65,8 @@ public class GameManager : MonoBehaviour
     private IEnumerator LoadSecondChapterScene()
     {
         yield return new WaitForSeconds(4);
+        GlobalData.instance.SetChapter("Laberynth");
+        GlobalData.instance.SetMaxChapter("Laberynth");
         SceneManager.LoadScene("Laberynth");
         
     }

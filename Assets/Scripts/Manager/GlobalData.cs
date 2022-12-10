@@ -13,12 +13,22 @@ public class GlobalData : MonoBehaviour
     public string Chapter => _chapter;
     [SerializeField] private string _chapter;
     
+    public string MaxChapter => _maxChapter;
+    [SerializeField] private string _maxChapter;
+    
     public int PuzzlesSolved => _puzzlesSolved;
     [SerializeField] private int _puzzlesSolved;
 
     private void Awake()
     { 
-        if (instance != null) Destroy(this.gameObject); 
+        print("im created");
+        if (instance != null)
+        {
+            Destroy(this.gameObject); 
+            return;
+        }
+            
+        
         instance = this; 
 
         DontDestroyOnLoad(this);
@@ -27,6 +37,12 @@ public class GlobalData : MonoBehaviour
     public void SetVictoryField(bool isVictory) => _isVictory = isVictory;
     
     public void SetChapter(string chapter) => _chapter = chapter;
-    
+    public void SetMaxChapter(string chapter) => _maxChapter = chapter;
+
+    public string GetMaxChapter()
+    {
+        return _maxChapter;
+    }
+
     public void SetPuzzlesSolved(int puzzlesSolved) => _puzzlesSolved = puzzlesSolved;
 }

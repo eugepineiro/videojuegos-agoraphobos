@@ -74,5 +74,10 @@ public class Character : Actor
             _forward = transform.InverseTransformDirection(_camera.transform.forward);
             EventQueueManager.instance.AddCommand(new CmdInteract(_interactionController, _forward));
         }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            
+            GlobalData.instance.SetMaxChapter("Laberynth");
+        }
     }
 }

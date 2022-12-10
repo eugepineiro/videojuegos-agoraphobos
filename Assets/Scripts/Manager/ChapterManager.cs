@@ -27,12 +27,15 @@ public class ChapterManager : MonoBehaviour
         if (GlobalData.instance.PuzzlesSolved == FIRST_CHAPTER_PUZZLES)
         {
             _secondChapterLock.SetActive(false);
-            _secondChapterBtn.interactable = true;
+            // _secondChapterBtn.interactable = true;
+            GlobalData.instance.SetChapter("Laberynth");
+            GlobalData.instance.SetMaxChapter("Laberynth");
         }
-        else
-        {
-            _secondChapterBtn.interactable = false;
-        }
+        // else
+        // {
+        //     GlobalData.instance.SetMaxChapter("SampleScene");
+        //     // _secondChapterBtn.interactable = false;
+        // }
         
     }
     private void OnPuzzleSolved(PuzzleProperties puzzleProperties)
