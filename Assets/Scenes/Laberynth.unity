@@ -97,8 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 678c2aba032d5f4249a977c166c77dc2, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 00f080ace520f8e08ac907b586cec9b5, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -3033,8 +3033,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _material: {fileID: 2100000, guid: f9972059ea24d02d1ba7bf70fc581682, type: 2}
-  _nextButton: {fileID: 1165918944}
-  _angle: 90
   _newCharacterPosition: {x: -28, y: 2.4, z: -11}
 --- !u!65 &681750613
 BoxCollider:
@@ -4957,8 +4955,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _material: {fileID: 2100000, guid: 664b346345407af9cb730b9cfe21db6c, type: 2}
-  _nextButton: {fileID: 681750609}
-  _angle: -90
   _newCharacterPosition: {x: 2, y: 1, z: -3}
 --- !u!65 &1165918946
 BoxCollider:
