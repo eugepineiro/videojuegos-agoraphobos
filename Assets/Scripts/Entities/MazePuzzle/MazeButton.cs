@@ -7,23 +7,21 @@ public class MazeButton : MonoBehaviour, IInteractable
     private bool _interacting = false;
     public bool interacting => _interacting;
 
-    [SerializeField] private Material _material;
-    [SerializeField] private GameObject _nextButton;
-    [SerializeField] private int _angle;
+    [SerializeField] private Material _material; 
+	[SerializeField] private Vector3 _newCharacterPosition;	
 
     private GameObject _maze;
-    private GameObject _mazePuzzle;
+    private GameObject _character;
 
     void Start()
     {
         _maze = GameObject.Find("Maze");
-        _mazePuzzle = GameObject.Find("MazePuzzle");
+        _character = GameObject.Find("Character");
     } 
     
     public void Interact()
     { 
-        _maze.GetComponent<Renderer>().material = _material;  
-        _mazePuzzle.transform.localRotation = Quaternion.Euler(0, _angle, 0);
-        _nextButton.SetActive(true);
+        _maze.GetComponent<Renderer>().material = _material;   
+		_character.transform.position = _newCharacterPosition;
     }
 }

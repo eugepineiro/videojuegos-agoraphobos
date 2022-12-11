@@ -3035,6 +3035,7 @@ MonoBehaviour:
   _material: {fileID: 2100000, guid: f9972059ea24d02d1ba7bf70fc581682, type: 2}
   _nextButton: {fileID: 1165918944}
   _angle: 90
+  _newCharacterPosition: {x: -28, y: 2.4, z: -11}
 --- !u!65 &681750613
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3309,7 +3310,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4634978906829813537, guid: 640fae00894905c55adfc5bf01f0047f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.1
+      value: -4.8
       objectReference: {fileID: 0}
     - target: {fileID: 4634978906829813537, guid: 640fae00894905c55adfc5bf01f0047f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3317,7 +3318,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4634978906829813537, guid: 640fae00894905c55adfc5bf01f0047f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 60
+      value: 60.9
       objectReference: {fileID: 0}
     - target: {fileID: 4634978906829813537, guid: 640fae00894905c55adfc5bf01f0047f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3493,7 +3494,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705666087}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.1, y: 4.04, z: 60}
+  m_LocalPosition: {x: -4.8, y: 4.04, z: 60.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4929,7 +4930,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c14003f544c92a7108f0323a8087783b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c14003f544c92a7108f0323a8087783b, type: 3}
@@ -4958,6 +4959,7 @@ MonoBehaviour:
   _material: {fileID: 2100000, guid: 664b346345407af9cb730b9cfe21db6c, type: 2}
   _nextButton: {fileID: 681750609}
   _angle: -90
+  _newCharacterPosition: {x: 2, y: 1, z: -3}
 --- !u!65 &1165918946
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6532,7 +6534,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1739204734}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.1, y: 4.04, z: 60}
+  m_LocalPosition: {x: -4.8, y: 4.04, z: 60.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
