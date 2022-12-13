@@ -15,5 +15,5 @@ MonoBehaviour:
   _puzzleValues:
     Id: THE AGORAPHOBIA
     Level: 5
-    TotalSteps: 3
+    TotalSteps: 4
     DoorsToOpen: []
