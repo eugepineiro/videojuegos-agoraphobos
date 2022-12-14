@@ -24,10 +24,15 @@ public class StepSolved : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        
         if ((!_isSolved) && other.name == objectName)
         {
             _isSolved = true;
             _mazePuzzleController.SolveStep(true);
+            if (this.name == "Maze")
+            {
+                _mazePuzzleController.Solve();
+            }
         }
     }
 
