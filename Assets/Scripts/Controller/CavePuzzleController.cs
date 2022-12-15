@@ -20,7 +20,6 @@ public class CavePuzzleController : PuzzleController
 
     public void OpenCaveDoor()
     {
-        Debug.Log("Solved cave puzzle");
         _caveDoor.SetActive(false);
         SolveStep(true);
         base.Solve();

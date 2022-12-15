@@ -30,8 +30,7 @@ public class StepSolved : MonoBehaviour
             _isSolved = true;
             _mazePuzzleController.SolveStep(true);
             if (this.gameObject.name == "Maze")
-            {
-                Debug.Log("AAAAAAAAAAAA ENTRO");
+            { 
                 MazePuzzleController.mazeInstance.SolveMaze();
             }
         }

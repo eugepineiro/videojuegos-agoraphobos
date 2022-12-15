@@ -22,8 +22,7 @@ public class GameManager : MonoBehaviour
             Destroy(this);
             return;
         }
-        instance = this; 
-        // DontDestroyOnLoad(gameObject);
+        instance = this;  
     }
     void Start()
     {
@@ -49,14 +48,15 @@ public class GameManager : MonoBehaviour
 
     private void OnPuzzleSolved(PuzzleProperties puzzleProperties) 
     {
-        Debug.Log("Son puzzle solvewd");
+        
         puzzlesSolved = GlobalData.instance.PuzzlesSolved +1;
         Debug.Log($"Solved {GlobalData.instance.PuzzlesSolved} puzzles");
         GlobalData.instance.SetPuzzlesSolved(puzzlesSolved);
-		if (GlobalData.instance.PuzzlesSolved == FIRST_CHAPTER_PUZZLES-1) GameObject.Find("HallPuzzles").transform.GetChild(0).gameObject.SetActive(true); // final puzzle needs mansion key
+		
+        if (GlobalData.instance.PuzzlesSolved == FIRST_CHAPTER_PUZZLES-1) GameObject.Find("HallPuzzles").transform.GetChild(0).gameObject.SetActive(true); // final puzzle needs mansion key
         
         if(GlobalData.instance.PuzzlesSolved == FIRST_CHAPTER_PUZZLES) StartCoroutine(LoadSecondChapterScene());
-        Debug.Log($"PUZZLES SOLVED {GlobalData.instance.PuzzlesSolved} >= TROTAL PUZEL {_totalPuzzles}");
+        
 		if(GlobalData.instance.PuzzlesSolved >= _totalPuzzles){
             _isVictory = true;
             EventsManager.instance.EventGameOver(_isVictory);
