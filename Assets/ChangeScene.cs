@@ -5,10 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
+    [SerializeField] private int time =20;
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(passiveMe(30));
+        StartCoroutine(passiveMe(time));
     }
     
  

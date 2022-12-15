@@ -307,6 +307,7 @@ MonoBehaviour:
   _isVictory: 0
   _chapter: 
   _maxChapter: 
+  _maxMinutes: 30
   _puzzlesSolved: 0
 --- !u!4 &231202454
 Transform:
@@ -515,7 +516,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ITRODUCTION
+  m_text: INTRODUCTION
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -874,7 +875,7 @@ GameObject:
   - component: {fileID: 865323811}
   - component: {fileID: 865323810}
   m_Layer: 0
-  m_Name: InfoBtn
+  m_Name: IntroBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
