@@ -115,6 +115,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5991462436040471675, guid: 1f1ef239e37e25b46828ee2f84f00a45, type: 3}
+      propertyPath: m_Drag
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991462436040471675, guid: 1f1ef239e37e25b46828ee2f84f00a45, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f1ef239e37e25b46828ee2f84f00a45, type: 3}
 --- !u!4 &4369788067222911449 stripped
@@ -172,6 +180,14 @@ PrefabInstance:
     - target: {fileID: 3943989184814502670, guid: 984e6b1be8afc5e47af7f2564e78fab2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5782925315888036957, guid: 984e6b1be8afc5e47af7f2564e78fab2, type: 3}
+      propertyPath: m_Drag
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5782925315888036957, guid: 984e6b1be8afc5e47af7f2564e78fab2, type: 3}
+      propertyPath: m_Constraints
+      value: 112
       objectReference: {fileID: 0}
     - target: {fileID: 8498034332905332558, guid: 984e6b1be8afc5e47af7f2564e78fab2, type: 3}
       propertyPath: m_Name
@@ -239,6 +255,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Table
       objectReference: {fileID: 0}
+    - target: {fileID: 6349783647381573187, guid: d5a06c9593a678b4cbf39c138374d654, type: 3}
+      propertyPath: m_Drag
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6349783647381573187, guid: d5a06c9593a678b4cbf39c138374d654, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6349783647381573187, guid: d5a06c9593a678b4cbf39c138374d654, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5a06c9593a678b4cbf39c138374d654, type: 3}
 --- !u!4 &2922818409477288394 stripped
@@ -301,6 +329,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BKing
       objectReference: {fileID: 0}
+    - target: {fileID: 8539361034223172962, guid: dec3dad85bfdf784eb9d0380e492ffe1, type: 3}
+      propertyPath: m_Drag
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8539361034223172962, guid: dec3dad85bfdf784eb9d0380e492ffe1, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dec3dad85bfdf784eb9d0380e492ffe1, type: 3}
 --- !u!4 &2820578827850989757 stripped
@@ -315,6 +351,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4569063809353917091}
     m_Modifications:
+    - target: {fileID: 1480226341756521231, guid: b0cf6585a1ea52241b30afb1c644c270, type: 3}
+      propertyPath: m_Drag
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480226341756521231, guid: b0cf6585a1ea52241b30afb1c644c270, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     - target: {fileID: 4132163410079923484, guid: b0cf6585a1ea52241b30afb1c644c270, type: 3}
       propertyPath: m_Name
       value: WPawn
@@ -377,6 +421,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4569063809353917091}
     m_Modifications:
+    - target: {fileID: 2454715161068396886, guid: 9b040601673849040afc67f318b59fc1, type: 3}
+      propertyPath: m_Drag
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7870696767156260975, guid: 9b040601673849040afc67f318b59fc1, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -439,6 +487,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4569063809353917091}
     m_Modifications:
+    - target: {fileID: 2454715161068396886, guid: 9b040601673849040afc67f318b59fc1, type: 3}
+      propertyPath: m_Drag
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7870696767156260975, guid: 9b040601673849040afc67f318b59fc1, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -501,6 +553,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4569063809353917091}
     m_Modifications:
+    - target: {fileID: 2454715161068396886, guid: 9b040601673849040afc67f318b59fc1, type: 3}
+      propertyPath: m_Drag
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7870696767156260975, guid: 9b040601673849040afc67f318b59fc1, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -607,6 +663,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5782925315888036957, guid: 984e6b1be8afc5e47af7f2564e78fab2, type: 3}
+      propertyPath: m_Drag
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8498034332905332558, guid: 984e6b1be8afc5e47af7f2564e78fab2, type: 3}
       propertyPath: m_Name
       value: BHorse (1)
@@ -673,6 +733,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5991462436040471675, guid: 1f1ef239e37e25b46828ee2f84f00a45, type: 3}
+      propertyPath: m_Drag
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f1ef239e37e25b46828ee2f84f00a45, type: 3}
 --- !u!4 &8034817900597055286 stripped
@@ -687,6 +751,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4569063809353917091}
     m_Modifications:
+    - target: {fileID: 1480226341756521231, guid: b0cf6585a1ea52241b30afb1c644c270, type: 3}
+      propertyPath: m_Drag
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4132163410079923484, guid: b0cf6585a1ea52241b30afb1c644c270, type: 3}
       propertyPath: m_Name
       value: WPawn (5)
@@ -749,6 +817,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4569063809353917091}
     m_Modifications:
+    - target: {fileID: 1480226341756521231, guid: b0cf6585a1ea52241b30afb1c644c270, type: 3}
+      propertyPath: m_Drag
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4132163410079923484, guid: b0cf6585a1ea52241b30afb1c644c270, type: 3}
       propertyPath: m_Name
       value: WPawn (3)
@@ -811,6 +883,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4569063809353917091}
     m_Modifications:
+    - target: {fileID: 1480226341756521231, guid: b0cf6585a1ea52241b30afb1c644c270, type: 3}
+      propertyPath: m_Drag
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4132163410079923484, guid: b0cf6585a1ea52241b30afb1c644c270, type: 3}
       propertyPath: m_Name
       value: WPawn (2)
@@ -873,6 +949,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4569063809353917091}
     m_Modifications:
+    - target: {fileID: 2872220616380594778, guid: 7239be5c6173da8489fdbe9aa316d2c1, type: 3}
+      propertyPath: m_Drag
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5306483644859973207, guid: 7239be5c6173da8489fdbe9aa316d2c1, type: 3}
       propertyPath: m_Name
       value: WHorse (1)
@@ -935,6 +1015,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4569063809353917091}
     m_Modifications:
+    - target: {fileID: 1480226341756521231, guid: b0cf6585a1ea52241b30afb1c644c270, type: 3}
+      propertyPath: m_Drag
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4132163410079923484, guid: b0cf6585a1ea52241b30afb1c644c270, type: 3}
       propertyPath: m_Name
       value: WPawn (6)
@@ -997,6 +1081,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4569063809353917091}
     m_Modifications:
+    - target: {fileID: 3750448450420075381, guid: 1484d911e44e3714ba55802a92157dce, type: 3}
+      propertyPath: m_Drag
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4173338368639726338, guid: 1484d911e44e3714ba55802a92157dce, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -1059,6 +1147,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4569063809353917091}
     m_Modifications:
+    - target: {fileID: 2454715161068396886, guid: 9b040601673849040afc67f318b59fc1, type: 3}
+      propertyPath: m_Drag
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7870696767156260975, guid: 9b040601673849040afc67f318b59fc1, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -1121,6 +1213,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4569063809353917091}
     m_Modifications:
+    - target: {fileID: 1480226341756521231, guid: b0cf6585a1ea52241b30afb1c644c270, type: 3}
+      propertyPath: m_Drag
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4132163410079923484, guid: b0cf6585a1ea52241b30afb1c644c270, type: 3}
       propertyPath: m_Name
       value: WPawn (7)
@@ -1183,6 +1279,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4569063809353917091}
     m_Modifications:
+    - target: {fileID: 1480226341756521231, guid: b0cf6585a1ea52241b30afb1c644c270, type: 3}
+      propertyPath: m_Drag
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4132163410079923484, guid: b0cf6585a1ea52241b30afb1c644c270, type: 3}
       propertyPath: m_Name
       value: WPawn (1)
@@ -1245,6 +1345,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4569063809353917091}
     m_Modifications:
+    - target: {fileID: 2454715161068396886, guid: 9b040601673849040afc67f318b59fc1, type: 3}
+      propertyPath: m_Drag
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7870696767156260975, guid: 9b040601673849040afc67f318b59fc1, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -1307,6 +1411,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4569063809353917091}
     m_Modifications:
+    - target: {fileID: 2454715161068396886, guid: 9b040601673849040afc67f318b59fc1, type: 3}
+      propertyPath: m_Drag
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7870696767156260975, guid: 9b040601673849040afc67f318b59fc1, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -1369,6 +1477,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4569063809353917091}
     m_Modifications:
+    - target: {fileID: 2454715161068396886, guid: 9b040601673849040afc67f318b59fc1, type: 3}
+      propertyPath: m_Drag
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7870696767156260975, guid: 9b040601673849040afc67f318b59fc1, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -1431,6 +1543,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4569063809353917091}
     m_Modifications:
+    - target: {fileID: 1480226341756521231, guid: b0cf6585a1ea52241b30afb1c644c270, type: 3}
+      propertyPath: m_Drag
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4132163410079923484, guid: b0cf6585a1ea52241b30afb1c644c270, type: 3}
       propertyPath: m_Name
       value: WPawn (4)
@@ -1493,6 +1609,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4569063809353917091}
     m_Modifications:
+    - target: {fileID: 1015961782437931885, guid: a8aa3b26adc615a47b87139db5088c59, type: 3}
+      propertyPath: m_Drag
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1015961782437931885, guid: a8aa3b26adc615a47b87139db5088c59, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     - target: {fileID: 8198810928512410674, guid: a8aa3b26adc615a47b87139db5088c59, type: 3}
       propertyPath: m_Name
       value: BQueen
@@ -1555,6 +1679,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4569063809353917091}
     m_Modifications:
+    - target: {fileID: 3750448450420075381, guid: 1484d911e44e3714ba55802a92157dce, type: 3}
+      propertyPath: m_Drag
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3750448450420075381, guid: 1484d911e44e3714ba55802a92157dce, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     - target: {fileID: 4173338368639726338, guid: 1484d911e44e3714ba55802a92157dce, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1661,6 +1793,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2547070687885304797, guid: be44f39d72d411b4d986b8fb36221388, type: 3}
+      propertyPath: m_Drag
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2547070687885304797, guid: be44f39d72d411b4d986b8fb36221388, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     - target: {fileID: 3353850897252355110, guid: be44f39d72d411b4d986b8fb36221388, type: 3}
       propertyPath: m_Name
       value: WKing
@@ -1679,6 +1819,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4569063809353917091}
     m_Modifications:
+    - target: {fileID: 2454715161068396886, guid: 9b040601673849040afc67f318b59fc1, type: 3}
+      propertyPath: m_Drag
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454715161068396886, guid: 9b040601673849040afc67f318b59fc1, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     - target: {fileID: 7870696767156260975, guid: 9b040601673849040afc67f318b59fc1, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1741,6 +1889,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4569063809353917091}
     m_Modifications:
+    - target: {fileID: 2872220616380594778, guid: 7239be5c6173da8489fdbe9aa316d2c1, type: 3}
+      propertyPath: m_Drag
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2872220616380594778, guid: 7239be5c6173da8489fdbe9aa316d2c1, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     - target: {fileID: 5306483644859973207, guid: 7239be5c6173da8489fdbe9aa316d2c1, type: 3}
       propertyPath: m_Name
       value: WHorse
@@ -1803,6 +1959,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4569063809353917091}
     m_Modifications:
+    - target: {fileID: 2796702830021862768, guid: 3408c09dcde445344b22decf967dba23, type: 3}
+      propertyPath: m_Drag
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796702830021862768, guid: 3408c09dcde445344b22decf967dba23, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     - target: {fileID: 4604830941489215971, guid: 3408c09dcde445344b22decf967dba23, type: 3}
       propertyPath: m_RootOrder
       value: 9

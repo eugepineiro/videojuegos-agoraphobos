@@ -10534,6 +10534,18 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6237156237460728937, guid: 0bb2d76ed51b3c54380af79f4220f65f, type: 3}
+      propertyPath: m_Drag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6237156237460728937, guid: 0bb2d76ed51b3c54380af79f4220f65f, type: 3}
+      propertyPath: m_Mass
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6237156237460728937, guid: 0bb2d76ed51b3c54380af79f4220f65f, type: 3}
+      propertyPath: m_Constraints
+      value: 126
+      objectReference: {fileID: 0}
     - target: {fileID: 6237156237475391088, guid: 0bb2d76ed51b3c54380af79f4220f65f, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
