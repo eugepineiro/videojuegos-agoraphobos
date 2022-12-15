@@ -6667,7 +6667,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4634978906829813539, guid: 640fae00894905c55adfc5bf01f0047f, type: 3}
       propertyPath: m_Constraints
-      value: 0
+      value: 112
       objectReference: {fileID: 0}
     - target: {fileID: 4634978906829813541, guid: 640fae00894905c55adfc5bf01f0047f, type: 3}
       propertyPath: camara
