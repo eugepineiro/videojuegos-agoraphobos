@@ -9,7 +9,12 @@ public class CavePuzzleController : PuzzleController
     
     private void Awake() 
     {
-        if( caveInstance != null) Destroy(this);
+        if (caveInstance != null)
+        {
+            Destroy(this);
+            return;
+        }
+            
         caveInstance = this; 
     }
 
@@ -17,6 +22,7 @@ public class CavePuzzleController : PuzzleController
     {
         Debug.Log("Solved cave puzzle");
         _caveDoor.SetActive(false);
+        SolveStep(true);
         base.Solve();
     }
 }

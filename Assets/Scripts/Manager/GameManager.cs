@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
             return;
         }
         instance = this; 
+        // DontDestroyOnLoad(gameObject);
     }
     void Start()
     {
@@ -49,7 +50,7 @@ public class GameManager : MonoBehaviour
     private void OnPuzzleSolved(PuzzleProperties puzzleProperties) 
     {
         Debug.Log("Son puzzle solvewd");
-        puzzlesSolved+=1;
+        puzzlesSolved = GlobalData.instance.PuzzlesSolved +1;
         Debug.Log($"Solved {GlobalData.instance.PuzzlesSolved} puzzles");
         GlobalData.instance.SetPuzzlesSolved(puzzlesSolved);
 		if (GlobalData.instance.PuzzlesSolved == FIRST_CHAPTER_PUZZLES-1) GameObject.Find("HallPuzzles").transform.GetChild(0).gameObject.SetActive(true); // final puzzle needs mansion key

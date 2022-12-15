@@ -10,7 +10,12 @@ public class EventsManager : MonoBehaviour
     
     private void Awake() 
     {
-        if(instance != null) Destroy(this);
+        if (instance != null)
+        {
+            Destroy(this);
+            return;
+        }
+            
         instance = this; 
     }
     

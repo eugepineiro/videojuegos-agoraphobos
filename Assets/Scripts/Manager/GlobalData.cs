@@ -20,7 +20,7 @@ public class GlobalData : MonoBehaviour
     [SerializeField] private int _maxMinutes = 30;
     
     public int PuzzlesSolved => _puzzlesSolved;
-    [SerializeField] private int _puzzlesSolved;
+    [SerializeField] private int _puzzlesSolved =0;
 
     private void Awake()
     {

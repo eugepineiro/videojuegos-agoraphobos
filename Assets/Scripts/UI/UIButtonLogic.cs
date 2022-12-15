@@ -42,5 +42,10 @@ public class UIButtonLogic : MonoBehaviour
     {
         SceneManager.LoadScene("Intro"); 
     }
+
+    public void LoadFinalScene()
+    {
+        SceneManager.LoadScene("Final");
+    }
     
 }

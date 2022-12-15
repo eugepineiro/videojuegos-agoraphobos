@@ -47,7 +47,7 @@ public class UIManager : MonoBehaviour
     
     private void OnPuzzleSolved(PuzzleProperties puzzleProperties)
     {
-        _level.text = $"Level {GlobalData.instance.PuzzlesSolved+1} of {GameManager.instance.GetTotalPuzzles()}";
+        _level.text = $"Level {puzzleProperties.Level + 1} of {GameManager.instance.GetTotalPuzzles()}";
         _steps.text = "0";
         _levelAnimation.text = $"LEVEL {puzzleProperties.Level + 1}\n{puzzleProperties.Id}";
         _animator.SetBool("isNewLevel", true);
