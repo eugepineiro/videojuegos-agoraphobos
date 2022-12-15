@@ -16,21 +16,21 @@ public class GlobalData : MonoBehaviour
     public string MaxChapter => _maxChapter;
     [SerializeField] private string _maxChapter;
     
+    public int MaxMinutes => _maxMinutes;
+    [SerializeField] private int _maxMinutes = 30;
+    
     public int PuzzlesSolved => _puzzlesSolved;
     [SerializeField] private int _puzzlesSolved;
 
     private void Awake()
-    { 
-        print("im created");
+    {
         if (instance != null)
         {
             Destroy(this.gameObject); 
             return;
         }
-            
         
-        instance = this; 
-
+        instance = this;
         DontDestroyOnLoad(this);
     }
 
@@ -45,4 +45,9 @@ public class GlobalData : MonoBehaviour
     }
 
     public void SetPuzzlesSolved(int puzzlesSolved) => _puzzlesSolved = puzzlesSolved;
+    
+    public int GetMaxMinutes()
+    {
+        return _maxMinutes;
+    }
 }

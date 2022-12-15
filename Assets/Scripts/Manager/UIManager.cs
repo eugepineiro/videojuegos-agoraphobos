@@ -26,8 +26,9 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-		timeRemaining = GameManager.instance.GetMaxTime();
-        _level.text = $"Level 1 of {GameManager.instance.GetTotalPuzzles()}";
+		timeRemaining = GlobalData.instance.MaxMinutes * 60;
+        Debug.Log($"TIME REIMAINGN {timeRemaining}");
+        _level.text = $"Level {GlobalData.instance.PuzzlesSolved+1} of {GameManager.instance.GetTotalPuzzles()}";
         _storyFrame.SetActive(false);
         _animator = _levelAnimation.GetComponent<Animator>();
         //_animator.SetBool("isNewLevel", true); 
@@ -46,7 +47,7 @@ public class UIManager : MonoBehaviour
     
     private void OnPuzzleSolved(PuzzleProperties puzzleProperties)
     {
-        _level.text = $"Level {puzzleProperties.Level+1} of {GameManager.instance.GetTotalPuzzles()}";
+        _level.text = $"Level {GlobalData.instance.PuzzlesSolved+1} of {GameManager.instance.GetTotalPuzzles()}";
         _steps.text = "0";
         _levelAnimation.text = $"LEVEL {puzzleProperties.Level + 1}\n{puzzleProperties.Id}";
         _animator.SetBool("isNewLevel", true);

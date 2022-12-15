@@ -29,9 +29,10 @@ public class StepSolved : MonoBehaviour
         {
             _isSolved = true;
             _mazePuzzleController.SolveStep(true);
-            if (this.name == "Maze")
+            if (this.gameObject.name == "Maze")
             {
-                _mazePuzzleController.Solve();
+                Debug.Log("AAAAAAAAAAAA ENTRO");
+                MazePuzzleController.mazeInstance.SolveMaze();
             }
         }
     }

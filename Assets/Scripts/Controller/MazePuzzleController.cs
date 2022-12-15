@@ -13,6 +13,11 @@ public class MazePuzzleController : PuzzleController
         mazeInstance = this; 
     }
 
+	public void SolveMaze() { 
+		Debug.Log("SOLVE MAZE");
+		base.Solve();	
+	}
+
 
    
 }
