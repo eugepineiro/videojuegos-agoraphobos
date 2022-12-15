@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Laberynth.unity
     guid: 6f77831a650ea4bb7ac79992395bc6c9
+  - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: b62f2ca8293c0984aba5e8fae650ed41
   m_configObjects: {}

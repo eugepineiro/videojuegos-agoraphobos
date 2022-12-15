@@ -37,5 +37,10 @@ public class UIButtonLogic : MonoBehaviour
     }
 
     public void CloseGame() => Application.Quit();
+
+    public void LoadIntroductionScene()
+    {
+        SceneManager.LoadScene("Intro"); 
+    }
     
 }
